@@ -1,0 +1,21 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_SCRIPTS\frames.cs">
+    <Files>
+      <File FileName="Assets\_SCRIPTS\frames.cs" Line="33" Column="5" />
+      <File FileName="Assets\_SCRIPTS\ciclosHertz.cs" Line="104" Column="1" />
+      <File FileName="Assets\_MENUS\MenuPrincipal\Scripts\JogarAnim.cs" Line="1" Column="1" />
+      <File FileName="Assets\_SCRIPTS\detectarcolisoes.cs" Line="86" Column="5" />
+      <File FileName="Assets\_MENUS\MenuPrincipal\Scripts\OpcoesAnim.cs" Line="1" Column="1" />
+      <File FileName="Assets\_MENUS\MenuOpcoes\ModoVisualAnim.cs" Line="1" Column="1" />
+      <File FileName="Assets\_MENUS\MenuOpcoes\TecladoAnim.cs" Line="1" Column="1" />
+      <File FileName="Assets\_MENUS\MenuOpcoes\DadosFrequencias.cs" Line="1" Column="1" />
+      <File FileName="Assets\_MENUS\MenuOpcoes\VoltarAnim.cs" Line="1" Column="1" />
+      <File FileName="Assets\_MENUS\MenuPrincipal\Scripts\SairAnim.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
