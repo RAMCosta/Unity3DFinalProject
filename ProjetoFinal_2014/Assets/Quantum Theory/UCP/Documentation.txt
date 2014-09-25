@@ -1,0 +1,9 @@
+Urban Construction Pack
+-------------------------
+
+Documentation is located at http://www.qt-ent.com/UCP/Documentation
+
+EULA
+----
+
+Users of this package are bound to licensing terms described at http://unity3d.com/company/legal/as_terms

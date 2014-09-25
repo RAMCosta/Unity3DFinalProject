@@ -1,0 +1,138 @@
+fileFormatVersion: 2
+guid: 492350616cfaf92459b20f464280a061
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: bld_1_roof_trim_LOD
+    100002: bld_1_roof_trim_corner_LOD
+    100004: bld_1_concave_LOD
+    100006: bld_1_bottom_corner_LOD
+    100008: bld_1_roof_trim_corner_concave_LOD
+    100010: bld_1_small_wind_2_LOD
+    100012: //RootNode
+    100014: bld_1_small_wind_1_LOD
+    100016: bld_1_windows_2_LOD
+    100018: bld_1_windows_1_LOD
+    100020: bld_1_trim_1_2_LOD
+    100022: bld_1_bottom_2_LOD
+    100024: bld_1_small_wind_corner_LOD
+    100026: bld_1_trim_1_corner_LOD
+    100028: bld_1_windows_corner_LOD
+    100030: bld_1_bottom_1_LOD
+    400000: bld_1_roof_trim_LOD
+    400002: bld_1_roof_trim_corner_LOD
+    400004: bld_1_concave_LOD
+    400006: bld_1_bottom_corner_LOD
+    400008: bld_1_roof_trim_corner_concave_LOD
+    400010: bld_1_small_wind_2_LOD
+    400012: //RootNode
+    400014: bld_1_small_wind_1_LOD
+    400016: bld_1_windows_2_LOD
+    400018: bld_1_windows_1_LOD
+    400020: bld_1_trim_1_2_LOD
+    400022: bld_1_bottom_2_LOD
+    400024: bld_1_small_wind_corner_LOD
+    400026: bld_1_trim_1_corner_LOD
+    400028: bld_1_windows_corner_LOD
+    400030: bld_1_bottom_1_LOD
+    2300000: bld_1_roof_trim_LOD
+    2300002: bld_1_roof_trim_corner_LOD
+    2300004: bld_1_concave_LOD
+    2300006: bld_1_bottom_corner_LOD
+    2300008: bld_1_roof_trim_corner_concave_LOD
+    2300010: bld_1_small_wind_2_LOD
+    2300012: bld_1_small_wind_1_LOD
+    2300014: bld_1_windows_2_LOD
+    2300016: bld_1_windows_1_LOD
+    2300018: bld_1_trim_1_2_LOD
+    2300020: bld_1_bottom_2_LOD
+    2300022: bld_1_small_wind_corner_LOD
+    2300024: bld_1_trim_1_corner_LOD
+    2300026: bld_1_windows_corner_LOD
+    2300028: bld_1_bottom_1_LOD
+    3300000: bld_1_roof_trim_LOD
+    3300002: bld_1_roof_trim_corner_LOD
+    3300004: bld_1_concave_LOD
+    3300006: bld_1_bottom_corner_LOD
+    3300008: bld_1_roof_trim_corner_concave_LOD
+    3300010: bld_1_small_wind_2_LOD
+    3300012: bld_1_small_wind_1_LOD
+    3300014: bld_1_windows_2_LOD
+    3300016: bld_1_windows_1_LOD
+    3300018: bld_1_trim_1_2_LOD
+    3300020: bld_1_bottom_2_LOD
+    3300022: bld_1_small_wind_corner_LOD
+    3300024: bld_1_trim_1_corner_LOD
+    3300026: bld_1_windows_corner_LOD
+    3300028: bld_1_bottom_1_LOD
+    4300000: bld_1_small_wind_2_LOD
+    4300002: bld_1_roof_trim_corner_concave_LOD
+    4300004: bld_1_bottom_corner_LOD
+    4300006: bld_1_concave_LOD
+    4300008: bld_1_roof_trim_corner_LOD
+    4300010: bld_1_roof_trim_LOD
+    4300012: bld_1_bottom_1_LOD
+    4300014: bld_1_windows_corner_LOD
+    4300016: bld_1_trim_1_corner_LOD
+    4300018: bld_1_small_wind_corner_LOD
+    4300020: bld_1_bottom_2_LOD
+    4300022: bld_1_trim_1_2_LOD
+    4300024: bld_1_windows_1_LOD
+    4300026: bld_1_windows_2_LOD
+    4300028: bld_1_small_wind_1_LOD
+    7400000: Default Take
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

@@ -4,34 +4,57 @@ using System.Collections;
 public class AndroidAndar : MonoBehaviour {
 
 	// Use this for initialization
-	public int velocidadeAndamento = 40;
-	public int velocidadeVirar = 10;
-	public int velocidadeSubir = 5;
+	int velocidadeAndamento = 13;
+	int velocidadeSubir = 3;
 	public GameObject Helicopterozico;
+	bool carregou = false;
+	bool colisao = false;
+	public GUITexture Acelerar;
+	public GUITexture SetaCima;
+	public GUITexture SetaBaixo;
+
+
+
 	void Start () {
-	
+		/*int widht = Screen.width;
+		Acelerar.transform.position = new Vector3(0.25f ,0.3f, 1.0f);
+		SetaCima.transform.position = new Vector3(0.65f ,0.4f, 1.0f);
+		SetaBaixo.transform.position = new Vector3(0.69f ,0.25f, 1.0f);
+*/
 	}
 	
+	
+
+
 	// Update is called once per frame
 	void Update () {
+
 		if (Input.touches.Length <= 0) {
 		} else {
 			for (int i=0; i<Input.touchCount; i++) {
-				if(this.guiTexture.HitTest(Input.GetTouch(i).position)){
-					rigidbody.useGravity = false;
-					Helicopterozico.transform.Translate (0, Helicopterozico.transform.position.y - 0.1f * Time.deltaTime, velocidadeAndamento * Time.deltaTime);
-					// virar para a esquerda
-					/*	if (SetaEsqu.guiTexture.HitTest(Input.GetTouch(i).position)) {
-							transform.Rotate (Vector3.down * Time.deltaTime * velocidadeVirar);
-						}
-						// virar para a direita
-						if (SetaDir.guiTexture.HitTest(Input.GetTouch(i).position)) {
-							transform.Rotate (Vector3.up * Time.deltaTime * velocidadeVirar);
-					}*/
-				}else {
-					rigidbody.useGravity = true;	
+				if(Acelerar.guiTexture.HitTest(Input.GetTouch(i).position)){
+					if (Input.GetTouch (i).phase == TouchPhase.Began) {
+						carregou = true;
+						Helicopterozico.rigidbody.useGravity = false; 
+					}if (Input.GetTouch (i).phase == TouchPhase.Ended) {
+						carregou = false;
+						Helicopterozico.rigidbody.useGravity=true;
+					}
 				}
+				if(SetaCima.guiTexture.HitTest(Input.GetTouch(i).position)){
+						Helicopterozico.transform.Translate (0, velocidadeSubir*Time.deltaTime, 0);
+				}
+				if(SetaBaixo.guiTexture.HitTest(Input.GetTouch(i).position)){
+					Helicopterozico.transform.Translate (0, -(velocidadeSubir*Time.deltaTime),0);
 			}
 		}
+		if (carregou == true) {
+			colisao = false;
+			Helicopterozico.transform.Translate (0, 0, velocidadeAndamento * Time.deltaTime);
+				
+		}if (carregou == false && colisao != true) {
+			//Helicopterozico.transform.Translate (0, -(velocidadeSubir*Time.deltaTime), (velocidadeAndamento-4) * Time.deltaTime);	
+		}
+	}
 	}
 }
