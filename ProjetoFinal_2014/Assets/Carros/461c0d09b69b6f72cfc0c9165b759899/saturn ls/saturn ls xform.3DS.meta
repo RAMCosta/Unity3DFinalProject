@@ -1,0 +1,187 @@
+fileFormatVersion: 2
+guid: 50bffd439ca965d45a8bc2f35b284d81
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: black m
+    100002: body
+    100004: bottom
+    100006: chrome
+    100008: cluster
+    100010: cooler
+    100012: dash
+    100014: door
+    100016: glass
+    100018: gum
+    100020: gum0
+    100022: gum1
+    100024: gum2
+    100026: gum3
+    100028: interior
+    100030: interior0
+    100032: light
+    100034: light01
+    100036: plate
+    100038: red l
+    100040: //RootNode
+    100042: st wheel
+    100044: wheel
+    100046: wheel0
+    100048: wheel1
+    100050: wheel2
+    400000: black m
+    400002: body
+    400004: bottom
+    400006: chrome
+    400008: cluster
+    400010: cooler
+    400012: dash
+    400014: door
+    400016: glass
+    400018: gum
+    400020: gum0
+    400022: gum1
+    400024: gum2
+    400026: gum3
+    400028: interior
+    400030: interior0
+    400032: light
+    400034: light01
+    400036: plate
+    400038: red l
+    400040: //RootNode
+    400042: st wheel
+    400044: wheel
+    400046: wheel0
+    400048: wheel1
+    400050: wheel2
+    2300000: black m
+    2300002: body
+    2300004: bottom
+    2300006: chrome
+    2300008: cluster
+    2300010: cooler
+    2300012: dash
+    2300014: door
+    2300016: glass
+    2300018: gum
+    2300020: gum0
+    2300022: gum1
+    2300024: gum2
+    2300026: gum3
+    2300028: interior
+    2300030: interior0
+    2300032: light
+    2300034: light01
+    2300036: plate
+    2300038: red l
+    2300040: st wheel
+    2300042: wheel
+    2300044: wheel0
+    2300046: wheel1
+    2300048: wheel2
+    3300000: black m
+    3300002: body
+    3300004: bottom
+    3300006: chrome
+    3300008: cluster
+    3300010: cooler
+    3300012: dash
+    3300014: door
+    3300016: glass
+    3300018: gum
+    3300020: gum0
+    3300022: gum1
+    3300024: gum2
+    3300026: gum3
+    3300028: interior
+    3300030: interior0
+    3300032: light
+    3300034: light01
+    3300036: plate
+    3300038: red l
+    3300040: st wheel
+    3300042: wheel
+    3300044: wheel0
+    3300046: wheel1
+    3300048: wheel2
+    4300000: body
+    4300002: bottom
+    4300004: gum
+    4300006: black m
+    4300008: red l
+    4300010: glass
+    4300012: light
+    4300014: cooler
+    4300016: chrome
+    4300018: interior
+    4300020: dash
+    4300022: cluster
+    4300024: st wheel
+    4300026: door
+    4300028: wheel
+    4300030: gum0
+    4300032: gum1
+    4300034: wheel0
+    4300036: plate
+    4300038: light01
+    4300040: gum2
+    4300042: wheel1
+    4300044: gum3
+    4300046: wheel2
+    4300048: interior0
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

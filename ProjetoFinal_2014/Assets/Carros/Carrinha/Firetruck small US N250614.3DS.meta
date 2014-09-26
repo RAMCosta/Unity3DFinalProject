@@ -1,0 +1,116 @@
+fileFormatVersion: 2
+guid: 5517c5227df45074e8e73a941888f58c
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Fbx_Root
+    100002: //RootNode
+    100004: Firetruck_
+    100006: Non_subD
+    100008: subD
+    100010: subD_1
+    100012: subD_2
+    100014: subD_3
+    100016: subD_4
+    100018: subD_5
+    100020: subD_RAD_0
+    100022: subD_RAD_H
+    100024: subD_RAD_V
+    400000: Fbx_Root
+    400002: //RootNode
+    400004: Firetruck_
+    400006: Non_subD
+    400008: subD
+    400010: subD_1
+    400012: subD_2
+    400014: subD_3
+    400016: subD_4
+    400018: subD_5
+    400020: subD_RAD_0
+    400022: subD_RAD_H
+    400024: subD_RAD_V
+    2300000: Non_subD
+    2300002: subD
+    2300004: subD_1
+    2300006: subD_2
+    2300008: subD_3
+    2300010: subD_4
+    2300012: subD_5
+    2300014: subD_RAD_0
+    2300016: subD_RAD_H
+    2300018: subD_RAD_V
+    3300000: Non_subD
+    3300002: subD
+    3300004: subD_1
+    3300006: subD_2
+    3300008: subD_3
+    3300010: subD_4
+    3300012: subD_5
+    3300014: subD_RAD_0
+    3300016: subD_RAD_H
+    3300018: subD_RAD_V
+    4300000: subD
+    4300002: subD_1
+    4300004: subD_2
+    4300006: subD_3
+    4300008: subD_4
+    4300010: subD_5
+    4300012: subD_RAD_H
+    4300014: subD_RAD_V
+    4300016: subD_RAD_0
+    4300018: Non_subD
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
