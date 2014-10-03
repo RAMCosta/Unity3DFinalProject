@@ -1,0 +1,661 @@
+fileFormatVersion: 2
+guid: 1275636b1aeccde44a71f7f5e9c7d547
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: arch_2
+    100002: arch_2 1
+    100004: arch_2 2
+    100006: arch_2 3
+    100008: balcony1_2
+    100010: balcony1_2 1
+    100012: balcony_-_upper_1
+    100014: balcony_-_upper_1 1
+    100016: green_glass
+    100018: green_glass 1
+    100020: group_0
+    100022: group_1
+    100024: group_2
+    100026: group_3
+    100028: ID12
+    100030: ID135
+    100032: ID135 1
+    100034: ID141
+    100036: ID141 1
+    100038: ID147
+    100040: ID147 1
+    100042: ID153
+    100044: ID153 1
+    100046: ID166
+    100048: ID166 1
+    100050: ID172
+    100052: ID172 1
+    100054: ID187
+    100056: ID187 1
+    100058: ID187 2
+    100060: ID187 3
+    100062: ID20
+    100064: ID207
+    100066: ID207 1
+    100068: ID215
+    100070: ID215 1
+    100072: ID233
+    100074: ID239
+    100076: ID245
+    100078: ID251
+    100080: ID264
+    100082: ID270
+    100084: ID278
+    100086: ID284
+    100088: ID297
+    100090: ID305
+    100092: ID318
+    100094: ID33
+    100096: ID382
+    100098: ID395
+    100100: ID403
+    100102: ID41
+    100104: ID416
+    100106: ID424
+    100108: ID430
+    100110: ID436
+    100112: ID444
+    100114: ID450
+    100116: ID463
+    100118: ID471
+    100120: ID479
+    100122: ID487
+    100124: ID495
+    100126: ID503
+    100128: ID511
+    100130: ID517
+    100132: ID56
+    100134: instance_0
+    100136: instance_1
+    100138: instance_10
+    100140: instance_11
+    100142: instance_12
+    100144: instance_13
+    100146: instance_14
+    100148: instance_15
+    100150: instance_16
+    100152: instance_17
+    100154: instance_18
+    100156: instance_19
+    100158: instance_2
+    100160: instance_20
+    100162: instance_21
+    100164: instance_22
+    100166: instance_23
+    100168: instance_24
+    100170: instance_25
+    100172: instance_26
+    100174: instance_27
+    100176: instance_28
+    100178: instance_29
+    100180: instance_3
+    100182: instance_30
+    100184: instance_31
+    100186: instance_32
+    100188: instance_33
+    100190: instance_34
+    100192: instance_35
+    100194: instance_36
+    100196: instance_37
+    100198: instance_38
+    100200: instance_39
+    100202: instance_4
+    100204: instance_40
+    100206: instance_41
+    100208: instance_42
+    100210: instance_43
+    100212: instance_44
+    100214: instance_45
+    100216: instance_46
+    100218: instance_47
+    100220: instance_48
+    100222: instance_49
+    100224: instance_5
+    100226: instance_50
+    100228: instance_51
+    100230: instance_52
+    100232: instance_53
+    100234: instance_6
+    100236: instance_7
+    100238: instance_8
+    100240: instance_9
+    100242: //RootNode
+    100244: post_2
+    100246: post_2 1
+    100248: post_2 2
+    100250: post_2 3
+    100252: rod
+    100254: rod 1
+    100256: rod 2
+    100258: rod 3
+    100260: rod 4
+    100262: rod 5
+    100264: rod 6
+    100266: rod 7
+    100268: triangle_support
+    100270: triangle_support 1
+    100272: triangle_support 2
+    100274: triangle_support 3
+    100276: weird_curves_1
+    100278: weird_curves_1 1
+    100280: weird_curves_1 2
+    100282: weird_curves_1 3
+    100284: windows
+    100286: windows 1
+    100288: windows 10
+    100290: windows 11
+    100292: windows 12
+    100294: windows 13
+    100296: windows 14
+    100298: windows 15
+    100300: windows 16
+    100302: windows 17
+    100304: windows 18
+    100306: windows 19
+    100308: windows 2
+    100310: windows 20
+    100312: windows 21
+    100314: windows 22
+    100316: windows 23
+    100318: windows 3
+    100320: windows 4
+    100322: windows 5
+    100324: windows 6
+    100326: windows 7
+    100328: windows 8
+    100330: windows 9
+    400000: arch_2
+    400002: arch_2 1
+    400004: arch_2 2
+    400006: arch_2 3
+    400008: balcony1_2
+    400010: balcony1_2 1
+    400012: balcony_-_upper_1
+    400014: balcony_-_upper_1 1
+    400016: green_glass
+    400018: green_glass 1
+    400020: group_0
+    400022: group_1
+    400024: group_2
+    400026: group_3
+    400028: ID12
+    400030: ID135
+    400032: ID135 1
+    400034: ID141
+    400036: ID141 1
+    400038: ID147
+    400040: ID147 1
+    400042: ID153
+    400044: ID153 1
+    400046: ID166
+    400048: ID166 1
+    400050: ID172
+    400052: ID172 1
+    400054: ID187
+    400056: ID187 1
+    400058: ID187 2
+    400060: ID187 3
+    400062: ID20
+    400064: ID207
+    400066: ID207 1
+    400068: ID215
+    400070: ID215 1
+    400072: ID233
+    400074: ID239
+    400076: ID245
+    400078: ID251
+    400080: ID264
+    400082: ID270
+    400084: ID278
+    400086: ID284
+    400088: ID297
+    400090: ID305
+    400092: ID318
+    400094: ID33
+    400096: ID382
+    400098: ID395
+    400100: ID403
+    400102: ID41
+    400104: ID416
+    400106: ID424
+    400108: ID430
+    400110: ID436
+    400112: ID444
+    400114: ID450
+    400116: ID463
+    400118: ID471
+    400120: ID479
+    400122: ID487
+    400124: ID495
+    400126: ID503
+    400128: ID511
+    400130: ID517
+    400132: ID56
+    400134: instance_0
+    400136: instance_1
+    400138: instance_10
+    400140: instance_11
+    400142: instance_12
+    400144: instance_13
+    400146: instance_14
+    400148: instance_15
+    400150: instance_16
+    400152: instance_17
+    400154: instance_18
+    400156: instance_19
+    400158: instance_2
+    400160: instance_20
+    400162: instance_21
+    400164: instance_22
+    400166: instance_23
+    400168: instance_24
+    400170: instance_25
+    400172: instance_26
+    400174: instance_27
+    400176: instance_28
+    400178: instance_29
+    400180: instance_3
+    400182: instance_30
+    400184: instance_31
+    400186: instance_32
+    400188: instance_33
+    400190: instance_34
+    400192: instance_35
+    400194: instance_36
+    400196: instance_37
+    400198: instance_38
+    400200: instance_39
+    400202: instance_4
+    400204: instance_40
+    400206: instance_41
+    400208: instance_42
+    400210: instance_43
+    400212: instance_44
+    400214: instance_45
+    400216: instance_46
+    400218: instance_47
+    400220: instance_48
+    400222: instance_49
+    400224: instance_5
+    400226: instance_50
+    400228: instance_51
+    400230: instance_52
+    400232: instance_53
+    400234: instance_6
+    400236: instance_7
+    400238: instance_8
+    400240: instance_9
+    400242: //RootNode
+    400244: post_2
+    400246: post_2 1
+    400248: post_2 2
+    400250: post_2 3
+    400252: rod
+    400254: rod 1
+    400256: rod 2
+    400258: rod 3
+    400260: rod 4
+    400262: rod 5
+    400264: rod 6
+    400266: rod 7
+    400268: triangle_support
+    400270: triangle_support 1
+    400272: triangle_support 2
+    400274: triangle_support 3
+    400276: weird_curves_1
+    400278: weird_curves_1 1
+    400280: weird_curves_1 2
+    400282: weird_curves_1 3
+    400284: windows
+    400286: windows 1
+    400288: windows 10
+    400290: windows 11
+    400292: windows 12
+    400294: windows 13
+    400296: windows 14
+    400298: windows 15
+    400300: windows 16
+    400302: windows 17
+    400304: windows 18
+    400306: windows 19
+    400308: windows 2
+    400310: windows 20
+    400312: windows 21
+    400314: windows 22
+    400316: windows 23
+    400318: windows 3
+    400320: windows 4
+    400322: windows 5
+    400324: windows 6
+    400326: windows 7
+    400328: windows 8
+    400330: windows 9
+    2300000: arch_2
+    2300002: arch_2 1
+    2300004: arch_2 2
+    2300006: arch_2 3
+    2300008: balcony1_2
+    2300010: balcony1_2 1
+    2300012: balcony_-_upper_1
+    2300014: balcony_-_upper_1 1
+    2300016: green_glass
+    2300018: green_glass 1
+    2300020: group_0
+    2300022: group_1
+    2300024: group_2
+    2300026: group_3
+    2300028: ID12
+    2300030: ID135
+    2300032: ID135 1
+    2300034: ID141
+    2300036: ID141 1
+    2300038: ID147
+    2300040: ID147 1
+    2300042: ID153
+    2300044: ID153 1
+    2300046: ID166
+    2300048: ID166 1
+    2300050: ID172
+    2300052: ID172 1
+    2300054: ID20
+    2300056: ID207
+    2300058: ID207 1
+    2300060: ID215
+    2300062: ID215 1
+    2300064: ID233
+    2300066: ID239
+    2300068: ID245
+    2300070: ID251
+    2300072: ID264
+    2300074: ID270
+    2300076: ID278
+    2300078: ID284
+    2300080: ID297
+    2300082: ID305
+    2300084: ID318
+    2300086: ID33
+    2300088: ID382
+    2300090: ID395
+    2300092: ID403
+    2300094: ID41
+    2300096: ID416
+    2300098: ID424
+    2300100: ID430
+    2300102: ID436
+    2300104: ID444
+    2300106: ID450
+    2300108: ID463
+    2300110: ID471
+    2300112: ID479
+    2300114: ID487
+    2300116: ID495
+    2300118: ID503
+    2300120: ID511
+    2300122: ID517
+    2300124: ID56
+    2300126: post_2
+    2300128: post_2 1
+    2300130: post_2 2
+    2300132: post_2 3
+    2300134: rod
+    2300136: rod 1
+    2300138: rod 2
+    2300140: rod 3
+    2300142: rod 4
+    2300144: rod 5
+    2300146: rod 6
+    2300148: rod 7
+    2300150: triangle_support
+    2300152: triangle_support 1
+    2300154: triangle_support 2
+    2300156: triangle_support 3
+    2300158: weird_curves_1
+    2300160: weird_curves_1 1
+    2300162: weird_curves_1 2
+    2300164: weird_curves_1 3
+    2300166: windows
+    2300168: windows 1
+    2300170: windows 10
+    2300172: windows 11
+    2300174: windows 12
+    2300176: windows 13
+    2300178: windows 14
+    2300180: windows 15
+    2300182: windows 16
+    2300184: windows 17
+    2300186: windows 18
+    2300188: windows 19
+    2300190: windows 2
+    2300192: windows 20
+    2300194: windows 21
+    2300196: windows 22
+    2300198: windows 23
+    2300200: windows 3
+    2300202: windows 4
+    2300204: windows 5
+    2300206: windows 6
+    2300208: windows 7
+    2300210: windows 8
+    2300212: windows 9
+    3300000: arch_2
+    3300002: arch_2 1
+    3300004: arch_2 2
+    3300006: arch_2 3
+    3300008: balcony1_2
+    3300010: balcony1_2 1
+    3300012: balcony_-_upper_1
+    3300014: balcony_-_upper_1 1
+    3300016: green_glass
+    3300018: green_glass 1
+    3300020: group_0
+    3300022: group_1
+    3300024: group_2
+    3300026: group_3
+    3300028: ID12
+    3300030: ID135
+    3300032: ID135 1
+    3300034: ID141
+    3300036: ID141 1
+    3300038: ID147
+    3300040: ID147 1
+    3300042: ID153
+    3300044: ID153 1
+    3300046: ID166
+    3300048: ID166 1
+    3300050: ID172
+    3300052: ID172 1
+    3300054: ID20
+    3300056: ID207
+    3300058: ID207 1
+    3300060: ID215
+    3300062: ID215 1
+    3300064: ID233
+    3300066: ID239
+    3300068: ID245
+    3300070: ID251
+    3300072: ID264
+    3300074: ID270
+    3300076: ID278
+    3300078: ID284
+    3300080: ID297
+    3300082: ID305
+    3300084: ID318
+    3300086: ID33
+    3300088: ID382
+    3300090: ID395
+    3300092: ID403
+    3300094: ID41
+    3300096: ID416
+    3300098: ID424
+    3300100: ID430
+    3300102: ID436
+    3300104: ID444
+    3300106: ID450
+    3300108: ID463
+    3300110: ID471
+    3300112: ID479
+    3300114: ID487
+    3300116: ID495
+    3300118: ID503
+    3300120: ID511
+    3300122: ID517
+    3300124: ID56
+    3300126: post_2
+    3300128: post_2 1
+    3300130: post_2 2
+    3300132: post_2 3
+    3300134: rod
+    3300136: rod 1
+    3300138: rod 2
+    3300140: rod 3
+    3300142: rod 4
+    3300144: rod 5
+    3300146: rod 6
+    3300148: rod 7
+    3300150: triangle_support
+    3300152: triangle_support 1
+    3300154: triangle_support 2
+    3300156: triangle_support 3
+    3300158: weird_curves_1
+    3300160: weird_curves_1 1
+    3300162: weird_curves_1 2
+    3300164: weird_curves_1 3
+    3300166: windows
+    3300168: windows 1
+    3300170: windows 10
+    3300172: windows 11
+    3300174: windows 12
+    3300176: windows 13
+    3300178: windows 14
+    3300180: windows 15
+    3300182: windows 16
+    3300184: windows 17
+    3300186: windows 18
+    3300188: windows 19
+    3300190: windows 2
+    3300192: windows 20
+    3300194: windows 21
+    3300196: windows 22
+    3300198: windows 23
+    3300200: windows 3
+    3300202: windows 4
+    3300204: windows 5
+    3300206: windows 6
+    3300208: windows 7
+    3300210: windows 8
+    3300212: windows 9
+    4300000: group_0
+    4300002: ID233
+    4300004: ID239
+    4300006: ID245
+    4300008: ID251
+    4300010: ID264
+    4300012: ID270
+    4300014: ID278
+    4300016: ID284
+    4300018: ID297
+    4300020: ID305
+    4300022: ID318
+    4300024: group_1
+    4300026: ID12
+    4300028: ID20
+    4300030: ID33
+    4300032: ID41
+    4300034: group_2
+    4300036: ID56
+    4300038: rod
+    4300040: triangle_support
+    4300042: green_glass
+    4300044: post_2
+    4300046: triangle_support
+    4300048: balcony1_2
+    4300050: ID135
+    4300052: ID141
+    4300054: ID147
+    4300056: ID153
+    4300058: ID166
+    4300060: ID172
+    4300062: weird_curves_1
+    4300064: balcony_-_upper_1
+    4300066: ID207
+    4300068: ID215
+    4300070: group_3
+    4300072: ID382
+    4300074: ID395
+    4300076: ID403
+    4300078: ID416
+    4300080: ID424
+    4300082: ID430
+    4300084: ID436
+    4300086: ID444
+    4300088: ID450
+    4300090: ID463
+    4300092: ID471
+    4300094: ID479
+    4300096: ID487
+    4300098: ID495
+    4300100: ID503
+    4300102: ID511
+    4300104: ID517
+    4300106: arch_2
+    4300108: windows
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
