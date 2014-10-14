@@ -1,0 +1,6 @@
+newmtl Broad_Leaf_1
+Ka 0 0 0
+Ns 7.69061
+Ks 1 1 1
+Kd 0.255547 0.268106 0.0786002
+map_Kd Broad_Leaf_1.bmp
