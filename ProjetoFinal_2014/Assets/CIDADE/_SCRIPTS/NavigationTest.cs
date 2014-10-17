@@ -14,6 +14,10 @@ public class NavigationTest : MonoBehaviour {
 	float posicaoAtualY;
 	float posicaoAtualZ;
 	string DestinoAnterior;
+	int Aceleracao = 8;
+	int Velocidade = 10;
+	public Material TaxiOcupado;
+	public Material TaxiLivre;
 	// Use this for initialization
 	void Start () {
 		EscolhaDestino.SetActive (false);
@@ -24,17 +28,15 @@ public class NavigationTest : MonoBehaviour {
 	void Update () {
 		
 		if (EscolhaDestino.activeSelf == true) {
-			this.gameObject.transform.position = new Vector3(posicaoAtualX,posicaoAtualY,posicaoAtualZ);
-			
 			if (Input.GetKey(KeyCode.M)){
 				EscolhaDestino.SetActive(false);
-				numerodestino = 2;
-				this.gameObject.GetComponent<NavMeshAgent>().acceleration =8;
+				numerodestino = 1;
+				this.gameObject.GetComponent<NavMeshAgent>().acceleration = Aceleracao;
 			}
 			if (Input.GetKey(KeyCode.Z)){
 				EscolhaDestino.SetActive(false);
-				numerodestino = 1;
-				this.gameObject.GetComponent<NavMeshAgent>().acceleration =8;
+				numerodestino = 2;
+				this.gameObject.GetComponent<NavMeshAgent>().acceleration = Aceleracao;
 			}
 		}
 		
@@ -42,22 +44,34 @@ public class NavigationTest : MonoBehaviour {
 		agente.SetDestination (destino[numerodestino].position);
 	}
 	
-	void OnCollisionEnter(Collision collision) {
+	void OnTriggerEnter(Collider collision) {
 		
 		if (collision.gameObject.name == "Destino") 
 		{
+			this.gameObject.GetComponent<NavMeshAgent>().acceleration = 0;
+			this.gameObject.GetComponent<NavMeshAgent>().acceleration = 0;
+			this.gameObject.GetComponent<NavMeshAgent>().Stop();
 			EscolhaDestino.SetActive (true);
-			agente.acceleration=0;
 			this.gameObject.GetComponent<NavMeshAgent>().acceleration =0;
+			this.gameObject.GetComponent<NavMeshAgent>().Stop();
 			posicaoAtualX = this.gameObject.transform.position.x;
 			posicaoAtualY = this.gameObject.transform.position.y;
 			posicaoAtualZ = this.gameObject.transform.position.z;
 			DestinoAnterior = collision.gameObject.name;
 			GameObject.Find(DestinoAnterior).SetActive(false);
+			GameObject.Find("EstadoTaxi1").renderer.material = TaxiOcupado;
+			GameObject.Find("EstadoTaxi2").renderer.material = TaxiOcupado;
+			GameObject.Find("EstadoTaxi3").renderer.material = TaxiOcupado;
+			GameObject.Find("EstadoTaxi4").renderer.material = TaxiOcupado;
+		//	this.gameObject.transform.position = new Vector3(posicaoAtualX,posicaoAtualY,posicaoAtualZ);
 		}
 
 		if (collision.gameObject.name == "Destino1") 
 		{
+			GameObject.Find("EstadoTaxi1").renderer.material = TaxiLivre;
+			GameObject.Find("EstadoTaxi2").renderer.material = TaxiLivre;
+			GameObject.Find("EstadoTaxi3").renderer.material = TaxiLivre;
+			GameObject.Find("EstadoTaxi4").renderer.material = TaxiLivre;
 			EscolhaDestino.SetActive (true);
 			agente.acceleration=0;
 			this.gameObject.GetComponent<NavMeshAgent>().acceleration =0;
@@ -70,6 +84,7 @@ public class NavigationTest : MonoBehaviour {
 
 		if (collision.gameObject.name == "Destino2") 
 		{
+
 			EscolhaDestino.SetActive (true);
 			agente.acceleration=0;
 			this.gameObject.GetComponent<NavMeshAgent>().acceleration =0;
