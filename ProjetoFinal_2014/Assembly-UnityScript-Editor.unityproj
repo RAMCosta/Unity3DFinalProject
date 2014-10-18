@@ -103,14 +103,14 @@
      <None Include="Assets\CIDADE\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />
      <None Include="Assets\CIDADE\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\Quantum MetaClouds Sample\Shaders\QuantumMetaCloud-SoftAlphaBlend.shader" />
- <Reference Include="UnityEditor.Graphs">
- <HintPath>D:/Programas/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ <Reference Include="EasyRoads3DEditor">
+ <HintPath>D:/ProjectoFinal - Jorge&Rafael/ProjetoFinal_2014/Assets/EasyRoads3D/Editor/EasyRoads3DEditor.dll</HintPath>
  </Reference>
  <Reference Include="EasyRoads3D">
  <HintPath>D:/ProjectoFinal - Jorge&Rafael/ProjetoFinal_2014/Assets/EasyRoads3D/lib/EasyRoads3D.dll</HintPath>
  </Reference>
- <Reference Include="EasyRoads3DEditor">
- <HintPath>D:/ProjectoFinal - Jorge&Rafael/ProjetoFinal_2014/Assets/EasyRoads3D/Editor/EasyRoads3DEditor.dll</HintPath>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>D:/Programas/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

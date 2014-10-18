@@ -106,14 +106,14 @@
  <Reference Include="Assembly-UnityScript">
  <HintPath>D:/ProjectoFinal - Jorge&Rafael/ProjetoFinal_2014/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
- <Reference Include="UnityEditor.Graphs">
- <HintPath>D:/Programas/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ <Reference Include="EasyRoads3DEditor">
+ <HintPath>D:/ProjectoFinal - Jorge&Rafael/ProjetoFinal_2014/Assets/EasyRoads3D/Editor/EasyRoads3DEditor.dll</HintPath>
  </Reference>
  <Reference Include="EasyRoads3D">
  <HintPath>D:/ProjectoFinal - Jorge&Rafael/ProjetoFinal_2014/Assets/EasyRoads3D/lib/EasyRoads3D.dll</HintPath>
  </Reference>
- <Reference Include="EasyRoads3DEditor">
- <HintPath>D:/ProjectoFinal - Jorge&Rafael/ProjetoFinal_2014/Assets/EasyRoads3D/Editor/EasyRoads3DEditor.dll</HintPath>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>D:/Programas/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
