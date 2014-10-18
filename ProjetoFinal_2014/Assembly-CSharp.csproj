@@ -100,12 +100,18 @@
      <Compile Include="Assets\CIDADE\_SCRIPTS\ciclosHertz.cs" />
      <Compile Include="Assets\CIDADE\_SCRIPTS\detectarcolisoes.cs" />
      <Compile Include="Assets\CIDADE\_SCRIPTS\frames.cs" />
+     <Compile Include="Assets\EasyRoads3D\scripts\EasyRoads3DTerrainID.cs" />
+     <Compile Include="Assets\EasyRoads3D\scripts\MarkerScript.cs" />
+     <Compile Include="Assets\EasyRoads3D\scripts\RoadObjectScript.cs" />
+     <Compile Include="Assets\EasyRoads3D\scripts\SurfaceScript.cs" />
+     <Compile Include="Assets\EasyRoads3D\scripts\sideObjectScript.cs" />
      <None Include="Assets\CIDADE\_IMPORTS\Carros\Carrinha\archibase.net.txt" />
      <None Include="Assets\CIDADE\_IMPORTS\Palmeiras\c55936caab7250ca8ee62c952a0d615f\archibase.net.txt" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT_DifSpecVC.shader" />
      <None Include="Assets\CIDADE\Standard Assets\Toon Shading\Sources\Shaders\Toony-LightedOutline.shader" />
      <None Include="Assets\CIDADE\_IMPORTS\Car&amp;People models\Man sitting business N200514\archibase.net.txt" />
      <None Include="Assets\CIDADE\Standard Assets\Tessellation Shaders\BumpedSpecularDisplacement.shader" />
+     <None Include="Assets\EasyRoads3D\Shaders\EasyRoads3D-Surface.shader" />
      <None Include="Assets\CIDADE\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Vertex Colored.shader" />
      <None Include="Assets\CIDADE\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT-Skydome.shader" />
@@ -116,10 +122,12 @@
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT_DiffuseVC.shader" />
      <None Include="Assets\CIDADE\_IMPORTS\Carros\461c0d09b69b6f72cfc0c9165b759899\archibase.net.txt" />
      <None Include="Assets\CIDADE\Standard Assets\Tessellation Shaders\BumpedSpecularSmooth.shader" />
+     <None Include="Assets\EasyRoads3D\Shaders\EasyRoads3D Marker.shader" />
      <None Include="Assets\CIDADE\_IMPORTS\Car&amp;People models\Man walking N120814\archibase.net.txt" />
      <None Include="Assets\CIDADE\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\CIDADE\TheLoom_Building_1_Free\Shaders\TheLoom_Normal.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\VertexOnly.shader" />
+     <None Include="Assets\EasyRoads3D\Shaders\EasyRoads3D-Surface alpha.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT_Road.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT_DiffuseVCEmissive.shader" />
      <None Include="Assets\CIDADE\Standard Assets\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />
@@ -134,6 +142,7 @@
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT-SkyBox.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT_LightingOnly.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT_DiffuseVCEmissiveCubeMap.shader" />
+     <None Include="Assets\EasyRoads3D\Shaders\EasyRoads3D-Normal-Diffuse.shader" />
      <None Include="Assets\CIDADE\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Reflective.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Documentation.txt" />
      <None Include="Assets\CIDADE\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Particles Additive Culled.shader" />
@@ -143,9 +152,13 @@
      <None Include="Assets\CIDADE\TheLoom_Building_1_Free\readme.txt" />
      <None Include="Assets\CIDADE\_IMPORTS\Carros\f7f8de6f0e1b137b229a98a7bcd004b8\archibase.net.txt" />
      <None Include="Assets\CIDADE\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
+     <None Include="Assets\EasyRoads3D\Shaders\EasyRoads3D-Road-Edit-Mode.shader" />
      <None Include="Assets\CIDADE\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />
      <None Include="Assets\CIDADE\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\Quantum MetaClouds Sample\Shaders\QuantumMetaCloud-SoftAlphaBlend.shader" />
+ <Reference Include="EasyRoads3D">
+ <HintPath>D:/ProjectoFinal - Jorge&Rafael/ProjetoFinal_2014/Assets/EasyRoads3D/lib/EasyRoads3D.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">

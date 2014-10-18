@@ -1,7 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CIDADE\_SCRIPTS\NavigationTest.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\EasyRoads3D\Editor\RoadObjectEditorScript.js">
     <Files>
+      <File FileName="Assets\EasyRoads3D\Editor\RoadObjectEditorScript.js" Line="203" Column="1" />
       <File FileName="Assets\CIDADE\_SCRIPTS\NavigationTest.cs" Line="74" Column="32" />
     </Files>
   </MonoDevelop.Ide.Workbench>
