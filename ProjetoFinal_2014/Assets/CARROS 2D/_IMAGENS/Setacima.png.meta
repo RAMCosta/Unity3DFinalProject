@@ -1,8 +1,7 @@
 fileFormatVersion: 2
 guid: 8e45e52886b3ce54d916f832756a7bae
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Setacima
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,9 +25,9 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: 1
+    aniso: -1
     mipBias: -1
-    wrapMode: 1
+    wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
