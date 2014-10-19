@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\Unity Projects\ProjetoFinal_2014\Assets\_SCRIPTS\Camera.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\ProjetoFinal_2014\Assets\CIDADE\_SCRIPTS\NavigationTest.cs">
     <Files>
-      <File FileName="..\..\Unity Projects\ProjetoFinal_2014\Assets\_SCRIPTS\Camera.cs" Line="11" Column="17" />
+      <File FileName="..\ProjetoFinal_2014\Assets\CIDADE\_SCRIPTS\NavigationTest.cs" Line="95" Column="31" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
