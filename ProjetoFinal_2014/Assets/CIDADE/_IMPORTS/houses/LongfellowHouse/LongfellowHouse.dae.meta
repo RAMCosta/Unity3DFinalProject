@@ -1,0 +1,334 @@
+fileFormatVersion: 2
+guid: 6459f171f32f01e4884755aeaa86c5ac
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Component_1
+    100002: Component_1 1
+    100004: Component_1 2
+    100006: DormerWindow
+    100008: DormerWindow 1
+    100010: DormerWindow 2
+    100012: DormerWindow 3
+    100014: DormerWindow 4
+    100016: group_0
+    100018: group_1
+    100020: group_10
+    100022: group_11
+    100024: group_2
+    100026: group_3
+    100028: group_4
+    100030: group_5
+    100032: group_5 1
+    100034: group_5 2
+    100036: group_5 3
+    100038: group_5 4
+    100040: group_6
+    100042: group_7
+    100044: group_8
+    100046: group_9
+    100048: ID107
+    100050: ID107 1
+    100052: ID107 2
+    100054: ID107 3
+    100056: ID107 4
+    100058: ID126
+    100060: ID126 1
+    100062: ID126 2
+    100064: ID126 3
+    100066: ID126 4
+    100068: ID139
+    100070: ID139 1
+    100072: ID139 2
+    100074: ID139 3
+    100076: ID139 4
+    100078: ID161
+    100080: ID167
+    100082: ID18
+    100084: ID195
+    100086: ID203
+    100088: ID209
+    100090: ID222
+    100092: ID228
+    100094: ID244
+    100096: ID250
+    100098: ID264
+    100100: ID272
+    100102: ID280
+    100104: ID295
+    100106: ID303
+    100108: ID41
+    100110: ID55
+    100112: ID61
+    100114: ID78
+    100116: instance_0
+    100118: instance_1
+    100120: instance_2
+    100122: instance_3
+    100124: instance_4
+    100126: instance_5
+    100128: instance_6
+    100130: instance_7
+    100132: //RootNode
+    400000: Component_1
+    400002: Component_1 1
+    400004: Component_1 2
+    400006: DormerWindow
+    400008: DormerWindow 1
+    400010: DormerWindow 2
+    400012: DormerWindow 3
+    400014: DormerWindow 4
+    400016: group_0
+    400018: group_1
+    400020: group_10
+    400022: group_11
+    400024: group_2
+    400026: group_3
+    400028: group_4
+    400030: group_5
+    400032: group_5 1
+    400034: group_5 2
+    400036: group_5 3
+    400038: group_5 4
+    400040: group_6
+    400042: group_7
+    400044: group_8
+    400046: group_9
+    400048: ID107
+    400050: ID107 1
+    400052: ID107 2
+    400054: ID107 3
+    400056: ID107 4
+    400058: ID126
+    400060: ID126 1
+    400062: ID126 2
+    400064: ID126 3
+    400066: ID126 4
+    400068: ID139
+    400070: ID139 1
+    400072: ID139 2
+    400074: ID139 3
+    400076: ID139 4
+    400078: ID161
+    400080: ID167
+    400082: ID18
+    400084: ID195
+    400086: ID203
+    400088: ID209
+    400090: ID222
+    400092: ID228
+    400094: ID244
+    400096: ID250
+    400098: ID264
+    400100: ID272
+    400102: ID280
+    400104: ID295
+    400106: ID303
+    400108: ID41
+    400110: ID55
+    400112: ID61
+    400114: ID78
+    400116: instance_0
+    400118: instance_1
+    400120: instance_2
+    400122: instance_3
+    400124: instance_4
+    400126: instance_5
+    400128: instance_6
+    400130: instance_7
+    400132: //RootNode
+    2300000: Component_1
+    2300002: Component_1 1
+    2300004: Component_1 2
+    2300006: DormerWindow
+    2300008: DormerWindow 1
+    2300010: DormerWindow 2
+    2300012: DormerWindow 3
+    2300014: DormerWindow 4
+    2300016: group_1
+    2300018: group_10
+    2300020: group_11
+    2300022: group_2
+    2300024: group_3
+    2300026: group_4
+    2300028: group_5
+    2300030: group_5 1
+    2300032: group_5 2
+    2300034: group_5 3
+    2300036: group_5 4
+    2300038: group_6
+    2300040: group_7
+    2300042: group_8
+    2300044: group_9
+    2300046: ID107
+    2300048: ID107 1
+    2300050: ID107 2
+    2300052: ID107 3
+    2300054: ID107 4
+    2300056: ID126
+    2300058: ID126 1
+    2300060: ID126 2
+    2300062: ID126 3
+    2300064: ID126 4
+    2300066: ID139
+    2300068: ID139 1
+    2300070: ID139 2
+    2300072: ID139 3
+    2300074: ID139 4
+    2300076: ID161
+    2300078: ID167
+    2300080: ID18
+    2300082: ID195
+    2300084: ID203
+    2300086: ID209
+    2300088: ID222
+    2300090: ID244
+    2300092: ID250
+    2300094: ID264
+    2300096: ID272
+    2300098: ID280
+    2300100: ID295
+    2300102: ID303
+    2300104: ID55
+    2300106: ID78
+    3300000: Component_1
+    3300002: Component_1 1
+    3300004: Component_1 2
+    3300006: DormerWindow
+    3300008: DormerWindow 1
+    3300010: DormerWindow 2
+    3300012: DormerWindow 3
+    3300014: DormerWindow 4
+    3300016: group_1
+    3300018: group_10
+    3300020: group_11
+    3300022: group_2
+    3300024: group_3
+    3300026: group_4
+    3300028: group_5
+    3300030: group_5 1
+    3300032: group_5 2
+    3300034: group_5 3
+    3300036: group_5 4
+    3300038: group_6
+    3300040: group_7
+    3300042: group_8
+    3300044: group_9
+    3300046: ID107
+    3300048: ID107 1
+    3300050: ID107 2
+    3300052: ID107 3
+    3300054: ID107 4
+    3300056: ID126
+    3300058: ID126 1
+    3300060: ID126 2
+    3300062: ID126 3
+    3300064: ID126 4
+    3300066: ID139
+    3300068: ID139 1
+    3300070: ID139 2
+    3300072: ID139 3
+    3300074: ID139 4
+    3300076: ID161
+    3300078: ID167
+    3300080: ID18
+    3300082: ID195
+    3300084: ID203
+    3300086: ID209
+    3300088: ID222
+    3300090: ID244
+    3300092: ID250
+    3300094: ID264
+    3300096: ID272
+    3300098: ID280
+    3300100: ID295
+    3300102: ID303
+    3300104: ID55
+    3300106: ID78
+    4300000: group_1
+    4300002: group_2
+    4300004: ID18
+    4300006: group_3
+    4300008: ID78
+    4300010: group_4
+    4300012: ID55
+    4300014: DormerWindow
+    4300016: ID126
+    4300018: ID139
+    4300020: group_5
+    4300022: ID107
+    4300024: group_6
+    4300026: group_7
+    4300028: ID161
+    4300030: ID167
+    4300032: group_8
+    4300034: ID195
+    4300036: ID203
+    4300038: ID209
+    4300040: ID222
+    4300042: group_9
+    4300044: ID264
+    4300046: ID272
+    4300048: ID280
+    4300050: group_10
+    4300052: ID244
+    4300054: ID250
+    4300056: group_11
+    4300058: ID295
+    4300060: ID303
+    4300062: Component_1
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
