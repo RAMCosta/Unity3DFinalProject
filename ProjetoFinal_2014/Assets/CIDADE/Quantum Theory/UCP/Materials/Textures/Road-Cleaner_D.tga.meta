@@ -22,7 +22,7 @@ TextureImporter:
   generateCubemap: 0
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 256
+  maxTextureSize: 32
   textureSettings:
     filterMode: 2
     aniso: 9
@@ -42,11 +42,11 @@ TextureImporter:
   textureType: 0
   buildTargetSettings:
   - buildTarget: Web
-    maxTextureSize: 256
+    maxTextureSize: 32
     textureFormat: -1
     compressionQuality: 50
   - buildTarget: Standalone
-    maxTextureSize: 256
+    maxTextureSize: 32
     textureFormat: -1
     compressionQuality: 50
   spriteSheet:

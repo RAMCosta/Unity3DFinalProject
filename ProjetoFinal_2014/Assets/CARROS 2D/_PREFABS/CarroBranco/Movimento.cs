@@ -10,7 +10,13 @@ public class Movimento : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.Translate (0,Input.GetAxis ("Vertical")*Time.deltaTime*velocidade, -5); // mexer conforme a tecla
+		if (ServidorTCP.comand.Equals("A")){
+
+			ServidorTCP.comand = "";
+			Debug.Log("Fui para cima");
+
+		transform.Translate (0,2, -5); // mexer conforme a tecla
 		transform.position = new Vector3(-7, transform.position.y, -2); //Nao deixar mover o eixo Y
+		}
 	}
 }

@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_5_4;UNITY_4_5;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_5_4;UNITY_4_5;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -60,12 +60,15 @@
      <Compile Include="Assets\CARROS 2D\_SCRIPTS\AnimacaoMindwave.cs" />
      <Compile Include="Assets\CARROS 2D\_SCRIPTS\AnimacaoWindows.cs" />
      <Compile Include="Assets\CARROS 2D\_SCRIPTS\ContasMatematica.cs" />
+     <Compile Include="Assets\CARROS 2D\_SCRIPTS\Estimulos\Arrow.cs" />
+     <Compile Include="Assets\CARROS 2D\_SCRIPTS\Estimulos\Estimulos.cs" />
      <Compile Include="Assets\CARROS 2D\_SCRIPTS\JogarAnimacao.cs" />
      <Compile Include="Assets\CARROS 2D\_SCRIPTS\OitoHzTeste.cs" />
      <Compile Include="Assets\CARROS 2D\_SCRIPTS\OpcoesAnimacao.cs" />
      <Compile Include="Assets\CARROS 2D\_SCRIPTS\SairAnimacao.cs" />
+     <Compile Include="Assets\CARROS 2D\_SCRIPTS\TCP Scripts\ClienteTCP.cs" />
+     <Compile Include="Assets\CARROS 2D\_SCRIPTS\TCP Scripts\ServidorTCP.cs" />
      <Compile Include="Assets\CARROS 2D\_SCRIPTS\VoltarAnimacao.cs" />
-     <Compile Include="Assets\CARROS 2D\_SCRIPTS\tcpClient.cs" />
      <Compile Include="Assets\CARROS 2D\_TOUCHSCRIPTS\BaixoMov.cs" />
      <Compile Include="Assets\CARROS 2D\_TOUCHSCRIPTS\CimaMov.cs" />
      <Compile Include="Assets\CIDADE\_IMPORTS\_FORDFOCUS\Scripts\Android.cs" />
@@ -87,22 +90,28 @@
      <Compile Include="Assets\CIDADE\_SCRIPTS\AnimacaoCarros.cs" />
      <Compile Include="Assets\CIDADE\_SCRIPTS\Bell_MovimentoHelicoptero.cs" />
      <Compile Include="Assets\CIDADE\_SCRIPTS\Bell_RodarHelices.cs" />
+     <Compile Include="Assets\CIDADE\_SCRIPTS\Conexao TCP\TCPServer.cs" />
+     <Compile Include="Assets\CIDADE\_SCRIPTS\Destinos\DestinoEstimulos.cs" />
+     <Compile Include="Assets\CIDADE\_SCRIPTS\Destinos\Destinos.cs" />
+     <Compile Include="Assets\CIDADE\_SCRIPTS\Destinos\DestinosAndroid.cs" />
      <Compile Include="Assets\CIDADE\_SCRIPTS\MovimentoHelicoptero.cs" />
      <Compile Include="Assets\CIDADE\_SCRIPTS\NavigationTest.cs" />
      <Compile Include="Assets\CIDADE\_SCRIPTS\RestaurarHeli.cs" />
      <Compile Include="Assets\CIDADE\_SCRIPTS\RodarHelices.cs" />
-     <Compile Include="Assets\CIDADE\_SCRIPTS\TESTES\Destinos.cs" />
      <Compile Include="Assets\CIDADE\_SCRIPTS\TamanhoEcra.cs" />
      <Compile Include="Assets\CIDADE\_SCRIPTS\VoltarMenu.cs" />
      <Compile Include="Assets\CIDADE\_SCRIPTS\ciclosHertz.cs" />
      <Compile Include="Assets\CIDADE\_SCRIPTS\detectarcolisoes.cs" />
      <Compile Include="Assets\CIDADE\_SCRIPTS\frames.cs" />
+     <Compile Include="Assets\MENU\Menu\Script\MainMenu.cs" />
+     <Compile Include="Assets\MENU\MenuAndroid\Script\MainMenuAndroid.cs" />
      <None Include="Assets\CIDADE\_IMPORTS\Carros\Carrinha\archibase.net.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT_DifSpecVC.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
      <None Include="Assets\CIDADE\_IMPORTS\Car&amp;People models\Man sitting business N200514\archibase.net.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />
+     <None Include="Assets\CIDADE\_IMPORTS\Car&amp;People models\c4ce7e143698f031c851e8c0942841bb\archibase.net.txt" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT-Skydome.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Detail.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT_DiffuseVCCubemap.shader" />
@@ -113,6 +122,7 @@
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\CIDADE\_IMPORTS\Car&amp;People models\Man walking N120814\archibase.net.txt" />
      <None Include="Assets\CIDADE\TheLoom_Building_1_Free\Shaders\TheLoom_Normal.shader" />
+     <None Include="Assets\CIDADE\_IMPORTS\Car&amp;People models\5bfeed11e99c952d459bc50137e93a87\archibase.net.txt" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\VertexOnly.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT_Road.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT_DiffuseVCEmissive.shader" />
@@ -124,6 +134,7 @@
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT-SkyBox.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT_LightingOnly.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT_DiffuseVCEmissiveCubeMap.shader" />
+     <None Include="Assets\CIDADE\_IMPORTS\Car&amp;People models\5ea87d13283f74084edccf14e1c99205\archibase.net.txt" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Documentation.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Vertex Colored.shader" />
      <None Include="Assets\CIDADE\_IMPORTS\Car&amp;People models\Man 1 N230614\archibase.net.txt" />
@@ -131,6 +142,7 @@
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap AlphaTest.shader" />
      <None Include="Assets\CIDADE\TheLoom_Building_1_Free\readme.txt" />
      <None Include="Assets\CIDADE\_IMPORTS\Carros\f7f8de6f0e1b137b229a98a7bcd004b8\archibase.net.txt" />
+     <None Include="Assets\CIDADE\_IMPORTS\Car&amp;People models\fb1a2fd5820296081eedbe0ce95b9c96\archibase.net.txt" />
      <None Include="Assets\CIDADE\Quantum Theory\Quantum MetaClouds Sample\Shaders\QuantumMetaCloud-SoftAlphaBlend.shader" />
   </ItemGroup>
   <ItemGroup>

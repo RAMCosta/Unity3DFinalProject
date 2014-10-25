@@ -9,13 +9,8 @@ public class NavigationTest : MonoBehaviour {
 	private NavMeshAgent agente;
 	public GameObject EscolhaDestino;
 	int numerodestino=0;
-	bool teclapressionada = false;
-	float posicaoAtualX;
-	float posicaoAtualY;
-	float posicaoAtualZ;
 	string DestinoAnterior;
 	int Aceleracao = 8;
-	int Velocidade = 10;
 	public Material TaxiOcupado;
 	public Material TaxiLivre;
 	// Use this for initialization
@@ -54,9 +49,6 @@ public class NavigationTest : MonoBehaviour {
 			EscolhaDestino.SetActive (true);
 			this.gameObject.GetComponent<NavMeshAgent>().acceleration =0;
 			this.gameObject.GetComponent<NavMeshAgent>().Stop();
-			posicaoAtualX = this.gameObject.transform.position.x;
-			posicaoAtualY = this.gameObject.transform.position.y;
-			posicaoAtualZ = this.gameObject.transform.position.z;
 			DestinoAnterior = collision.gameObject.name;
 			GameObject.Find(DestinoAnterior).SetActive(false);
 			GameObject.Find("EstadoTaxi1").renderer.material = TaxiOcupado;
@@ -75,9 +67,6 @@ public class NavigationTest : MonoBehaviour {
 			EscolhaDestino.SetActive (true);
 			agente.acceleration=0;
 			this.gameObject.GetComponent<NavMeshAgent>().acceleration =0;
-			posicaoAtualX = this.gameObject.transform.position.x;
-			posicaoAtualY = this.gameObject.transform.position.y;
-			posicaoAtualZ = this.gameObject.transform.position.z;
 			DestinoAnterior = collision.gameObject.name;
 			GameObject.Find(DestinoAnterior).SetActive(false);
 		}
@@ -88,9 +77,6 @@ public class NavigationTest : MonoBehaviour {
 			EscolhaDestino.SetActive (true);
 			agente.acceleration=0;
 			this.gameObject.GetComponent<NavMeshAgent>().acceleration =0;
-			posicaoAtualX = this.gameObject.transform.position.x;
-			posicaoAtualY = this.gameObject.transform.position.y;
-			posicaoAtualZ = this.gameObject.transform.position.z;
 			DestinoAnterior = collision.gameObject.name;
 			GameObject.Find(DestinoAnterior).SetActive(false);
 		}

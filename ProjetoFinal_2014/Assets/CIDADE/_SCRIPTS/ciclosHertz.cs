@@ -10,12 +10,6 @@ public class ciclosHertz : MonoBehaviour {
 	public GameObject SetaEsq2;
 	public GameObject SetaDir1;
 	public GameObject SetaDir2;
-	public GameObject SetaDireccaoCima;
-	public GameObject SetaDireccaoBaixo;
-	public GameObject SetaDireccaoEsquerda;
-	public GameObject SetaDireccaoDireita;
-	bool PiscarEsquerda = false;
-	bool PiscarDireita = false;
 	Time data;
 	double frequenciaSetaCima;
 	double frequenciaSetaBaixo;
@@ -28,10 +22,6 @@ public class ciclosHertz : MonoBehaviour {
 			SetaEsq2.SetActive (true);
 			SetaDir1.SetActive (true);
 			SetaDir2.SetActive (true);
-			SetaDireccaoCima.SetActive(false);
-			SetaDireccaoBaixo.SetActive(false);
-			SetaDireccaoEsquerda.SetActive(false);
-			SetaDireccaoDireita.SetActive(false);
 
 		}
 
@@ -40,10 +30,6 @@ public class ciclosHertz : MonoBehaviour {
 			SetaEsq2.SetActive (false);
 			SetaDir1.SetActive (false);
 			SetaDir2.SetActive (false);
-			SetaDireccaoCima.SetActive(true);
-			SetaDireccaoBaixo.SetActive(true);
-			SetaDireccaoEsquerda.SetActive(true);
-			SetaDireccaoDireita.SetActive(true);
 		}
 
 		// Valor definido nas opçoes de jogo
