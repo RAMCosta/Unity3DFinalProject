@@ -14,19 +14,16 @@ public class MainMenu : MonoBehaviour
 		public bool mindwave = false;
 		public bool gusbamp = false;
 		public bool teclado = false;
-		public GUIText FreqEsq;
-		public GUIText FreqDir;
-		public GUIText FreqFrente;
 		public static int FreqEsqVal = 4;
-		public static int FreqDirVal = 4;
-		public static int FreqFrenteVal = 4;
+		public static int FreqDirVal = 12;
+		public static int FreqFrenteVal = 8;
  
 		// Use this for initialization
 		void Start ()
 		{
-				FreqEsq.text = "" + FreqEsqVal;
-				FreqDir.text = "" + FreqDirVal;
-				FreqFrente.text = "" + FreqFrenteVal;
+				GameObject.Find ("FreqEsq").GetComponent<TextMesh> ().text = "" + FreqEsqVal;
+				GameObject.Find ("FreqDir").GetComponent<TextMesh> ().text = "" + FreqDirVal;
+				GameObject.Find ("FreqFrente").GetComponent<TextMesh> ().text = "" + FreqFrenteVal;
 
 		}
 	
@@ -43,7 +40,7 @@ public class MainMenu : MonoBehaviour
 						renderer.material.color = Color.red;
 				} else {
 						GetComponent<TextMesh> ().fontSize = GetComponent<TextMesh> ().fontSize + 2;
-						renderer.material.color = Color.black;
+						renderer.material.color = Color.yellow;
 				}
 		}
 	
@@ -56,25 +53,24 @@ public class MainMenu : MonoBehaviour
 		void OnMouseDown ()
 		{
 				//********************************** Frequencias ******************************
-
-				if (this.gameObject.name == "MenosFreqEsq") {
+					if (this.name == "MenosFreqEsq"){
 						FreqEsqVal--;
-						FreqEsq.GetComponent<TextMesh> ().text = "" + FreqEsqVal;
-				} else if (this.gameObject.name == "MaisFreqEsq") {
+						GameObject.Find ("FreqEsq").GetComponent<TextMesh> ().text = "" + FreqEsqVal;
+				} else if (this.name == "MaisFreqEsq") {
 						FreqEsqVal++;
-						FreqEsq.GetComponent<TextMesh> ().text = "" + FreqEsqVal;
-				} else if (this.gameObject.name == "MenosFreqDir") {
+						GameObject.Find ("FreqEsq").GetComponent<TextMesh> ().text = "" + FreqEsqVal;
+				} else if (this.name == "MenosFreqDir") {
 						FreqDirVal--;
-						FreqDir.GetComponent<TextMesh> ().text = "" + FreqDirVal;
-				} else if (this.gameObject.name == "MaisFreqDir") {
+						GameObject.Find ("FreqDir").GetComponent<TextMesh> ().text = "" + FreqDirVal;
+				} else if (this.name == "MaisFreqDir") {
 						FreqDirVal++;
-						FreqDir.GetComponent<TextMesh> ().text = "" + FreqDirVal;
-				} else if (this.gameObject.name == "MenosFreqFrente") {
+						GameObject.Find ("FreqDir").GetComponent<TextMesh> ().text = "" + FreqDirVal;
+				} else if (this.name == "MenosFreqFrente") {
 						FreqFrenteVal--;
-						FreqFrente.GetComponent<TextMesh> ().text = "" + FreqFrenteVal;
-				} else if (this.gameObject.name == "MaisFreqFrente") {
+						GameObject.Find ("FreqFrente").GetComponent<TextMesh> ().text = "" + FreqFrenteVal;
+				} else if (this.name == "MaisFreqFrente") {
 						FreqFrenteVal++;
-						FreqFrente.GetComponent<TextMesh> ().text = "" + FreqFrenteVal;
+						GameObject.Find ("FreqFrente").GetComponent<TextMesh> ().text = "" + FreqFrenteVal;
 				}
 
 				//********************************** Menus ************************************
