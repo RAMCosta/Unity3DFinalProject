@@ -14,6 +14,12 @@ public class MainMenu : MonoBehaviour
 		public bool mindwave = false;
 		public bool gusbamp = false;
 		public bool teclado = false;
+		public bool MenosFreqEsq = false;
+		public bool MenosFreqDir = false;
+		public bool MenosFreqFrente = false;
+		public bool MaisFreqEsq = false;
+		public bool MaisFreqDir = false;
+		public bool MaisFreqFrente = false;
 		public static int FreqEsqVal = 4;
 		public static int FreqDirVal = 12;
 		public static int FreqFrenteVal = 8;
@@ -21,10 +27,11 @@ public class MainMenu : MonoBehaviour
 		// Use this for initialization
 		void Start ()
 		{
-				GameObject.Find ("FreqEsq").GetComponent<TextMesh> ().text = "" + FreqEsqVal;
-				GameObject.Find ("FreqDir").GetComponent<TextMesh> ().text = "" + FreqDirVal;
-				GameObject.Find ("FreqFrente").GetComponent<TextMesh> ().text = "" + FreqFrenteVal;
-
+				if (Application.loadedLevelName == "Menuopcoes") {
+						GameObject.Find ("FreqEsq").GetComponent<TextMesh> ().text = "" + FreqEsqVal;
+						GameObject.Find ("FreqDir").GetComponent<TextMesh> ().text = "" + FreqDirVal;
+						GameObject.Find ("FreqFrente").GetComponent<TextMesh> ().text = "" + FreqFrenteVal;
+				}
 		}
 	
 		// Update is called once per frame
@@ -53,26 +60,49 @@ public class MainMenu : MonoBehaviour
 		void OnMouseDown ()
 		{
 				//********************************** Frequencias ******************************
-					if (this.name == "MenosFreqEsq"){
-						FreqEsqVal--;
-						GameObject.Find ("FreqEsq").GetComponent<TextMesh> ().text = "" + FreqEsqVal;
+				if (this.name == "MenosFreqEsq") {
+						if (FreqEsqVal == 4) {
+								FreqEsqVal += 1;
+						} else {
+								FreqEsqVal--;
+								GameObject.Find ("FreqEsq").GetComponent<TextMesh> ().text = "" + FreqEsqVal;
+						}
 				} else if (this.name == "MaisFreqEsq") {
-						FreqEsqVal++;
-						GameObject.Find ("FreqEsq").GetComponent<TextMesh> ().text = "" + FreqEsqVal;
+						if (FreqEsqVal == 20) {
+								FreqEsqVal -= 1;
+						} else {
+								FreqEsqVal++;
+								GameObject.Find ("FreqEsq").GetComponent<TextMesh> ().text = "" + FreqEsqVal;
+						}
 				} else if (this.name == "MenosFreqDir") {
-						FreqDirVal--;
-						GameObject.Find ("FreqDir").GetComponent<TextMesh> ().text = "" + FreqDirVal;
+						if (FreqDirVal == 4) {
+								FreqDirVal += 1;
+						} else {
+								FreqDirVal--;
+								GameObject.Find ("FreqDir").GetComponent<TextMesh> ().text = "" + FreqDirVal;
+						} 
 				} else if (this.name == "MaisFreqDir") {
-						FreqDirVal++;
-						GameObject.Find ("FreqDir").GetComponent<TextMesh> ().text = "" + FreqDirVal;
+						if (FreqDirVal == 20) {
+								FreqDirVal -= 1;
+						} else {
+								FreqDirVal++;
+								GameObject.Find ("FreqDir").GetComponent<TextMesh> ().text = "" + FreqDirVal;
+						} 
 				} else if (this.name == "MenosFreqFrente") {
-						FreqFrenteVal--;
-						GameObject.Find ("FreqFrente").GetComponent<TextMesh> ().text = "" + FreqFrenteVal;
+						if (FreqFrenteVal == 4) {
+								FreqFrenteVal += 1;
+						} else {
+								FreqFrenteVal--;
+								GameObject.Find ("FreqFrente").GetComponent<TextMesh> ().text = "" + FreqFrenteVal;
+						} 
 				} else if (this.name == "MaisFreqFrente") {
-						FreqFrenteVal++;
-						GameObject.Find ("FreqFrente").GetComponent<TextMesh> ().text = "" + FreqFrenteVal;
+						if (FreqFrenteVal == 20) {
+								FreqFrenteVal -= 1;
+						} else {	
+								FreqFrenteVal++;
+								GameObject.Find ("FreqFrente").GetComponent<TextMesh> ().text = "" + FreqFrenteVal;
+						}
 				}
-
 				//********************************** Menus ************************************
 				if (jogar == true) {
 						opcoes = false;
@@ -109,21 +139,37 @@ public class MainMenu : MonoBehaviour
 						carros3d = false;
 						voltar = false;
 						Application.LoadLevel ("MenuHelicoptero");
-				} else if (mindwave == true) {
-						teclado = false;
-						gusbamp = false;
-						voltar = false;
-						//Application.LoadLevel("MindWave");
-				} else if (gusbamp == true) {
-						mindwave = false;
-						teclado = false;
-						voltar = false;
-						//Application.LoadLevel("gusbamp");
-				} else if (teclado == true) {
-						mindwave = false;
-						gusbamp = false;
-						voltar = false;
-						//Application.LoadLevel("teclado");
+			//************************************************** Menus jogo *********************************
+				} else if (Application.loadedLevelName == "MenuCarros2d") {
+						if (mindwave == true) {
+								//Application.LoadLevel("MindWave");
+						}
+						if (gusbamp == true) {
+								//Application.LoadLevel("gusbamp");
+						}
+						if (teclado == true) {
+								//Application.LoadLevel("teclado");
+						}	
+				} else if (Application.loadedLevelName == "MenuCarros3d") {
+						if (mindwave == true) {
+								//Application.LoadLevel("MindWave");
+						}
+						if (gusbamp == true) {
+								//Application.LoadLevel("gusbamp");
+						}
+						if (teclado == true) {
+								//Application.LoadLevel("teclado");
+						}	
+				} else if (Application.loadedLevelName == "MenuHelicoptero") {
+						if (mindwave == true) {
+								//Application.LoadLevel("MindWave");
+						}
+						if (gusbamp == true) {
+								//Application.LoadLevel("gusbamp");
+						}
+						if (teclado == true) {
+								//Application.LoadLevel("teclado");
+						}	
 				}
 		}
 }

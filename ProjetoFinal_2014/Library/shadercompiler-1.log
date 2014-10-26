@@ -1,3 +1,93 @@
-Base path: D:/Programas/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-1-2152
+Base path: C:/Program Files (x86)/Unity/Editor/Data
+Pipe name: \\.\pipe\UnityShaderCompiler-1-5576
 Cmd: getPlatforms
+Cmd: preprocess
+  insize=3557 outsize=1412 ok=1
+Cmd: preprocess
+  insize=2733 outsize=1451 ok=1
+Cmd: preprocess
+  insize=848 outsize=848 ok=1
+Cmd: preprocess
+  insize=3281 outsize=1430 ok=1
+Cmd: preprocess
+  insize=3491 outsize=1997 ok=1
+Cmd: preprocess
+  insize=2335 outsize=1324 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (77): 'vert': output parameter 'o' not completely initialized
+  error: 1 plat 4 at (103): implicit truncation of vector type
+  api=4 type=0 insize=6140 outsize=0 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=0
+Cmd: preprocess
+  insize=2874 outsize=1319 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (84): 'vert': output parameter 'o' not completely initialized
+  error: 1 plat 4 at (113): implicit truncation of vector type
+  api=4 type=0 insize=6936 outsize=0 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=0
+Cmd: preprocess
+  insize=3309 outsize=1509 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (86): 'vert': output parameter 'o' not completely initialized
+  error: 1 plat 4 at (112): 'texCUBE': implicit truncation of vector type
+  error: 1 plat 4 at (122): implicit truncation of vector type
+  error: 1 plat 4 at (123): implicit truncation of vector type
+  api=4 type=0 insize=7305 outsize=0 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=0
+Cmd: preprocess
+  insize=495 outsize=495 ok=1
+Cmd: preprocess
+  insize=876 outsize=876 ok=1
+Cmd: preprocess
+  insize=769 outsize=769 ok=1
+Cmd: preprocess
+  insize=2573 outsize=1382 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (80): 'vert': output parameter 'o' not completely initialized
+  error: 1 plat 4 at (109): implicit truncation of vector type
+  api=4 type=0 insize=6447 outsize=0 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=0
+Cmd: preprocess
+  insize=3166 outsize=1606 ok=1
+Cmd: preprocess
+  insize=638 outsize=638 ok=1
+Cmd: preprocess
+  insize=3110 outsize=1735 ok=1
+Cmd: preprocess
+  insize=2892 outsize=1337 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (84): 'vert': output parameter 'o' not completely initialized
+  error: 1 plat 4 at (113): implicit truncation of vector type
+  api=4 type=0 insize=6936 outsize=0 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=0
+Cmd: preprocess
+  insize=1426 outsize=1426 ok=1
+Cmd: preprocess
+  insize=334 outsize=334 ok=1
+Cmd: preprocess
+  insize=2581 outsize=1403 ok=1
+Cmd: preprocess
+  insize=664 outsize=664 ok=1
+Cmd: preprocess
+  insize=1000 outsize=1000 ok=1
+Cmd: preprocess
+  insize=2356 outsize=1310 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (77): 'vert': output parameter 'o' not completely initialized
+  error: 1 plat 4 at (104): implicit truncation of vector type
+  api=4 type=0 insize=6273 outsize=0 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=0
+Cmd: preprocess
+  insize=1812 outsize=1056 ok=1
+Cmd: preprocess
+  insize=2966 outsize=1475 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (88): 'vert': output parameter 'o' not completely initialized
+  error: 1 plat 4 at (110): 'texCUBE': implicit truncation of vector type
+  error: 1 plat 4 at (118): implicit truncation of vector type
+  error: 1 plat 4 at (119): implicit truncation of vector type
+  error: 1 plat 4 at (120): implicit truncation of vector type
+  error: 1 plat 4 at (121): implicit truncation of vector type
+  api=4 type=0 insize=7070 outsize=0 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=0
+Cmd: preprocess
+  insize=3121 outsize=1452 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (91): 'vert': output parameter 'o' not completely initialized
+  error: 1 plat 4 at (120): implicit truncation of vector type
+  error: 1 plat 4 at (121): implicit truncation of vector type
+  error: 1 plat 4 at (122): implicit truncation of vector type
+  api=4 type=0 insize=7142 outsize=0 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=0
