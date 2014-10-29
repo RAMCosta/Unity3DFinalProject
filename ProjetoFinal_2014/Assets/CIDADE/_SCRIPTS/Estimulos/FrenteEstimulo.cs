@@ -15,8 +15,8 @@ public class FrenteEstimulo : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		frequencia = MainMenu.FreqFrenteVal;
-		delay = (int) (1000 / frequencia);
+		//frequencia = MainMenu.FreqFrenteVal;
+		delay = (int) (1000 / frequencia)/2;
 		Autorun = new Thread (Blink);
 		Autorun.Start ();
 		

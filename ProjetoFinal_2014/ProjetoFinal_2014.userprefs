@@ -1,13 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MENU\Menu\Script\MainMenu.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MENU\Menu\Opcoes\SCRIPT\EscolhaEstimulos.cs">
     <Files>
-      <File FileName="Assets\CIDADE\_SCRIPTS\Estimulos\DireitaEstimulo.cs" Line="12" Column="19" />
-      <File FileName="Assets\CIDADE\_SCRIPTS\Estimulos\EsquerdaEstimulo.cs" Line="1" Column="1" />
-      <File FileName="Assets\CIDADE\_SCRIPTS\Estimulos\FrenteEstimulo.cs" Line="19" Column="31" />
-      <File FileName="Assets\MENU\Menu\Script\MainMenu.cs" Line="142" Column="101" />
-      <File FileName="Assets\CIDADE\_SCRIPTS\Destinos\DestinoEstimulos.cs" Line="96" Column="4" />
-      <File FileName="Assets\CARROS 2D\_SCRIPTS\Estimulos\Arrow.cs" Line="1" Column="1" />
+      <File FileName="Assets\MENU\Menu\Opcoes\SCRIPT\EscolhaEstimulos.cs" Line="99" Column="31" />
+      <File FileName="Assets\MENU\Menu\Script\MainMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets\MENU\Menu\Opcoes\SCRIPT\PiscarSetas.cs" Line="48" Column="1" />
+      <File FileName="Assets\CIDADE\_SCRIPTS\Conexao TCP\TCPServer.cs" Line="95" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

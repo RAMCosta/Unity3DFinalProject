@@ -15,8 +15,8 @@ public class DireitaEstimulo : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		frequencia = MainMenu.FreqDirVal;
-		delay = (int) (1000 / frequencia);
+		//frequencia = MainMenu.FreqDirVal;
+		delay = (int) (1000 / frequencia)/2;
 		Autorun = new Thread (Blink);
 		Autorun.Start ();
 		

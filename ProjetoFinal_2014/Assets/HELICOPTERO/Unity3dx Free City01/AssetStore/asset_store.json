@@ -1,0 +1,11 @@
+{
+	"publisher_id": 0,
+	"publisher_package_id": 676,
+	"title": "Free City 01",
+	"description": "This is a massive city (size of New York, or SF) with textures,<br>\nroads, buildings etc! Uses Pro water but you can replace it with <br>\nstandard water for the free version of Unity.<br>\n<br>\nFeatures a low polycount for incredibly fast performance. <br>\nMore info <a href='http://www.unity3dx.com'>here</a>",
+	"changes": "added 2 projects, one for PRO and one for Indies.\nfixed some flashing polys.",
+	"version_name": "1.0",
+	"category": 0,
+	"recommended_features": [],
+	"required_features": []
+}
