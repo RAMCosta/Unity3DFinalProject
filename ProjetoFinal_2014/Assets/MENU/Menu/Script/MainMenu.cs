@@ -20,6 +20,9 @@ public class MainMenu : MonoBehaviour
 		public bool MaisFreqEsq = false;
 		public bool MaisFreqDir = false;
 		public bool MaisFreqFrente = false;
+		public bool OpcoesFreq = false;
+		public bool OpcoesEscEsti = false;
+		public bool OpcoesCalibrar = false;
 		public static int FreqEsqVal = 4;
 		public static int FreqDirVal = 12;
 		public static int FreqFrenteVal = 8;
@@ -123,7 +126,11 @@ public class MainMenu : MonoBehaviour
 						helicoptero = false;
 						carros2d = false;
 						carros3d = false;
-						Application.LoadLevel ("MainMenu");
+						if (Application.loadedLevelName == "DefinirFrequencias_Menuopcoes" || Application.loadedLevelName == "Calibracao_Menuopcoes" || Application.loadedLevelName == "EscolherEstimulos_Menuopcoes") {
+								Application.LoadLevel ("MenuOpcoes");
+						} else {
+								Application.LoadLevel ("MainMenu");
+						}
 				} else if (carros2d == true) {
 						helicoptero = false;
 						carros3d = false;
@@ -139,36 +146,46 @@ public class MainMenu : MonoBehaviour
 						carros3d = false;
 						voltar = false;
 						Application.LoadLevel ("MenuHelicoptero");
-			//************************************************** Menus jogo *********************************
+						//************************************************** Menus jogo *********************************
 				} else if (Application.loadedLevelName == "MenuCarros2d") {
 						if (mindwave == true) {
-								//Application.LoadLevel("MindWave");
+								Application.LoadLevel ("Carros2D_Mindwave");
 						}
 						if (gusbamp == true) {
 								//Application.LoadLevel("gusbamp");
 						}
 						if (teclado == true) {
-								//Application.LoadLevel("teclado");
+								Application.LoadLevel ("Carros2D");
 						}	
 				} else if (Application.loadedLevelName == "MenuCarros3d") {
 						if (mindwave == true) {
 								//Application.LoadLevel("MindWave");
 						}
 						if (gusbamp == true) {
-								//Application.LoadLevel("gusbamp");
+								Application.LoadLevel ("Carro3DEstimulos");
 						}
 						if (teclado == true) {
-								//Application.LoadLevel("teclado");
+								Application.LoadLevel ("AutoNavegacaoCarro");
 						}	
 				} else if (Application.loadedLevelName == "MenuHelicoptero") {
 						if (mindwave == true) {
 								//Application.LoadLevel("MindWave");
 						}
 						if (gusbamp == true) {
-								//Application.LoadLevel("gusbamp");
+								Application.LoadLevel ("HelicopteroEstimulos");
 						}
 						if (teclado == true) {
-								//Application.LoadLevel("teclado");
+								Application.LoadLevel ("Helicoptero");
+						}	
+				} else if (Application.loadedLevelName == "MenuOpcoes") {
+						if (OpcoesFreq == true) {
+								Application.LoadLevel ("DefinirFrequencias_Menuopcoes");
+						}
+						if (OpcoesEscEsti == true) {
+								Application.LoadLevel ("EscolherEstimulos_Menuopcoes");
+						}
+						if (OpcoesCalibrar == true) {
+								Application.LoadLevel ("Calibracao_Menuopcoes");
 						}	
 				}
 		}

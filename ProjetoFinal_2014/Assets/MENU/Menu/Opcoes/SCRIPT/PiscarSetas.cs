@@ -6,7 +6,7 @@ using System;
 
 public class PiscarSetas : MonoBehaviour {
 	
-	Thread Autorun;
+	public static Thread ThreadBlink;
 	int delay;
 	bool state;
 	float frequencia;
@@ -17,8 +17,8 @@ public class PiscarSetas : MonoBehaviour {
 	{
 		frequencia = 5;
 		delay = (int) (1000 / frequencia)/2;
-		Autorun = new Thread (Blink);
-		Autorun.Start ();
+		ThreadBlink = new Thread (Blink);
+		ThreadBlink.Start ();
 		
 	}
 	
@@ -45,6 +45,6 @@ public class PiscarSetas : MonoBehaviour {
 
 	void OnApplicationQuit()
 	{
-		Autorun.Abort ();
+		ThreadBlink.Abort ();
 	}
 }

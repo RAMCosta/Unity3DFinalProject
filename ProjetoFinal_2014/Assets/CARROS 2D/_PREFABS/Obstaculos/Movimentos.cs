@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Movimentos : MonoBehaviour {
 
-	float velocidade = -2;
+	public float velocidade = -2;
 	public static bool final = false; // Variavel para verificar e esta passou a meta
 	// Variavel utilizada porque nao sabia como parar o script Obstaculos e Movimentos devido a haver clonagem dos Obstaculos
 	// E utilizada no script Obstaculos(Para verificacao) e MostrarSons, para meter a true quando passa a meta

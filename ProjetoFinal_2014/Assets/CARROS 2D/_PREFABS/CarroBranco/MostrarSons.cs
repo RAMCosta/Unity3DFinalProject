@@ -14,7 +14,7 @@ public class MostrarSons : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		GameObject.Find("Pontuacaozica").guiText.text = "Pontuacao : " + pontuacao;
+		GameObject.Find("Pontuacaozica").guiText.text = "Pontuacao: " + pontuacao;
 		if (Tempo > 1) { 
 			Tempo -= Time.deltaTime;
 		} else {
@@ -23,6 +23,7 @@ public class MostrarSons : MonoBehaviour {
 		if (Tempo < 5) {
 			metaScript.velocidadeMeta = -5f;
 		}
+		GameObject.Find("TempoJogo").guiText.text = "Tempo de Jogo: " + Mathf.Floor(Tempo) + " seg.";
 	}
 	
 	void PlaySound(int numberClip){

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class metaScript : MonoBehaviour {
 
-	public static float velocidadeMeta = -2f;
+	public static float velocidadeMeta = -5f;
 	// Use this for initialization
 	void Start () {
 		

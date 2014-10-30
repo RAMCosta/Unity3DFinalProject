@@ -46,9 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CARROS 2D\HERTZ\BaixoMovHertz.cs" />
-     <Compile Include="Assets\CARROS 2D\HERTZ\CimaMovHertz.cs" />
-     <Compile Include="Assets\CARROS 2D\HERTZ\ControloCiclosHertz.cs" />
      <Compile Include="Assets\CARROS 2D\HERTZ\VerficarFramesActual.cs" />
      <Compile Include="Assets\CARROS 2D\_PREFABS\CarroBranco\MostrarSons.cs" />
      <Compile Include="Assets\CARROS 2D\_PREFABS\CarroBranco\Movimento.cs" />
@@ -63,7 +60,6 @@
      <Compile Include="Assets\CARROS 2D\_SCRIPTS\Estimulos\Arrow.cs" />
      <Compile Include="Assets\CARROS 2D\_SCRIPTS\Estimulos\Estimulos.cs" />
      <Compile Include="Assets\CARROS 2D\_SCRIPTS\JogarAnimacao.cs" />
-     <Compile Include="Assets\CARROS 2D\_SCRIPTS\OitoHzTeste.cs" />
      <Compile Include="Assets\CARROS 2D\_SCRIPTS\OpcoesAnimacao.cs" />
      <Compile Include="Assets\CARROS 2D\_SCRIPTS\SairAnimacao.cs" />
      <Compile Include="Assets\CARROS 2D\_SCRIPTS\TCP Scripts\ClienteTCP.cs" />
@@ -72,7 +68,6 @@
      <Compile Include="Assets\CARROS 2D\_TOUCHSCRIPTS\BaixoMov.cs" />
      <Compile Include="Assets\CARROS 2D\_TOUCHSCRIPTS\CimaMov.cs" />
      <Compile Include="Assets\CIDADE\_IMPORTS\_FORDFOCUS\Scripts\Android.cs" />
-     <Compile Include="Assets\CIDADE\_IMPORTS\_FORDFOCUS\Scripts\Camera.cs" />
      <Compile Include="Assets\CIDADE\_IMPORTS\_FORDFOCUS\Scripts\CarroMov.cs" />
      <Compile Include="Assets\CIDADE\_IMPORTS\_FORDFOCUS\Scripts\MenuScripts\MenuScript.cs" />
      <Compile Include="Assets\CIDADE\_IMPORTS\_FORDFOCUS\Scripts\MovSecundarios.cs" />
@@ -111,6 +106,9 @@
      <Compile Include="Assets\HELICOPTERO\SCRIPTS\NavMeshDestinos.cs" />
      <Compile Include="Assets\HELICOPTERO\SCRIPTS\TCPDestinos.cs" />
      <Compile Include="Assets\HELICOPTERO\Unity3dx Free City01\scripts\MouseLook.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\Calibracao.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\CalibracaoPiscarSetas.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\ComecarCalibracao.cs" />
      <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\EscolhaEstimulos.cs" />
      <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\PiscarSetas.cs" />
      <Compile Include="Assets\MENU\Menu\Script\MainMenu.cs" />
