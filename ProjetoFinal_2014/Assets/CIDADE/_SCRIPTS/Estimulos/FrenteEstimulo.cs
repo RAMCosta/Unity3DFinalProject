@@ -6,31 +6,74 @@ using System;
 
 public class FrenteEstimulo : MonoBehaviour {
 	
-	Thread Autorun;
+	public static Thread ThreadBlink;
 	int delay;
 	bool state;
-	public float frequencia;
-	public GameObject Seta1;
-	public GameObject Seta2;
+	float frequencia;
+	public GUITexture Seta1;
+	public GUITexture Seta2;
+	public Texture[] TexturaEstimulos;
 	// Use this for initialization
 	void Start ()
 	{
-		//frequencia = MainMenu.FreqFrenteVal;
+		if(MainMenu.DefFreqManual==true)
+		{
+			frequencia = MainMenu.FreqFrenteVal;
+		} else if(Calibracao.DefFreqCalibrar==true){
+			frequencia= Calibracao.FreqRecMeioFrente;
+		}
 		delay = (int) (1000 / frequencia)/2;
-		Autorun = new Thread (Blink);
-		Autorun.Start ();
 		
+		ThreadBlink = new Thread (Blink);
+		ThreadBlink.Start ();
+		
+		if (EscolhaEstimulos.Seta1Usada == "SetaAmarela") {
+			Seta1.guiTexture.texture = TexturaEstimulos[0];	
+		}
+		if (EscolhaEstimulos.Seta2Usada == "SetaAmarela") {
+			Seta2.guiTexture.texture = TexturaEstimulos[0];		
+		}
+		if (EscolhaEstimulos.Seta1Usada == "SetaAzul") {
+			Seta1.guiTexture.texture = TexturaEstimulos[1];		
+		}
+		if (EscolhaEstimulos.Seta2Usada == "SetaAzul") {
+			Seta2.guiTexture.texture = TexturaEstimulos[1];			
+		}
+		if (EscolhaEstimulos.Seta1Usada == "SetaBranca") {
+			Seta1.guiTexture.texture = TexturaEstimulos[2];			
+		}
+		if (EscolhaEstimulos.Seta2Usada == "SetaBranca") {
+			Seta2.guiTexture.texture = TexturaEstimulos[2];			
+		}
+		if (EscolhaEstimulos.Seta1Usada == "SetaVerde") {
+			Seta1.guiTexture.texture = TexturaEstimulos[3];			
+		}
+		if (EscolhaEstimulos.Seta2Usada == "SetaVerde") {
+			Seta2.guiTexture.texture = TexturaEstimulos[3];			
+		}
+		if (EscolhaEstimulos.Seta1Usada == "SetaVermelha") {
+			Seta1.guiTexture.texture = TexturaEstimulos[4];			
+		}
+		if (EscolhaEstimulos.Seta2Usada == "SetaVermelha") {
+			Seta2.guiTexture.texture = TexturaEstimulos[4];			
+		}
+		if (EscolhaEstimulos.Seta1Usada == "SetaCinzenta") {
+			Seta1.guiTexture.texture = TexturaEstimulos[5];			
+		}
+		if (EscolhaEstimulos.Seta2Usada == "SetaCinzenta") {
+			Seta2.guiTexture.texture = TexturaEstimulos[5];			
+		}
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
 		if (state) {
-			Seta1.SetActive (true);
-			Seta2.SetActive (false);
+			Seta1.enabled=true;
+			Seta2.enabled=false;
 		} else {
-			Seta1.SetActive (false);
-			Seta2.SetActive (true);
+			Seta1.enabled=false;
+			Seta2.enabled=true;
 		}
 	}
 	
@@ -41,5 +84,10 @@ public class FrenteEstimulo : MonoBehaviour {
 			state = !state;
 			Thread.Sleep (delay-resto);
 		}
+	}
+	
+	void OnApplicationQuit()
+	{
+		ThreadBlink.Abort ();
 	}
 }

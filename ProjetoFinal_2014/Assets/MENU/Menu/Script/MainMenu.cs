@@ -24,17 +24,15 @@ public class MainMenu : MonoBehaviour
 		public bool OpcoesEscEsti = false;
 		public bool OpcoesCalibrar = false;
 		public static int FreqEsqVal = 4;
-		public static int FreqDirVal = 12;
-		public static int FreqFrenteVal = 8;
+		public static int FreqFrenteVal = 14;	
+		public static int FreqDirVal = 16;
+		
+		public static bool DefFreqManual = true;
  
 		// Use this for initialization
 		void Start ()
 		{
-				if (Application.loadedLevelName == "Menuopcoes") {
-						GameObject.Find ("FreqEsq").GetComponent<TextMesh> ().text = "" + FreqEsqVal;
-						GameObject.Find ("FreqDir").GetComponent<TextMesh> ().text = "" + FreqDirVal;
-						GameObject.Find ("FreqFrente").GetComponent<TextMesh> ().text = "" + FreqFrenteVal;
-				}
+
 		}
 	
 		// Update is called once per frame
@@ -50,7 +48,7 @@ public class MainMenu : MonoBehaviour
 						renderer.material.color = Color.red;
 				} else {
 						GetComponent<TextMesh> ().fontSize = GetComponent<TextMesh> ().fontSize + 2;
-						renderer.material.color = Color.yellow;
+						renderer.material.color = Color.black;
 				}
 		}
 	
@@ -105,6 +103,11 @@ public class MainMenu : MonoBehaviour
 								FreqFrenteVal++;
 								GameObject.Find ("FreqFrente").GetComponent<TextMesh> ().text = "" + FreqFrenteVal;
 						}
+				}
+
+				if (this.name == "DefFreqManual") {
+						DefFreqManual = true;
+						Calibracao.DefFreqCalibrar = false;
 				}
 				//********************************** Menus ************************************
 				if (jogar == true) {

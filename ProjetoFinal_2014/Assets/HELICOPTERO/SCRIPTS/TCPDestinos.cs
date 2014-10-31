@@ -25,7 +25,7 @@ public class TCPDestinos : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		EscolhaDestino.SetActive (true);
+		EscolhaDestino.SetActive (false);
 		DestinoActual = "Destino20";
 		DestinoAnterior = "Destino20";
 		comando = "";
@@ -91,9 +91,10 @@ public class TCPDestinos : MonoBehaviour
 		}
 		
 		// Verificacao de colidiu com os Triggers colocados ao meio das ruas, para visualizar as direcoes
-	/*	if (distancia < 150 && comando == "") {
+		if (distancia < 150 && comando == "") {
 			EscolhaDestino.SetActive (true);
-		}*/
+			this.gameObject.GetComponent<NavMeshAgent> ().speed = 5;
+		}
 		
 		// Colocar o Taxi na rota de destino definida pela tecla pressionada, se o NavMesh estiver ativo
 		if (this.gameObject.GetComponent<NavMeshAgent> ().enabled == true) {

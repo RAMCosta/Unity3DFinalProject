@@ -8,8 +8,8 @@ public class EscolhaEstimulos : MonoBehaviour
 		GameObject VerSeta2;
 		public Sprite[] sprites;
 		public static int numeroSeta = 1;
-	public static string Seta1Usada = "SetaBranca";
-	public static string Seta2Usada = "SetaAmarela";
+		public static string Seta1Usada = "SetaVermelha";
+		public static string Seta2Usada = "SetaAmarela";
 		public static int aux = 0;
 		// Use this for initialization
 		void Start ()

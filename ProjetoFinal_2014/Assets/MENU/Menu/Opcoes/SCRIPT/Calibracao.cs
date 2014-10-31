@@ -15,6 +15,12 @@ public class Calibracao : MonoBehaviour
 		float[] Frequencias = { 6f, 7.5f, 9f, 11f, 14f, 16f, 17f };
 		int numeroListaFreq;
 		public static float frequencia;
+		public static bool DefFreqCalibrar = false;
+
+		public static float FreqRecMenorEsquerda = 7.5f;
+		public static float FreqRecMeioFrente = 11f;	
+		public static float FreqRecMaiorDireita = 17f;
+		
 	
 		void Start ()
 		{
@@ -53,6 +59,8 @@ public class Calibracao : MonoBehaviour
 			CalibracaoPiscarSetas.ThreadBlink.Abort();
 //			GameObject.Find ("VerSetas").GetComponent<CalibracaoPiscarSetas> ().enabled = false;
 			GameObject.Find ("VerSetas").SetActive(false);
+			MainMenu.DefFreqManual = false;
+			DefFreqCalibrar = true;
 				}
 		}
 

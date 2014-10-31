@@ -1,9 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MENU\PRELOAD\LoadHelicopterKeyboard.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CIDADE\_SCRIPTS\Estimulos\DireitaEstimulo.cs">
     <Files>
-      <File FileName="Assets\MENU\PRELOAD\LoadHelicopterKeyboard.cs" Line="12" Column="35" />
-      <File FileName="Assets\MENU\Menu\Script\MainMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets\CIDADE\_SCRIPTS\Estimulos\EsquerdaEstimulo.cs" Line="21" Column="37" />
+      <File FileName="Assets\CIDADE\_SCRIPTS\Estimulos\DireitaEstimulo.cs" Line="12" Column="19" />
+      <File FileName="Assets\CIDADE\_SCRIPTS\Estimulos\FrenteEstimulo.cs" Line="77" Column="4" />
+      <File FileName="Assets\MENU\Menu\Opcoes\SCRIPT\EscolhaEstimulos.cs" Line="11" Column="3" />
+      <File FileName="Assets\MENU\Menu\Script\MainMenu.cs" Line="30" Column="42" />
+      <File FileName="Assets\MENU\Menu\Opcoes\SCRIPT\Calibracao.cs" Line="63" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
