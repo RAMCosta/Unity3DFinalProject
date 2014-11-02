@@ -101,8 +101,10 @@
      <Compile Include="Assets\CIDADE\_SCRIPTS\ciclosHertz.cs" />
      <Compile Include="Assets\CIDADE\_SCRIPTS\detectarcolisoes.cs" />
      <Compile Include="Assets\CIDADE\_SCRIPTS\frames.cs" />
+     <Compile Include="Assets\HELICOPTERO\SCRIPTS\ApanharMoedas.cs" />
      <Compile Include="Assets\HELICOPTERO\SCRIPTS\ConexaoTCP\Tcpheli.cs" />
      <Compile Include="Assets\HELICOPTERO\SCRIPTS\DestinosHelicoptero.cs" />
+     <Compile Include="Assets\HELICOPTERO\SCRIPTS\EscolherMoedas.cs" />
      <Compile Include="Assets\HELICOPTERO\SCRIPTS\NavMeshDestinos.cs" />
      <Compile Include="Assets\HELICOPTERO\SCRIPTS\TCPDestinos.cs" />
      <Compile Include="Assets\HELICOPTERO\Unity3dx Free City01\scripts\MouseLook.cs" />

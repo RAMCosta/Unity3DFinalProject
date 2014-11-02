@@ -8,8 +8,6 @@ public class DestinoEstimulos : MonoBehaviour {
 	string DestinoAnterior;
 	string ColisaoActual;
 	int NumeroDestino = 13;
-	int Aceleracao = 10;
-	int Velocidade = 10;
 	string DestinoActual;
 	public GameObject EscolhaDestino;
 	public Transform[] destino;

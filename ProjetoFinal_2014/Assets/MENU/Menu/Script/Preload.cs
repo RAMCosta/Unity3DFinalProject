@@ -23,12 +23,11 @@ public class Preload : MonoBehaviour {
 		scale.x = Screen.width/originalWidth; 
 		scale.y = Screen.height/originalHeight; 
 		scale.z = 1;
-		var svMat = GUI.matrix; 
 		GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, scale);
 		if(async!= null)
 		{
-			progress = async.progress;
-			GUI.DrawTexture(new Rect(100, 1000, 500 * Mathf.Clamp01(progress), 75), progressBarFrente);
+			progress = async.progress;//Mathf.Clamp01
+			GUI.DrawTexture(new Rect(100, 1000, 500 * (int)(progress), 75), progressBarFrente);
 			GUI.Label(new Rect(200, 950, 300, 100), "" + "A Carregar ... " + (progress*100+10) + " %",FontStyle);
 		}
 

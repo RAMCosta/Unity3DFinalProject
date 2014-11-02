@@ -104,8 +104,6 @@ public class EscolhaEstimulos : MonoBehaviour
 						}	
 				}
 				if (this.gameObject.name == "DefinirSeta") {
-						Debug.Log (Seta1Usada);
-						Debug.Log (Seta2Usada);
 						aux = 0;
 						PiscarSetas.ThreadBlink.Abort();
 				}
