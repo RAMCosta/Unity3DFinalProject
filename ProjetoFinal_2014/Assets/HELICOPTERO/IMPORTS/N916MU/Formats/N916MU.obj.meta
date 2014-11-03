@@ -1,0 +1,147 @@
+fileFormatVersion: 2
+guid: 222695c0156c15845813eade67d026b6
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Helicopter_body
+    100002: Helicopter_doors_lock
+    100004: Helicopter_glass
+    100006: Helicopter_lights
+    100008: Helicopter_Part
+    100010: Helicopter_Part1
+    100012: Helicopter_Part10
+    100014: Helicopter_Part2
+    100016: Helicopter_Part3
+    100018: Helicopter_Part4
+    100020: Helicopter_Part5
+    100022: Helicopter_Part6
+    100024: Helicopter_Part7
+    100026: Helicopter_Part8
+    100028: Helicopter_Part9
+    100030: Helicopter_Propellers
+    100032: Helicopter_seats
+    100034: //RootNode
+    400000: Helicopter_body
+    400002: Helicopter_doors_lock
+    400004: Helicopter_glass
+    400006: Helicopter_lights
+    400008: Helicopter_Part
+    400010: Helicopter_Part1
+    400012: Helicopter_Part10
+    400014: Helicopter_Part2
+    400016: Helicopter_Part3
+    400018: Helicopter_Part4
+    400020: Helicopter_Part5
+    400022: Helicopter_Part6
+    400024: Helicopter_Part7
+    400026: Helicopter_Part8
+    400028: Helicopter_Part9
+    400030: Helicopter_Propellers
+    400032: Helicopter_seats
+    400034: //RootNode
+    2300000: Helicopter_body
+    2300002: Helicopter_doors_lock
+    2300004: Helicopter_glass
+    2300006: Helicopter_lights
+    2300008: Helicopter_Part
+    2300010: Helicopter_Part1
+    2300012: Helicopter_Part10
+    2300014: Helicopter_Part2
+    2300016: Helicopter_Part3
+    2300018: Helicopter_Part4
+    2300020: Helicopter_Part5
+    2300022: Helicopter_Part6
+    2300024: Helicopter_Part7
+    2300026: Helicopter_Part8
+    2300028: Helicopter_Part9
+    2300030: Helicopter_Propellers
+    2300032: Helicopter_seats
+    3300000: Helicopter_body
+    3300002: Helicopter_doors_lock
+    3300004: Helicopter_glass
+    3300006: Helicopter_lights
+    3300008: Helicopter_Part
+    3300010: Helicopter_Part1
+    3300012: Helicopter_Part10
+    3300014: Helicopter_Part2
+    3300016: Helicopter_Part3
+    3300018: Helicopter_Part4
+    3300020: Helicopter_Part5
+    3300022: Helicopter_Part6
+    3300024: Helicopter_Part7
+    3300026: Helicopter_Part8
+    3300028: Helicopter_Part9
+    3300030: Helicopter_Propellers
+    3300032: Helicopter_seats
+    4300000: Helicopter_body
+    4300002: Helicopter_doors_lock
+    4300004: Helicopter_glass
+    4300006: Helicopter_lights
+    4300008: Helicopter_Part
+    4300010: Helicopter_Part1
+    4300012: Helicopter_Part10
+    4300014: Helicopter_Part2
+    4300016: Helicopter_Part3
+    4300018: Helicopter_Part4
+    4300020: Helicopter_Part5
+    4300022: Helicopter_Part6
+    4300024: Helicopter_Part7
+    4300026: Helicopter_Part8
+    4300028: Helicopter_Part9
+    4300030: Helicopter_Propellers
+    4300032: Helicopter_seats
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
