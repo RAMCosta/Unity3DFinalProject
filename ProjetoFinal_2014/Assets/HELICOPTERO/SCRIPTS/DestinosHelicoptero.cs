@@ -39,7 +39,7 @@ public class DestinosHelicoptero : MonoBehaviour
 				if (EscolhaDestino == true || ParouCruzamento == true) {
 						if (Input.GetKey (KeyCode.M)) {
 								comando = "M";
-				EscolhaDestino = false;
+								EscolhaDestino = false;
 								this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
 								if (this.gameObject.GetComponent<NavMeshAgent> ().enabled == false) {
 										ParouCruzamento = false;
@@ -49,7 +49,7 @@ public class DestinosHelicoptero : MonoBehaviour
 						}
 						if (Input.GetKey (KeyCode.Z)) {
 								comando = "Z";
-				EscolhaDestino = false;
+								EscolhaDestino = false;
 								this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
 								if (this.gameObject.GetComponent<NavMeshAgent> ().enabled == false) {
 										ParouCruzamento = false;
@@ -58,7 +58,7 @@ public class DestinosHelicoptero : MonoBehaviour
 						}
 						if (Input.GetKey (KeyCode.Y)) {
 								comando = "Y";
-				EscolhaDestino = false;
+								EscolhaDestino = false;
 								this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
 								if (this.gameObject.GetComponent<NavMeshAgent> ().enabled == false) {
 										ParouCruzamento = false;
@@ -101,10 +101,6 @@ public class DestinosHelicoptero : MonoBehaviour
 	
 		void OnTriggerEnter (Collider collision)
 		{
-				Debug.Log (collision.gameObject.name);
-				Debug.Log ("BATEU NO DESTINO");
-				Debug.Log ("D. Anterior: " + DestinoAnterior);
-				Debug.Log ("D. Actual: " + DestinoActual);
 		
 				// Verificacao de colidiu com algum Trigger Destino. Esta condicao serve para verificar onde estao os viajantes,
 				// bem como verificar se o jogador definiu algum caminho antes de chegar ao cruzamento
@@ -121,9 +117,6 @@ public class DestinosHelicoptero : MonoBehaviour
 						// Actualiza o Destino Actual, para saber em que sentido o Taxi segue
 						//comando = "";
 						DestinoActual = collision.gameObject.name;
-						Debug.Log ("BATEU NO DESTINO");
-						Debug.Log ("D. Anterior: " + DestinoAnterior);
-						Debug.Log ("D. Actual: " + DestinoActual);
 						chegouDestino = true;
 						EscolhaDestino = false;
 						distancia = 0;
@@ -229,6 +222,9 @@ public class DestinosHelicoptero : MonoBehaviour
 						NumeroDestino = 8;
 				}
 				if (DestinoActual == "Destino7" && DestinoAnterior == "Destino8") {
+						NumeroDestino = 6;
+				}
+				if (DestinoActual == "Destino7" && DestinoAnterior == "Destino6") {
 						NumeroDestino = 3;
 				}
 		
@@ -468,6 +464,9 @@ public class DestinosHelicoptero : MonoBehaviour
 				}
 				if (DestinoActual == "Destino7" && DestinoAnterior == "Destino8") {
 						NumeroDestino = 1;
+				}
+				if (DestinoActual == "Destino7" && DestinoAnterior == "Destino6") {
+						NumeroDestino = 8;
 				}
 		
 				if (DestinoActual == "Destino8" && DestinoAnterior == "Destino7") {

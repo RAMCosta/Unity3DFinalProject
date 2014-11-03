@@ -5,6 +5,7 @@ public class MainMenu : MonoBehaviour
 {
 
 		public bool jogar = false;
+		public bool creditos = false;
 		public bool opcoes = false;
 		public bool sair = false;
 		public bool voltar = false;
@@ -120,7 +121,12 @@ public class MainMenu : MonoBehaviour
 						sair = false;
 						voltar = false;
 						Application.LoadLevel ("MenuOpcoes");
-				} else if (sair == true) {
+				} else if (creditos == true) {
+						jogar = false;
+						sair = false;
+						voltar = false;
+						Application.LoadLevel ("Creditos");
+				}else if (sair == true) {
 						jogar = false;
 						opcoes = false;
 						voltar = false;

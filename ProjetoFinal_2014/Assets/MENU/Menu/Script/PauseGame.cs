@@ -59,23 +59,18 @@ public class PauseGame : MonoBehaviour
 				
 						if (HelicopteroTecladoScene) {
 								Application.LoadLevel ("Helicoptero");
-						}
-						if (HelicopteroGusbampScene) {
+						}else if (HelicopteroGusbampScene) {
 								Application.LoadLevel ("HelicopteroEstimulos");
-						}
-						if (Carros3DTecladoScene) {
+						}else if (Carros3DTecladoScene) {
 								Application.LoadLevel ("AutoNavegacaoCarro");
-						}
-						if (Carros3DGusbampScene) {
+						}else if (Carros3DGusbampScene) {
 								Application.LoadLevel ("Carro3DEstimulos");
-						}
-						if (Carros2DTecladoScene) {
+						}else if (Carros2DTecladoScene) {
 								Application.LoadLevel ("Carros2D");
-						}
-						if (Carros2DMindwaveScene) {
+						}else if (Carros2DMindwaveScene) {
 								Application.LoadLevel ("Carros2D_Mindwave");
 						}
-
+			clickMenuReiniciar = false;
 				}
 		}
 
@@ -91,7 +86,7 @@ public class PauseGame : MonoBehaviour
 								clickMenuVoltar = true;
 						}
 						if (GUI.Button (new Rect ((Screen.width / 4), (3 * Screen.height / 8), 2 * Screen.width / 4, Screen.height / 8), "Reiniciar")) {
-								
+								clickMenuReiniciar = true;
 						}
 						if (GUI.Button (new Rect ((Screen.width / 4), (5 * Screen.height / 8), 2 * Screen.width / 4, Screen.height / 8), "Sair")) {
 								Application.LoadLevel ("MainMenu");

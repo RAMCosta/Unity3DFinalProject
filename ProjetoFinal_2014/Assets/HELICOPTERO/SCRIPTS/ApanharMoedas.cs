@@ -12,7 +12,7 @@ public class ApanharMoedas : MonoBehaviour
 
 				GameObject.Find ("Main Camera").audio.Play ();
 				this.gameObject.SetActive (false);
-				Pontuacao += 100;
+				Pontuacao += 1;
 		}
 
 		

@@ -7,113 +7,131 @@ using System.Text;
 using System.Threading;
 using System;
 
-public class Tcpheli : MonoBehaviour {
+public class Tcpheli : MonoBehaviour
+{
 
-	public static string comand = "a";
-	string ip_address  = "127.0.0.1";
-	int port = 10100;
+		public static string comand = "a";
+		string ip_address; //= "127.0.0.1";
+		int port = 10100;
+		Thread listen_thread;
+		TcpListener tcp_listener;
+		Thread clientThread;
+		TcpClient tcp_client;
+		bool isTrue = true;
+		public GUIStyle LetraDisconectado;
+		public GUIStyle LetraConectado;
+		public static bool conectado = false;
 	
-	Thread listen_thread;
-	TcpListener tcp_listener;
-	Thread clientThread;
-	TcpClient tcp_client;
-	bool isTrue = true;
+		void Start ()
+		{
+			/*	string str = "";
+				System.Net.Dns.GetHostName ();
+				IPHostEntry ipEntry = System.Net.Dns.GetHostEntry (str);
+				IPAddress[] addr = ipEntry.AddressList;
+				ip_address = "" + addr [addr.Length - 1].ToString ();
+				*/
+
+		IPHostEntry IPHost = Dns.GetHostByName(Dns.GetHostName());
+
+		ip_address = "" + IPHost.AddressList[0].ToString();
+
+		IPAddress ip_addy = IPAddress.Parse (ip_address);
+		tcp_listener = new TcpListener (ip_addy, port);
+		listen_thread = new Thread (new ThreadStart (ListenForClients));
+				listen_thread.Start ();
+				listen_thread.IsBackground = true;
+				Debug.Log ("Espera Clientes .....");
+				conectado = false;
+		}
 	
-	void Start () 
-	{
-		IPAddress ip_addy = IPAddress.Parse(ip_address);
-		tcp_listener = new TcpListener(ip_addy, port);
-		listen_thread = new Thread(new ThreadStart(ListenForClients));
-		listen_thread.Start();
-		listen_thread.IsBackground = true;
-		Debug.Log("Espera Clientes .....");
-	}
+		private void ListenForClients ()
+		{
+				this.tcp_listener.Start ();
+		
+				while (isTrue == true) {
+						//blocks until a client has connected to the server
+						TcpClient client = this.tcp_listener.AcceptTcpClient ();
+			
+						//create a thread to handle communication 
+						//with connected client
+						clientThread = new Thread (new ParameterizedThreadStart (HandleClientComm));
+						clientThread.Start (client);
+			
+			
+						Debug.Log ("Conectado ... " + client);
+						conectado = true;
+				}
+
+		}
 	
-	private void ListenForClients()
-	{
-		this.tcp_listener.Start();
-		
-		while(isTrue == true)   
+		private void HandleClientComm (object client)
 		{
-			//blocks until a client has connected to the server
-			TcpClient client = this.tcp_listener.AcceptTcpClient();
+				tcp_client = (TcpClient)client;
+				NetworkStream client_stream = tcp_client.GetStream ();
+		
+		
+				byte[] message = new byte[4096];
+				int bytes_read;
+		
+				while (isTrue == true) {
+						bytes_read = 0;
+						//blocks until a client sends a message
+						bytes_read = client_stream.Read (message, 0, 4096);
+						//Debug.Log(message);
+						//a socket error has occured
+						if (bytes_read == 0) {
+								//client has disconnected
+								Debug.Log ("Disconectado");
+								conectado = false;
+								tcp_client.Close ();
+								break;
+						}
 			
-			//create a thread to handle communication 
-			//with connected client
-			clientThread = new Thread(new ParameterizedThreadStart(HandleClientComm));
-			clientThread.Start(client);
+						ASCIIEncoding encoder = new ASCIIEncoding ();
+						Debug.Log (encoder.GetString (message, 0, bytes_read));
+						comand = encoder.GetString (message, 0, bytes_read);
 			
 			
-			Debug.Log("Conectado ... " + client);
-			
+				}
+		
+				if (isTrue == false) {
+						tcp_client.Close ();
+						Debug.Log ("Conexao TCP terminada");
+						conectado = false;
+						clientThread.Abort ();
+						listen_thread.Abort ();
+						tcp_listener.Stop ();
+						Debug.Log ("clientThread: " + clientThread.IsAlive); 
+						Debug.Log ("listen_thread: " + clientThread.IsAlive); 
+				}
 		}
-	}
 	
-	private void HandleClientComm(object client)
-	{
-		tcp_client = (TcpClient)client;
-		NetworkStream client_stream = tcp_client.GetStream();
+		void OnApplicationQuit ()
+		{
+				conectado = false;
+				try {
+						tcp_client.Close ();
+						isTrue = false;
+				} catch (Exception e) {
+						Debug.Log (e.Message);
+				}
 		
-		
-		byte[] message = new byte[4096];
-		int bytes_read;
-		
-		while(isTrue == true)
-		{
-			bytes_read = 0;
-			//blocks until a client sends a message
-			bytes_read = client_stream.Read(message, 0, 4096);
-			//Debug.Log(message);
-			//a socket error has occured
-			if(bytes_read == 0)
-			{
-				//client has disconnected
-				Debug.Log("Disconectado");
-				tcp_client.Close();
-				break;
-			}
-			
-			ASCIIEncoding encoder = new ASCIIEncoding();
-			Debug.Log(encoder.GetString(message,0,bytes_read));
-			comand = encoder.GetString(message,0,bytes_read);
-			
-			
+				// You must close the tcp listener
+				try {
+						tcp_listener.Stop ();
+						isTrue = false;
+				} catch (Exception e) {
+						Debug.Log (e.Message);
+				}
+				Debug.Log (clientThread.IsAlive); //true (must be false)
 		}
-		
-		if(isTrue == false)
+
+		void OnGUI ()
 		{
-			tcp_client.Close();
-			Debug.Log("Conexao TCP terminada");
-			clientThread.Abort();
-			listen_thread.Abort();
-			tcp_listener.Stop();
-			Debug.Log("clientThread: " + clientThread.IsAlive); 
-			Debug.Log("listen_thread: " + clientThread.IsAlive); 
+				if (conectado == false) {
+						GUI.Label (new Rect ((12 * Screen.width / 20), (Screen.height / 20), 2 * Screen.width / 4, Screen.height / 8), "Esperando Clientes...", LetraDisconectado);
+				} else {
+						GUI.Label (new Rect ((12 * Screen.width / 20), (Screen.height / 20), 2 * Screen.width / 4, Screen.height / 8), "Conectado", LetraConectado);
+				}
 		}
-	}
-	
-	void OnApplicationQuit()
-	{
-		try
-		{
-			tcp_client.Close();
-			isTrue = false;
-		}
-		catch(Exception e)
-		{
-			Debug.Log(e.Message);
-		}
-		
-		// You must close the tcp listener
-		try
-		{
-			tcp_listener.Stop();
-			isTrue = false;
-		}
-		catch(Exception e)
-		{
-			Debug.Log(e.Message);
-		}
-		Debug.Log(clientThread.IsAlive); //true (must be false)
-	}
 }
