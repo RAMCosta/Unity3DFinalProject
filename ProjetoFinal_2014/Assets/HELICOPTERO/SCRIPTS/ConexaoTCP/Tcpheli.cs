@@ -21,15 +21,13 @@ public class Tcpheli : MonoBehaviour
 		public GUIStyle LetraDisconectado;
 		public GUIStyle LetraConectado;
 		public static bool conectado = false;
+		public GUIText Conectado;
+
+		public static bool EnviarComandoMatLabHeli = false;
+		public static bool PararComandoMatLabHeli = false;
 	
 		void Start ()
 		{
-			/*	string str = "";
-				System.Net.Dns.GetHostName ();
-				IPHostEntry ipEntry = System.Net.Dns.GetHostEntry (str);
-				IPAddress[] addr = ipEntry.AddressList;
-				ip_address = "" + addr [addr.Length - 1].ToString ();
-				*/
 
 		IPHostEntry IPHost = Dns.GetHostByName(Dns.GetHostName());
 
@@ -43,7 +41,27 @@ public class Tcpheli : MonoBehaviour
 				Debug.Log ("Espera Clientes .....");
 				conectado = false;
 		}
-	
+
+	void Update(){
+		if (conectado == false) {
+			Conectado.guiText.color= Color.red;
+			Conectado.guiText.text = "Esperando Clientes...  [" + ip_address + "]";
+		} else {
+			Conectado.guiText.color= Color.green;
+			Conectado.guiText.text = "Conectado";
+		}
+
+		if (EnviarComandoMatLabHeli == true) {
+			EnviarComandoMatLabHeli = false;
+			SendMessageGetFreq(tcp_client);
+		}
+		if (PararComandoMatLabHeli == true) {
+			PararComandoMatLabHeli = false;
+			SendMessageEndFreq(tcp_client);
+		}
+
+	}
+
 		private void ListenForClients ()
 		{
 				this.tcp_listener.Start ();
@@ -105,6 +123,29 @@ public class Tcpheli : MonoBehaviour
 						Debug.Log ("listen_thread: " + clientThread.IsAlive); 
 				}
 		}
+
+	void SendMessageGetFreq(TcpClient client)
+	{
+		string message = "A1";
+	//	byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(message);
+		NetworkStream stream = client.GetStream();
+		StreamWriter writer = new StreamWriter(stream);
+		writer.WriteLine(message);
+		writer.Flush();
+	}
+
+	void SendMessageEndFreq(TcpClient client)
+	{
+		
+		string message = "B1";
+	//	byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(message);
+		NetworkStream stream = client.GetStream();
+		StreamWriter writer = new StreamWriter(stream);
+		writer.WriteLine(message);
+		writer.Flush();
+		
+	}
+
 	
 		void OnApplicationQuit ()
 		{
@@ -124,14 +165,5 @@ public class Tcpheli : MonoBehaviour
 						Debug.Log (e.Message);
 				}
 				Debug.Log (clientThread.IsAlive); //true (must be false)
-		}
-
-		void OnGUI ()
-		{
-				if (conectado == false) {
-						GUI.Label (new Rect ((12 * Screen.width / 20), (Screen.height / 20), 2 * Screen.width / 4, Screen.height / 8), "Esperando Clientes...", LetraDisconectado);
-				} else {
-						GUI.Label (new Rect ((12 * Screen.width / 20), (Screen.height / 20), 2 * Screen.width / 4, Screen.height / 8), "Conectado", LetraConectado);
-				}
 		}
 }

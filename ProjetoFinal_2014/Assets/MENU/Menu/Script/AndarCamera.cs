@@ -12,6 +12,15 @@ public class AndarCamera : MonoBehaviour
 		public GameObject Camera4;
 		public GameObject NomeJogo;
 		public static int aux = 0;
+		public GameObject Anel;
+		public GameObject SDir1;
+		public GameObject SDir2;
+		public GameObject SEsq1;
+		public GameObject SEsq2;
+		public GameObject SFrn1;
+		public GameObject SFrn2;
+
+		float time;
 
 		void Start ()
 		{
@@ -21,6 +30,11 @@ public class AndarCamera : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{
+		time += Time.deltaTime;
+		EstimulosSom (time);
+
+
+
 		if (Input.anyKey) {
 			aux = 0;
 			AteHelicoptero=false;
@@ -34,9 +48,10 @@ public class AndarCamera : MonoBehaviour
 				} else if (MoedaTrigger.Camera2Chegou == true && aux == 0) {
 						Camera2.SetActive (false);
 						Camera3.SetActive (true);
+						Anel.SetActive(true);
 						Camera3.transform.Translate (new Vector3 (0, -1 * Time.deltaTime, 30 * Time.deltaTime));
 				}
-				if (Camera3.transform.position.y < -88 && Camera3.activeSelf == true) {
+				if (Camera3.transform.position.y < -98 && Camera3.activeSelf == true) {
 						MoedaTrigger.Camera2Chegou = false;
 						aux = 1;
 						Camera4.SetActive (true);
@@ -51,4 +66,55 @@ public class AndarCamera : MonoBehaviour
 				}
 				
 		}
+
+	void EstimulosSom(float time){
+		if (time>10) {
+			SEsq1.SetActive(true);
+		}
+		if (time>10.2) {
+			SEsq1.SetActive(false);
+			SEsq2.SetActive(true);
+		}
+		if (time>10.4 ) {
+			SEsq2.SetActive(false);
+		}
+		if (time>12.3) {
+			SDir1.SetActive(true);
+		}
+		if (time>12.5 ) {
+			SDir1.SetActive(false);
+			SDir2.SetActive(true);
+		}
+		if (time>12.7 ) {
+			SDir2.SetActive(false);
+		}
+		if (time>14.6) {
+			SFrn1.SetActive(true);
+		}
+		if (time>14.8 ) {
+			SFrn1.SetActive(false);
+			SFrn2.SetActive(true);
+		}
+		if (time>15 ) {
+			SFrn2.SetActive(false);
+		}
+		if (time>16.8) {
+			SDir1.SetActive(true);
+			SEsq1.SetActive(true);
+			SFrn1.SetActive(true);
+		}
+		if (time>17 ) {
+			SDir1.SetActive(false);
+			SEsq1.SetActive(false);
+			SFrn1.SetActive(false);
+			SDir2.SetActive(true);
+			SEsq2.SetActive(true);
+			SFrn2.SetActive(true);
+		}
+		if (time>17.2) {
+			SDir2.SetActive(false);
+			SEsq2.SetActive(false);
+			SFrn2.SetActive(false);
+		}
+	}
 }

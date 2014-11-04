@@ -5,7 +5,6 @@ public class DestinosHelicoptero : MonoBehaviour
 {
 	
 		string DestinoAnterior;
-		string ColisaoActual;
 		int NumeroDestino = 1;
 		int Aceleracao = 10;
 		int Velocidade = 10;
@@ -17,14 +16,13 @@ public class DestinosHelicoptero : MonoBehaviour
 		public bool chegouDestino = false; 	 // verifica se passou num trigger Destino
 		public bool ParouCruzamento = false; // Serve para verificar se chegou a um cruzamento
 		public static int distancia;
-		public Texture2D SetaDireita;
-		public Texture2D SetaEsquerda;
+		public GUIText DistanciaGUI;
+		public GameObject Teclado;
 	
 	
 		// Use this for initialization
 		void Start ()
 		{
-
 				DestinoActual = "Destino20";
 				DestinoAnterior = "Destino20";
 				comando = "";
@@ -33,13 +31,20 @@ public class DestinosHelicoptero : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{
-				distancia = (int)Vector3.Distance (this.transform.position, destino [NumeroDestino].transform.position);
 
+				if (EscolhaDestino == true) {
+						Teclado.SetActive (true);
+				} else {
+						Teclado.SetActive (false);
+				}
+				distancia = (int)Vector3.Distance (this.transform.position, destino [NumeroDestino].transform.position);
+				DistanciaGUI.guiText.text = distancia + "m";
 				// Escolha da tecla correspondente ao destino do Helicoptero
 				if (EscolhaDestino == true || ParouCruzamento == true) {
-						if (Input.GetKey (KeyCode.M)) {
+						if (Input.GetKey (KeyCode.M) || Direita.DireitaTeclado == true) {
 								comando = "M";
 								EscolhaDestino = false;
+								Direita.DireitaTeclado = false;
 								this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
 								if (this.gameObject.GetComponent<NavMeshAgent> ().enabled == false) {
 										ParouCruzamento = false;
@@ -47,9 +52,11 @@ public class DestinosHelicoptero : MonoBehaviour
 								}
 				
 						}
-						if (Input.GetKey (KeyCode.Z)) {
+						if (Input.GetKey (KeyCode.Z) || Esquerda.EsquerdaTeclado == true) {
+								
 								comando = "Z";
 								EscolhaDestino = false;
+								Esquerda.EsquerdaTeclado = false;
 								this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
 								if (this.gameObject.GetComponent<NavMeshAgent> ().enabled == false) {
 										ParouCruzamento = false;
@@ -81,7 +88,7 @@ public class DestinosHelicoptero : MonoBehaviour
 								chegouDestino = false;
 						}
 						comando = "";
-				}
+				} 
 
 				// Verificacao de colidiu com os Triggers colocados ao meio das ruas, para visualizar as direcoes
 				if (distancia <= 150 && comando == "") {
@@ -106,8 +113,8 @@ public class DestinosHelicoptero : MonoBehaviour
 				// bem como verificar se o jogador definiu algum caminho antes de chegar ao cruzamento
 				if (collision.gameObject.name.Contains ("Destino") && DestinoActual != collision.gameObject.name) {
 						
-			
-						// Verificacao se chegou ao cruzamento ja com rota definida ou nao. Se nao para o carro e espera direcao
+						
+						// Verificacao se chegou ao cruzamento ja com rota definida ou nao. Se nao para o helicoptero e espera direcao
 						if (comando == "") {
 								this.gameObject.GetComponent<NavMeshAgent> ().speed = 0;
 								this.gameObject.GetComponent<NavMeshAgent> ().acceleration = 0;
@@ -122,7 +129,7 @@ public class DestinosHelicoptero : MonoBehaviour
 						distancia = 0;
 				}
 		}
-	
+
 		// Verificacao se o Taxi parou num cruzamento, se parou ativa de novo o NavMesh e respectivas Velocidades
 		void ActivarNavMesh (int Velocidade, int Aceleracao)
 		{
@@ -130,15 +137,8 @@ public class DestinosHelicoptero : MonoBehaviour
 				this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
 				this.gameObject.GetComponent<NavMeshAgent> ().acceleration = Aceleracao;
 		}
-
-		void OnGUI ()
-		{
-				if (EscolhaDestino == true) {
-						GUI.DrawTexture (new Rect (0, (3 * Screen.height / 8), (Screen.width / 4), (Screen.height / 4)), SetaEsquerda);
-						GUI.DrawTexture (new Rect ((3 * Screen.width / 4), (3 * Screen.height / 8), (Screen.width / 4), (Screen.height / 4)), SetaDireita);
-				}
-		}
 	
+
 		//  ----------------------  FUNCOES RELATIVAS A DIRECAO ESCOLHIDA ------------------------------------------------------
 		void VirarDireita ()
 		{

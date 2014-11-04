@@ -18,9 +18,8 @@ public class TCPDestinos : MonoBehaviour
 		public bool chegouDestino = false; 	 // verifica se passou num trigger Destino
 		public bool ParouCruzamento = false; // Serve para verificar se chegou a um cruzamento
 		public static float distancia;
-		string niceTime;
-		float timer;
-	
+		public GUIText DistanciaGUI;
+		bool EnviarMatLab = true; // ficheiro que controla o pedido de envio de freq, para nao enviar mais que uma vez
 	
 		// Use this for initialization
 		void Start ()
@@ -36,11 +35,14 @@ public class TCPDestinos : MonoBehaviour
 		{	// Se houver ligacao TCP com o jogo ele anda, senao fica parado
 				if (Tcpheli.conectado == true) {
 						distancia = (int)Vector3.Distance (this.transform.position, destino [NumeroDestino].transform.position);
-
+						DistanciaGUI.guiText.text = distancia + "m";
+					
 						// Escolha da tecla correspondente ao destino do Helicoptero
 						if (EscolhaDestino.activeSelf == true || ParouCruzamento == true) {
 								if (Tcpheli.comand.Equals ("A") || Tcpheli.comand.Equals ("D")) {
 										comando = "M";
+										Tcpheli.PararComandoMatLabHeli = true;
+										EnviarMatLab = true;
 										EscolhaDestino.SetActive (false);
 										this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
 										if (this.gameObject.GetComponent<NavMeshAgent> ().enabled == false) {
@@ -51,6 +53,8 @@ public class TCPDestinos : MonoBehaviour
 								}
 								if (Tcpheli.comand.Equals ("B") || Tcpheli.comand.Equals ("C")) {
 										comando = "Z";
+										Tcpheli.PararComandoMatLabHeli = true;
+										EnviarMatLab = true;
 										EscolhaDestino.SetActive (false);
 										this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
 										if (this.gameObject.GetComponent<NavMeshAgent> ().enabled == false) {
@@ -58,16 +62,6 @@ public class TCPDestinos : MonoBehaviour
 												ActivarNavMesh (Velocidade, Aceleracao);
 										}
 								}
-								/*	if (Tcpheli.comand.Equals("C")) {
-				comando = "Y";
-			//	EscolhaDestino.SetActive (false);
-				this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
-				if (this.gameObject.GetComponent<NavMeshAgent> ().enabled == false) {
-					ParouCruzamento = false;
-					ActivarNavMesh (Velocidade, Aceleracao);
-					Debug.Log("ESCOLHIDO C");
-				}
-			}*/
 						}
 		
 						// Dar destino ao Taxi segundo a tecla em cima pressionada
@@ -88,9 +82,15 @@ public class TCPDestinos : MonoBehaviour
 		
 						// Verificacao de colidiu com os Triggers colocados ao meio das ruas, para visualizar as direcoes
 						if (distancia < 150 && comando == "") {
+								if (EnviarMatLab = true) {
+										Tcpheli.EnviarComandoMatLabHeli = true;  // Dizer ao MatLab para enviar comando -- Class TCPheli
+										EnviarMatLab = false;
+								}
+								
 								EscolhaDestino.SetActive (true);
 								this.gameObject.GetComponent<NavMeshAgent> ().speed = 5;
 						} else if (distancia > 150) {
+								EnviarMatLab = true;
 								EscolhaDestino.SetActive (false);
 								this.gameObject.GetComponent<NavMeshAgent> ().speed = Mathf.Floor (Velocidade);
 						}
@@ -101,7 +101,7 @@ public class TCPDestinos : MonoBehaviour
 								agente.SetDestination (destino [NumeroDestino].position);
 						}
 		
-				}
+				} 
 		}
 	
 		void OnTriggerEnter (Collider collision)
