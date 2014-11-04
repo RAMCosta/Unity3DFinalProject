@@ -13,6 +13,9 @@ public class Android : MonoBehaviour {
 		public Transform WheelBLTrans;
 		public Transform WheelBRTrans;
 		public Transform VolanteTrans;
+		private float lowestSteerAtSpeed = 50f; //
+		private float lowSpeedSteerAngle = 10f;//
+		private float hightSpeedSteerAngle = 1f;//
 		public float VelocidadeActual;
 		public float VelocidadeMaxima = 150f;
 		private float desacelerar = 40f; 

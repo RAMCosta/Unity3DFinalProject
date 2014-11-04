@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: 97c22a107532fbb4db98241ef447d16c
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: SetaDirVerde
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

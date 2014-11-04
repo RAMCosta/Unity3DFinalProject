@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: 90a86e269d4f39c449d02f2668610b0e
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: helicopter_PNG5308
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

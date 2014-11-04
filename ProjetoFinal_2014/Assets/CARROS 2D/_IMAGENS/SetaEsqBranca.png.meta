@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: cb27ac841dbd6b64e88321ae57e5d52d
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: SetaEsqBranca
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: 8965b55cae0859a4a960e0c833b93c9b
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: MindwaveLogo
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

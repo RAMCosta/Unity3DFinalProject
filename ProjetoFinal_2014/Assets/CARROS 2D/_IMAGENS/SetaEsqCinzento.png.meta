@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: 6ccfb8cff583fac458e0bb2e11190af3
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: SetaEsqCinzento
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

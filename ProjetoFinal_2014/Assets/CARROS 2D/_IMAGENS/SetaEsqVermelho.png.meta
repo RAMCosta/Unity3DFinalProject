@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: d2da528594eca2b4aae4cdc9b9ce3ca2
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: SetaEsqVermelho
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

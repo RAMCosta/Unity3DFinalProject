@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: 2e49eb8aa4524d047aca27c5c05ee23d
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: SetaEsqAzul
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

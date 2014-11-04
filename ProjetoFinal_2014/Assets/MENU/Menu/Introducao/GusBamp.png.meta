@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: 283981920eb6dff40b8daee458f7dedb
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: GusBamp
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

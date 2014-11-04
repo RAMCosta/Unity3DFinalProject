@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: a206a7afc09874f45884a65726e2fcbe
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: eurocoin
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

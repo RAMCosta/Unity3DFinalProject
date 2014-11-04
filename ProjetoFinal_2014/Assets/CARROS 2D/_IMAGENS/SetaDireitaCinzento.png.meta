@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: 2978c76bac495484b83ffd60af851efe
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: SetaDireitaCinzento
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

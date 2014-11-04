@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: 80413f43a24306e4ab031078172f7159
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: glossy_button_blank_aqua_rectangle_T
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
