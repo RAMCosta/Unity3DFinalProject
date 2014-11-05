@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_5_2;UNITY_4_5;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_5_5;UNITY_4_5;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/Programas/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/Programas/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -105,8 +105,7 @@
      <Compile Include="Assets\HELICOPTERO\IMPORTS\N916MU\Formats\RodarHelic.cs" />
      <Compile Include="Assets\HELICOPTERO\SCRIPTS\Android\Direita.cs" />
      <Compile Include="Assets\HELICOPTERO\SCRIPTS\Android\Esquerda.cs" />
-     <Compile Include="Assets\HELICOPTERO\SCRIPTS\Android\VirarDireita.cs" />
-     <Compile Include="Assets\HELICOPTERO\SCRIPTS\Android\VirarEsquerda.cs" />
+     <Compile Include="Assets\HELICOPTERO\SCRIPTS\Android\Frente.cs" />
      <Compile Include="Assets\HELICOPTERO\SCRIPTS\ApanharMoedas.cs" />
      <Compile Include="Assets\HELICOPTERO\SCRIPTS\ConexaoTCP\Tcpheli.cs" />
      <Compile Include="Assets\HELICOPTERO\SCRIPTS\DestinosHelicoptero.cs" />
@@ -120,14 +119,41 @@
      <Compile Include="Assets\MENU\Menu\Introducao\MoedaTrigger.cs" />
      <Compile Include="Assets\MENU\Menu\Introducao\NavIntro.cs" />
      <Compile Include="Assets\MENU\Menu\Introducao\NavTaxi.cs" />
-     <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\Calibracao.cs" />
-     <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\CalibracaoPiscarSetas.cs" />
-     <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\ComecarCalibracao.cs" />
-     <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\EscolhaEstimulos.cs" />
-     <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\PiscarSetas.cs" />
+     <Compile Include="Assets\MENU\Menu\MainMenu\CreditosMainMenu.cs" />
+     <Compile Include="Assets\MENU\Menu\MainMenu\JogarOpcao.cs" />
+     <Compile Include="Assets\MENU\Menu\MainMenu\OpcoesMenu.cs" />
+     <Compile Include="Assets\MENU\Menu\MainMenu\SairMainMenu.cs" />
+     <Compile Include="Assets\MENU\Menu\MenuJogar\Carros2DJogar.cs" />
+     <Compile Include="Assets\MENU\Menu\MenuJogar\Carros3dJogar.cs" />
+     <Compile Include="Assets\MENU\Menu\MenuJogar\HeliJogar.cs" />
+     <Compile Include="Assets\MENU\Menu\MenuJogar\MenuCarros2D\Mindwave2d.cs" />
+     <Compile Include="Assets\MENU\Menu\MenuJogar\MenuCarros2D\Teclado2d.cs" />
+     <Compile Include="Assets\MENU\Menu\MenuJogar\MenuCarros2D\Voltar2d.cs" />
+     <Compile Include="Assets\MENU\Menu\MenuJogar\MenuCarros3d\gusbamp3d.cs" />
+     <Compile Include="Assets\MENU\Menu\MenuJogar\MenuCarros3d\teclado3d.cs" />
+     <Compile Include="Assets\MENU\Menu\MenuJogar\MenuCarros3d\voltar3d.cs" />
+     <Compile Include="Assets\MENU\Menu\MenuJogar\MenuHelicoptero\Voltarheli.cs" />
+     <Compile Include="Assets\MENU\Menu\MenuJogar\MenuHelicoptero\gusbamp2heli.cs" />
+     <Compile Include="Assets\MENU\Menu\MenuJogar\MenuHelicoptero\gusbampheli.cs" />
+     <Compile Include="Assets\MENU\Menu\MenuJogar\MenuHelicoptero\tecladoheli.cs" />
+     <Compile Include="Assets\MENU\Menu\MenuJogar\VoltarJogar.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\Calibracao\Calibracao.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\Calibracao\CalibracaoPiscarSetas.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\Calibracao\ComecarCalibracao.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\Calibracao\PiscarGUI.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\Calibracao\VoltarCalibracao.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\EscolhaEstimulo\EstimulosEscolha.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\EscolhaEstimulo\PiscarSetas.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\EscolhaEstimulo\VoltarEstim.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\EscolhaFreq\FreqEscolhe.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\EscolhaFreq\VoltarEscFreq.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\CalibrarMenu.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\EstimMenu.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\FreqMenu.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\TesteGUI.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\VoltarMenuOpcoes.cs" />
      <Compile Include="Assets\MENU\Menu\Script\AndarCamera.cs" />
      <Compile Include="Assets\MENU\Menu\Script\Creditos.cs" />
-     <Compile Include="Assets\MENU\Menu\Script\MainMenu.cs" />
      <Compile Include="Assets\MENU\Menu\Script\PauseGame.cs" />
      <Compile Include="Assets\MENU\Menu\Script\Preload.cs" />
      <Compile Include="Assets\MENU\MenuAndroid\Script\MainMenuAndroid.cs" />
@@ -172,7 +198,7 @@
      <None Include="Assets\CIDADE\_IMPORTS\Car&amp;People models\fb1a2fd5820296081eedbe0ce95b9c96\archibase.net.txt" />
      <None Include="Assets\CIDADE\Quantum Theory\Quantum MetaClouds Sample\Shaders\QuantumMetaCloud-SoftAlphaBlend.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/RafaelC/Desktop/Unity3DFinalProject/ProjetoFinal_2014/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>D:/ProjectoFinal - Jorge&Rafael/ProjetoFinal_2014/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

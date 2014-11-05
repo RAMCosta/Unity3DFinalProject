@@ -39,11 +39,14 @@ public class EscolherAneis : MonoBehaviour
 				int minutes = Mathf.FloorToInt (timer / 60F);
 				int seconds = Mathf.FloorToInt (timer - minutes * 60);
 				niceTime = string.Format ("{0:0}:{1:00}", minutes, seconds);
+				Time.timeScale = 1.0f;
 		}
 	
 		// Update is called once per frame
 		void Update ()
-		{		
+		{	
+			if (Tcpheli.conectado == true) {
+
 				distancia = (int)Vector3.Distance (Helicoptero.transform.position, Aneis [int.Parse (ListaAneis [PassarAneis.Pontos].ToString ())].transform.position);
 				DistanciaGUI.guiText.text = distancia + "m";
 				PontuacaoGUI.guiText.text = PassarAneis.Pontos + "/10";
@@ -63,10 +66,10 @@ public class EscolherAneis : MonoBehaviour
 						niceTime = string.Format ("{0:0}:{1:00}", minutes, seconds);
 
 				}
-		
-				if (clickMenuReiniciar == true) {
-						Application.LoadLevel ("HelicopteroLivre");
-				}
+			if (clickMenuReiniciar == true) {
+				Application.LoadLevel ("HelicopteroLivre");
+			}
+			}
 		}
 	
 		void OnGUI ()

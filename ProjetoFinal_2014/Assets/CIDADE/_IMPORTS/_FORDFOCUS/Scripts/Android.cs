@@ -13,7 +13,6 @@ public class Android : MonoBehaviour {
 		public Transform WheelBLTrans;
 		public Transform WheelBRTrans;
 		public Transform VolanteTrans;
-		private float lowestSteerAtSpeed = 50f; //
 		private float lowSpeedSteerAngle = 10f;//
 		private float hightSpeedSteerAngle = 1f;//
 		public float VelocidadeActual;
@@ -111,13 +110,6 @@ public class Android : MonoBehaviour {
 				WheelBR.motorTorque = 0; 
 				WheelBL.motorTorque = 0; 
 			}
-
-		/*	var speedFactor = rigidbody.velocity.magnitude / lowestSteerAtSpeed;
-			var currentSteerAngle = Mathf.Lerp (lowSpeedSteerAngle, hightSpeedSteerAngle, speedFactor);
-			currentSteerAngle *= Input.GetAxis ("Horizontal");
-			WheelFL.steerAngle = currentSteerAngle; // 10 * Input.GetAxis ("Horizontal");
-			WheelFR.steerAngle = currentSteerAngle; // 10 * Input.GetAxis ("Horizontal");*/
-			
 			
 		}
 		

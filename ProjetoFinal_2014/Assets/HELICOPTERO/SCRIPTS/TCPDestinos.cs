@@ -23,7 +23,8 @@ public class TCPDestinos : MonoBehaviour
 	
 		// Use this for initialization
 		void Start ()
-		{
+		{	
+				Time.timeScale = 1.0f;
 				EscolhaDestino.SetActive (false);
 				DestinoActual = "Destino20";
 				DestinoAnterior = "Destino20";
@@ -41,7 +42,6 @@ public class TCPDestinos : MonoBehaviour
 						if (EscolhaDestino.activeSelf == true || ParouCruzamento == true) {
 								if (Tcpheli.comand.Equals ("A") || Tcpheli.comand.Equals ("D")) {
 										comando = "M";
-										Tcpheli.PararComandoMatLabHeli = true;
 										EnviarMatLab = true;
 										EscolhaDestino.SetActive (false);
 										this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
@@ -53,7 +53,6 @@ public class TCPDestinos : MonoBehaviour
 								}
 								if (Tcpheli.comand.Equals ("B") || Tcpheli.comand.Equals ("C")) {
 										comando = "Z";
-										Tcpheli.PararComandoMatLabHeli = true;
 										EnviarMatLab = true;
 										EscolhaDestino.SetActive (false);
 										this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
@@ -82,7 +81,7 @@ public class TCPDestinos : MonoBehaviour
 		
 						// Verificacao de colidiu com os Triggers colocados ao meio das ruas, para visualizar as direcoes
 						if (distancia < 150 && comando == "") {
-								if (EnviarMatLab = true) {
+								if (EnviarMatLab == true) { // Para apenas mandar o comando 1 vez
 										Tcpheli.EnviarComandoMatLabHeli = true;  // Dizer ao MatLab para enviar comando -- Class TCPheli
 										EnviarMatLab = false;
 								}

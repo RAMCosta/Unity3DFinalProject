@@ -10,10 +10,12 @@ public class PauseGame : MonoBehaviour
 		public Texture pauseGUI;
 		public bool HelicopteroTecladoScene;
 		public bool HelicopteroGusbampScene;
+		public bool HelicopteroLivre;
 		public bool Carros3DTecladoScene;
 		public bool Carros3DGusbampScene;
 		public bool Carros2DTecladoScene;
 		public bool Carros2DMindwaveScene;
+		public bool Carros2DAndroid;
 
 		void Start ()
 		{
@@ -26,10 +28,10 @@ public class PauseGame : MonoBehaviour
 						clickMenuVoltar = false;
 						if (pause == true) {
 								pause = false;
-								if (HelicopteroTecladoScene || HelicopteroGusbampScene) {
+								if (HelicopteroTecladoScene || HelicopteroGusbampScene || HelicopteroLivre) {
 										GameObject.Find ("Helicoptero").audio.Play ();
 								}
-								if (Carros2DTecladoScene || Carros2DMindwaveScene) {
+								if (Carros2DTecladoScene || Carros2DMindwaveScene || Carros2DAndroid) {
 										GameObject.Find ("Camera").audio.Play ();
 								}
 								if (Carros3DTecladoScene || Carros3DGusbampScene) {
@@ -39,10 +41,10 @@ public class PauseGame : MonoBehaviour
 								pause = true;
 						}
 						if (pause == true) {
-								if (HelicopteroTecladoScene || HelicopteroGusbampScene) {
+								if (HelicopteroTecladoScene || HelicopteroGusbampScene || HelicopteroLivre) {
 										GameObject.Find ("Helicoptero").audio.Pause ();
 								}
-								if (Carros2DTecladoScene || Carros2DMindwaveScene) {
+								if (Carros2DTecladoScene || Carros2DMindwaveScene || Carros2DAndroid) {
 										GameObject.Find ("Camera").audio.Pause ();
 								}
 								if (Carros3DTecladoScene || Carros3DGusbampScene) {
@@ -59,18 +61,22 @@ public class PauseGame : MonoBehaviour
 				
 						if (HelicopteroTecladoScene) {
 								Application.LoadLevel ("Helicoptero");
-						}else if (HelicopteroGusbampScene) {
+						} else if (HelicopteroGusbampScene) {
 								Application.LoadLevel ("HelicopteroEstimulos");
-						}else if (Carros3DTecladoScene) {
-								Application.LoadLevel ("AutoNavegacaoCarro");
-						}else if (Carros3DGusbampScene) {
-								Application.LoadLevel ("Carro3DEstimulos");
-						}else if (Carros2DTecladoScene) {
+						} else if (HelicopteroLivre) {
+								Application.LoadLevel ("HelicopteroLivre");
+						} else if (Carros3DTecladoScene) {
+								Application.LoadLevel ("Carro3DTeclado");
+						} else if (Carros3DGusbampScene) {
+								Application.LoadLevel ("Carro3DGusBamp");
+						} else if (Carros2DTecladoScene) {
 								Application.LoadLevel ("Carros2D");
-						}else if (Carros2DMindwaveScene) {
+						} else if (Carros2DMindwaveScene) {
 								Application.LoadLevel ("Carros2D_Mindwave");
+						} else if (Carros2DAndroid) {
+								Application.LoadLevel ("Carros2D_Android");
 						}
-			clickMenuReiniciar = false;
+						clickMenuReiniciar = false;
 				}
 		}
 

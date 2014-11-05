@@ -22,45 +22,41 @@ public class Tcpheli : MonoBehaviour
 		public GUIStyle LetraConectado;
 		public static bool conectado = false;
 		public GUIText Conectado;
+		int numeroConectado = 0; // Controlo de conexao, devido ao Matlab enviar 2x a sincronizacao .. 1 ao fazer Run e outra ao meter Play
 
 		public static bool EnviarComandoMatLabHeli = false;
-		public static bool PararComandoMatLabHeli = false;
 	
 		void Start ()
 		{
 
-		IPHostEntry IPHost = Dns.GetHostByName(Dns.GetHostName());
+				IPHostEntry IPHost = Dns.GetHostByName (Dns.GetHostName ());
 
-		ip_address = "" + IPHost.AddressList[0].ToString();
+				ip_address = "" + IPHost.AddressList [0].ToString ();
 
-		IPAddress ip_addy = IPAddress.Parse (ip_address);
-		tcp_listener = new TcpListener (ip_addy, port);
-		listen_thread = new Thread (new ThreadStart (ListenForClients));
+				IPAddress ip_addy = IPAddress.Parse (ip_address);
+				tcp_listener = new TcpListener (ip_addy, port);
+				listen_thread = new Thread (new ThreadStart (ListenForClients));
 				listen_thread.Start ();
 				listen_thread.IsBackground = true;
 				Debug.Log ("Espera Clientes .....");
 				conectado = false;
 		}
 
-	void Update(){
-		if (conectado == false) {
-			Conectado.guiText.color= Color.red;
-			Conectado.guiText.text = "Esperando Clientes...  [" + ip_address + "]";
-		} else {
-			Conectado.guiText.color= Color.green;
-			Conectado.guiText.text = "Conectado";
-		}
+		void Update ()
+		{
+				if (conectado == false) {
+						Conectado.guiText.color = Color.red;
+						Conectado.guiText.text = "Esperando Clientes...  [" + ip_address + "]";
+				} else {
+						Conectado.guiText.color = Color.green;
+						Conectado.guiText.text = "Conectado";
+				}
 
-		if (EnviarComandoMatLabHeli == true) {
-			EnviarComandoMatLabHeli = false;
-			SendMessageGetFreq(tcp_client);
+				if (EnviarComandoMatLabHeli == true) {
+						EnviarComandoMatLabHeli = false;
+						SendMessageGetFreq (tcp_client);
+				}
 		}
-		if (PararComandoMatLabHeli == true) {
-			PararComandoMatLabHeli = false;
-			SendMessageEndFreq(tcp_client);
-		}
-
-	}
 
 		private void ListenForClients ()
 		{
@@ -74,10 +70,15 @@ public class Tcpheli : MonoBehaviour
 						//with connected client
 						clientThread = new Thread (new ParameterizedThreadStart (HandleClientComm));
 						clientThread.Start (client);
-			
-			
-						Debug.Log ("Conectado ... " + client);
-						conectado = true;
+		
+						numeroConectado ++;
+						if (numeroConectado == 2) {
+								conectado = true;
+								numeroConectado = 0;
+								Debug.Log("Conexao 2/2.. Pode Jogar");
+						} else {
+								Debug.Log ("Conexao 1/2.. ");
+						}
 				}
 
 		}
@@ -124,28 +125,15 @@ public class Tcpheli : MonoBehaviour
 				}
 		}
 
-	void SendMessageGetFreq(TcpClient client)
-	{
-		string message = "A1";
-	//	byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(message);
-		NetworkStream stream = client.GetStream();
-		StreamWriter writer = new StreamWriter(stream);
-		writer.WriteLine(message);
-		writer.Flush();
-	}
-
-	void SendMessageEndFreq(TcpClient client)
-	{
-		
-		string message = "B1";
-	//	byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(message);
-		NetworkStream stream = client.GetStream();
-		StreamWriter writer = new StreamWriter(stream);
-		writer.WriteLine(message);
-		writer.Flush();
-		
-	}
-
+		void SendMessageGetFreq (TcpClient client)
+		{
+				string message = "A1";
+				//	byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(message);
+				NetworkStream stream = client.GetStream ();
+				StreamWriter writer = new StreamWriter (stream);
+				writer.WriteLine (message);
+				writer.Flush ();
+		}
 	
 		void OnApplicationQuit ()
 		{

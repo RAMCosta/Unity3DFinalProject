@@ -24,7 +24,11 @@ public class AndarCamera : MonoBehaviour
 
 		void Start ()
 		{
-			
+		Camera2.SetActive (false);
+		Camera3.SetActive (false);
+		Camera4.SetActive (false);
+		NomeJogo.SetActive(false);
+		Anel.SetActive(false);
 		}
 	
 		// Update is called once per frame

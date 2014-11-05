@@ -16,9 +16,9 @@ public class EsquerdaEstimulo : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		if(MainMenu.DefFreqManual==true)
+		if(FreqEscolhe.DefFreqManual==true)
 		{
-			frequencia = MainMenu.FreqEsqVal;
+			frequencia = FreqEscolhe.FreqEsqVal;
 		} else if(Calibracao.DefFreqCalibrar==true){
 			frequencia= Calibracao.FreqRecMenorEsquerda;
 		}
@@ -27,40 +27,40 @@ public class EsquerdaEstimulo : MonoBehaviour {
 		ThreadBlink = new Thread (Blink);
 		ThreadBlink.Start ();
 		
-		if (EscolhaEstimulos.Seta1Usada == "SetaAmarela") {
+		if (EstimulosEscolha.Seta1Usada == "SetaAmarela") {
 			Seta1.guiTexture.texture = TexturaEstimulos[0];	
 		}
-		if (EscolhaEstimulos.Seta2Usada == "SetaAmarela") {
+		if (EstimulosEscolha.Seta2Usada == "SetaAmarela") {
 			Seta2.guiTexture.texture = TexturaEstimulos[0];		
 		}
-		if (EscolhaEstimulos.Seta1Usada == "SetaAzul") {
+		if (EstimulosEscolha.Seta1Usada == "SetaAzul") {
 			Seta1.guiTexture.texture = TexturaEstimulos[1];		
 		}
-		if (EscolhaEstimulos.Seta2Usada == "SetaAzul") {
+		if (EstimulosEscolha.Seta2Usada == "SetaAzul") {
 			Seta2.guiTexture.texture = TexturaEstimulos[1];			
 		}
-		if (EscolhaEstimulos.Seta1Usada == "SetaBranca") {
+		if (EstimulosEscolha.Seta1Usada == "SetaBranca") {
 			Seta1.guiTexture.texture = TexturaEstimulos[2];			
 		}
-		if (EscolhaEstimulos.Seta2Usada == "SetaBranca") {
+		if (EstimulosEscolha.Seta2Usada == "SetaBranca") {
 			Seta2.guiTexture.texture = TexturaEstimulos[2];			
 		}
-		if (EscolhaEstimulos.Seta1Usada == "SetaVerde") {
+		if (EstimulosEscolha.Seta1Usada == "SetaVerde") {
 			Seta1.guiTexture.texture = TexturaEstimulos[3];			
 		}
-		if (EscolhaEstimulos.Seta2Usada == "SetaVerde") {
+		if (EstimulosEscolha.Seta2Usada == "SetaVerde") {
 			Seta2.guiTexture.texture = TexturaEstimulos[3];			
 		}
-		if (EscolhaEstimulos.Seta1Usada == "SetaVermelha") {
+		if (EstimulosEscolha.Seta1Usada == "SetaVermelha") {
 			Seta1.guiTexture.texture = TexturaEstimulos[4];			
 		}
-		if (EscolhaEstimulos.Seta2Usada == "SetaVermelha") {
+		if (EstimulosEscolha.Seta2Usada == "SetaVermelha") {
 			Seta2.guiTexture.texture = TexturaEstimulos[4];			
 		}
-		if (EscolhaEstimulos.Seta1Usada == "SetaCinzenta") {
+		if (EstimulosEscolha.Seta1Usada == "SetaCinzenta") {
 			Seta1.guiTexture.texture = TexturaEstimulos[5];			
 		}
-		if (EscolhaEstimulos.Seta2Usada == "SetaCinzenta") {
+		if (EstimulosEscolha.Seta2Usada == "SetaCinzenta") {
 			Seta2.guiTexture.texture = TexturaEstimulos[5];			
 		}
 	}

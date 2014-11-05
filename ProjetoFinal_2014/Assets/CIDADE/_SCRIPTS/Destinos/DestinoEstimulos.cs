@@ -2,13 +2,12 @@
 using System.Collections;
 
 public class DestinoEstimulos : MonoBehaviour {
-
 	
-	public AudioClip[] audioclip;
 	string DestinoAnterior;
-	string ColisaoActual;
-	int NumeroDestino = 13;
+	int NumeroDestino = 4;
 	string DestinoActual;
+	int Aceleracao = 10;
+	int Velocidade = 10;
 	public GameObject EscolhaDestino;
 	public Transform[] destino;
 	private NavMeshAgent agente;
@@ -17,7 +16,6 @@ public class DestinoEstimulos : MonoBehaviour {
 	public int NumeroViajante = 0;
 	public int Pontuacao = 0;
 	public bool viajanteABordo = false;
-	Vector3 lastPosition;
 	public GameObject Setas;
 	public GUIText TextoPontos;
 	public Material TaxiOcupado;
@@ -25,79 +23,127 @@ public class DestinoEstimulos : MonoBehaviour {
 	public string comando;				 // contem a tecla que o utilizador escolheu
 	public bool chegouDestino = false; 	 // verifica se passou num trigger Destino
 	public bool ParouCruzamento = false; // Serve para verificar se chegou a um cruzamento
-	
+	int distanciaDest;
+	int distanciaViaj;
+	public GUIText DistanciaGUI;
+	bool EnviarMatLab = true; // ficheiro que controla o pedido de envio de freq, para nao enviar mais que uma vez
 	
 	// Use this for initialization
 	void Start ()
 	{
+		Time.timeScale = 1.0f;
 		EscolhaDestino.SetActive (false);
-		DestinoActual = "Destino12";
-		DestinoAnterior = "Destino12";
+		DestinoActual = "Destino3";
+		DestinoAnterior = "Destino3";
 		comando = "";
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-
-		// Actualizacao dos pontos do Jogador
-		TextoPontos.guiText.text = Pontuacao.ToString ();
-		
-		// Mudar a cor da placa em cima do taxi, para avisar se ocupado ou livre
-		if (viajanteABordo == false) {
-			Setas.transform.LookAt (Viajantes [NumeroViajante].transform);
-			GameObject.Find ("EstadoTaxi1").renderer.material = TaxiLivre;
-			GameObject.Find ("EstadoTaxi2").renderer.material = TaxiLivre;
-			GameObject.Find ("EstadoTaxi3").renderer.material = TaxiLivre;
-			GameObject.Find ("EstadoTaxi4").renderer.material = TaxiLivre;
-		} else {
-			Setas.transform.LookAt (ParticulasDestino [NumeroViajante].transform);
-			GameObject.Find ("EstadoTaxi1").renderer.material = TaxiOcupado;
-			GameObject.Find ("EstadoTaxi2").renderer.material = TaxiOcupado;
-			GameObject.Find ("EstadoTaxi3").renderer.material = TaxiOcupado;
-			GameObject.Find ("EstadoTaxi4").renderer.material = TaxiOcupado;
-		}
+		if (TCPServer.connect == true) {
 				
-		// Dar destino ao Taxi segundo a tecla em cima pressionada
-		if (chegouDestino == true) {
-			Debug.Log("ENTROU NO CHEGOU DESTINO");
-			if (TCPServer.comand.Equals("A") || TCPServer.comand.Equals("D")) {
-				VirarDireita ();
-				DestinoAnterior = DestinoActual;
-				chegouDestino = false;
-				Debug.Log("ESCOLHIDO A OU D");
+				distanciaDest = (int)Vector3.Distance (this.transform.position, destino [NumeroDestino].transform.position);
+				
+				// Actualizacao dos pontos do Jogador
+				TextoPontos.guiText.text = Pontuacao.ToString ();
+		
+				// Mudar a cor da placa em cima do taxi, para avisar se ocupado ou livre
+				if (viajanteABordo == false) {
+						Setas.transform.LookAt (Viajantes [NumeroViajante].transform);
+						distanciaViaj = (int)Vector3.Distance (this.transform.position, Viajantes [NumeroViajante].transform.position);
+						GameObject.Find ("EstadoDir").renderer.material = TaxiLivre;
+						GameObject.Find ("EstadoEsq").renderer.material = TaxiLivre;
+				} else {
+						distanciaViaj = (int)Vector3.Distance (this.transform.position, ParticulasDestino [NumeroViajante].transform.position);
+						Setas.transform.LookAt (ParticulasDestino [NumeroViajante].transform);
+						GameObject.Find ("EstadoDir").renderer.material = TaxiOcupado;
+						GameObject.Find ("EstadoEsq").renderer.material = TaxiOcupado;
+				}
+					DistanciaGUI.guiText.text = distanciaViaj + "m";
+
+
+			// Escolha da tecla correspondente ao destino do Taxi
+			if (EscolhaDestino.activeSelf == true || ParouCruzamento == true) {
+				if (TCPServer.comand.Equals ("A") || TCPServer.comand.Equals ("D")) {
+					comando = "M";
+					EscolhaDestino.SetActive (false);
+					Direita.DireitaTeclado = false;
+					this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
+					if (this.gameObject.GetComponent<NavMeshAgent> ().enabled == false) {
+						ParouCruzamento = false;
+						ActivarNavMesh (Velocidade, Aceleracao);
+					}
+					
+				}
+				if (TCPServer.comand.Equals ("B")) {
+					comando = "Z";
+					EscolhaDestino.SetActive (false);
+					Esquerda.EsquerdaTeclado = false;
+					this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
+					if (this.gameObject.GetComponent<NavMeshAgent> ().enabled == false) {
+						ParouCruzamento = false;
+						ActivarNavMesh (Velocidade, Aceleracao);
+					}
+				}
+				if (TCPServer.comand == "C") {
+					comando = "Y";
+					EscolhaDestino.SetActive (false);
+					Frente.FrenteTeclado = false;
+					this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
+					if (this.gameObject.GetComponent<NavMeshAgent> ().enabled == false) {
+						ParouCruzamento = false;
+						ActivarNavMesh (Velocidade, Aceleracao);
+					}
+				}
 			}
-			if (TCPServer.comand.Equals("B")) {
-				VirarEsquerda ();
-				DestinoAnterior = DestinoActual;
-				chegouDestino = false;
-				Debug.Log("ESCOLHIDO B");
+
+			if (distanciaDest <= 100 && comando == "") {
+				if (EnviarMatLab == true) { // Para apenas mandar o comando 1 vez
+					TCPServer.EnviarComandoMatLabHeli = true;  // Dizer ao MatLab para enviar comando -- Class TCPheli
+					EnviarMatLab = false;
+				}
+				EscolhaDestino.SetActive (true);
+				this.gameObject.GetComponent<NavMeshAgent> ().speed = Mathf.Floor (Velocidade / 2);
+			} else if (distanciaDest > 100) {
+				EnviarMatLab = true;
+				EscolhaDestino.SetActive (false);
+				this.gameObject.GetComponent<NavMeshAgent> ().speed = Mathf.Floor (Velocidade);
 			}
-			if (TCPServer.comand == "C") {
-				SeguirEmFrente ();
+				
+			// Dar destino ao Taxi segundo a tecla pressionada
+			if (comando != "" && chegouDestino == true) {
+				if (comando == "M") {
+					VirarDireita ();
+					
+				}
+				if (comando == "Z") {
+					VirarEsquerda ();
+				}
+				if (comando == "Y") {
+					SeguirEmFrente ();
+				}
+				comando = "";
 				DestinoAnterior = DestinoActual;
 				chegouDestino = false;
-				Debug.Log("ESCOLHIDO C");
+				
+			}
+
+			// Colocar o Taxi na rota de destino definida pela tecla pressionada, se o NavMesh estiver ativo
+			if (this.gameObject.GetComponent<NavMeshAgent> ().enabled == true) {
+				agente = gameObject.GetComponent<NavMeshAgent> ();
+				agente.SetDestination (destino [NumeroDestino].position);
 			}
 		}
-		// Colocar o Taxi na rota de destino definida pela tecla pressionada, se o NavMesh estiver ativo
-			agente = gameObject.GetComponent<NavMeshAgent> ();
-			agente.SetDestination (destino [NumeroDestino].position);
-		
-		
 	}
 	
 	void OnTriggerEnter (Collider collision)
 	{
-		// Verificacao de colidiu com os Triggers colocados ao meio das ruas, para visualizar as direcoes
-		if (collision.gameObject.name.Contains ("TriggerSetas")) {
-			EscolhaDestino.SetActive (true);
-			comando = "";
-		}
 		// Verificacao de colidiu com algum Trigger Destino. Esta condicao serve para verificar onde estao os viajantes,
 		// bem como verificar se o jogador definiu algum caminho antes de chegar ao cruzamento
 		if (collision.gameObject.name.Contains ("Destino") && DestinoActual != collision.gameObject.name) {
 			chegouDestino = true;
+			this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
 			
 			// -------------------- VIAJANTE 0 ---------------------------------------------
 			if (collision.gameObject.name == "Destino5" && Viajantes [0].activeSelf == true) {
@@ -140,13 +186,27 @@ public class DestinoEstimulos : MonoBehaviour {
 			if (collision.gameObject.name == "Destino24" && NumeroViajante == 4) {
 				LargarViajante (NumeroViajante);
 			}
-
+			
+			// Verificacao se chegou ao cruzamento ja com rota definida ou nao. Se nao para o carro e espera direcao
+			if (comando == "") {
+				this.gameObject.GetComponent<NavMeshAgent> ().speed = 0;
+				this.gameObject.GetComponent<NavMeshAgent> ().acceleration = 0;
+				this.gameObject.GetComponent<NavMeshAgent> ().enabled = false;
+				ParouCruzamento = true;
+			}
 			// Actualiza o Destino Actual, para saber em que sentido o Taxi segue
 			DestinoActual = collision.gameObject.name;
 		}
 	}
 
-	
+	// Verificacao se o Taxi parou num cruzamento, se parou ativa de novo o NavMesh e respectivas Velocidades
+	void ActivarNavMesh (int Velocidade, int Aceleracao)
+	{
+		this.gameObject.GetComponent<NavMeshAgent> ().enabled = true;
+		this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
+		this.gameObject.GetComponent<NavMeshAgent> ().acceleration = Aceleracao;
+	}
+
 	// Funcao que serve para desativar o viajante que esta no carro, bem como ativar a particula para o local de destino
 	void ApanharViajante (int viajante)
 	{
@@ -161,7 +221,6 @@ public class DestinoEstimulos : MonoBehaviour {
 		ParticulasDestino [NumeroViajante].SetActive (false);
 		NumeroViajante++;
 		Pontuacao += 490 + (NumeroViajante * 10);
-		audio.clip = audioclip [0];
 		audio.Play ();
 		Viajantes [NumeroViajante].SetActive (true);
 		viajanteABordo = false;

@@ -24,7 +24,7 @@ public class TCPHeliLivre : MonoBehaviour
 
 						if (EnviarMatLab == true) { // Cada vez que se perde ligaçao e retoma, envia um pedido de Frequencias
 								EnviarMatLab = false;
-				Tcpheli.EnviarComandoMatLabHeli=true;
+								Tcpheli.EnviarComandoMatLabHeli=true;
 						}
 						Estimulos.SetActive (true);
 

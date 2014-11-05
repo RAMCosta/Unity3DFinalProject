@@ -23,6 +23,7 @@ public class DestinosHelicoptero : MonoBehaviour
 		// Use this for initialization
 		void Start ()
 		{
+				Time.timeScale = 1.0f;
 				DestinoActual = "Destino20";
 				DestinoAnterior = "Destino20";
 				comando = "";
@@ -31,7 +32,7 @@ public class DestinosHelicoptero : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{
-
+				
 				if (EscolhaDestino == true) {
 						Teclado.SetActive (true);
 				} else {
