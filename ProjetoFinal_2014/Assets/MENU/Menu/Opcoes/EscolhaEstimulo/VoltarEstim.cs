@@ -25,5 +25,10 @@ public class VoltarEstim : MonoBehaviour {
 	void OnMouseDown ()
 	{
 		Application.LoadLevel ("MenuOpcoes");
+		if (Application.loadedLevel.Equals("EscolherEstimulos_Menuopcoes")) {
+			EstimulosEscolha.aux = 0;
+			PiscarSetas.ThreadBlink.Abort();
+			Application.LoadLevel("MenuOpcoes");
+		}
 	}
 }

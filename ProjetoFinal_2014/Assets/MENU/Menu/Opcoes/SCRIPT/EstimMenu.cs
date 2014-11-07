@@ -26,5 +26,6 @@ public class EstimMenu : MonoBehaviour {
 	void OnMouseDown ()
 	{
 		Application.LoadLevel ("EscolherEstimulos_Menuopcoes");
+		EstimulosEscolha.aux = 0;
 	}
 }
