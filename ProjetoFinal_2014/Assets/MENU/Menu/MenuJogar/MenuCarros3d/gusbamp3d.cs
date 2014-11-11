@@ -25,6 +25,6 @@ public class gusbamp3d : MonoBehaviour {
 	
 	void OnMouseDown ()
 	{
-		Application.LoadLevel ("Carro3DGusBamp");
+		Application.LoadLevel ("Taxi3DGusBamp");
 	}
 }

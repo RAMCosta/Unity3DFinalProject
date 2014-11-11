@@ -45,8 +45,6 @@ public class EscolherAneis : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{	
-			if (Tcpheli.conectado == true) {
-
 				distancia = (int)Vector3.Distance (Helicoptero.transform.position, Aneis [int.Parse (ListaAneis [PassarAneis.Pontos].ToString ())].transform.position);
 				DistanciaGUI.guiText.text = distancia + "m";
 				PontuacaoGUI.guiText.text = PassarAneis.Pontos + "/10";
@@ -69,7 +67,7 @@ public class EscolherAneis : MonoBehaviour
 			if (clickMenuReiniciar == true) {
 				Application.LoadLevel ("HelicopteroLivre");
 			}
-			}
+
 		}
 	
 		void OnGUI ()

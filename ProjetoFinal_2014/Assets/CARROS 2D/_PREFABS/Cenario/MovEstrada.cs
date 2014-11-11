@@ -12,8 +12,8 @@ public class MovEstrada : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		transform.Translate (velocidade*Time.deltaTime, 0, 0);
-		if (transform.position.x < -13) {
-			transform.position = new Vector2(38, transform.position.y); 		
+		if (transform.position.x < -11) {
+			transform.position = new Vector2(36, transform.position.y); 		
 		}
 	}
 }

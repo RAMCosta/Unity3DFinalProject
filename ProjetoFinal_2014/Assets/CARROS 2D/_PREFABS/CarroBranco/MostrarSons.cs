@@ -6,6 +6,12 @@ public class MostrarSons : MonoBehaviour {
 	public AudioClip[] audioclip;
 	private int pontuacao = 10000;
 	private float Tempo = 120;
+	public GUIStyle TipoLetraFinal;
+	public Texture pauseGUI;
+	bool clickMenuReiniciar = false;
+	bool JogoAcabou = false;
+	public bool Carros2D;
+	public bool Carros2DMindwave;
 	// Use this for initialization
 	
 	void Start () {
@@ -24,6 +30,11 @@ public class MostrarSons : MonoBehaviour {
 			metaScript.velocidadeMeta = -5f;
 		}
 		GameObject.Find("TempoJogo").guiText.text = "Tempo de Jogo: " + Mathf.Floor(Tempo) + " seg.";
+
+		if (clickMenuReiniciar == true) {
+			if(Carros2D){Application.LoadLevel ("Carros2D");}
+			if(Carros2DMindwave){Application.LoadLevel ("Carros2D_Mindwave");}
+		}
 	}
 	
 	void PlaySound(int numberClip){
@@ -67,16 +78,26 @@ public class MostrarSons : MonoBehaviour {
 			(GameObject.Find("Cenario2").GetComponent(typeof(MovEstrada)) as MovEstrada).enabled = false;
 			(GameObject.Find("Meta").GetComponent(typeof(metaScript)) as metaScript).enabled = false;
 			Movimentos.final = true;
-			/*(GameObject.Find("Barreira(Clone)").GetComponent(typeof(Obstaculos)) as Obstaculos).enabled = false;
-			(GameObject.Find("Pino(Clone)").GetComponent(typeof(Obstaculos)) as Obstaculos).enabled = false;
-			(GameObject.Find("Coelho(Clone)").GetComponent(typeof(Obstaculos)) as Obstaculos).enabled = false;*/
+			JogoAcabou = true;
+			Time.timeScale = 0.0f;
 		}
 		
 	}
 	
-	/*void OnGUI() {
-		GUI.Label(new Rect (500,4,100,100), pontuacao + " pontos");
-		GUI.Label(new Rect (850,4,100,100), "Tempo: " + Tempo);
-	}*/
+	void OnGUI ()
+	{
+		
+		if (JogoAcabou == true) {
+			GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), pauseGUI);
+			GUI.Label (new Rect ((Screen.width / 4), (Screen.height / 10), 2 * Screen.width / 4, Screen.height / 8), "FIM DO JOGO", TipoLetraFinal);
+			GUI.Label (new Rect ((Screen.width / 4), (3 * Screen.height / 10), 2 * Screen.width / 4, Screen.height / 8), "Pontos : " + pontuacao, TipoLetraFinal);
+			if (GUI.Button (new Rect ((Screen.width / 4), (4 * Screen.height / 8), 2 * Screen.width / 4, Screen.height / 8), "Reiniciar")) {
+				clickMenuReiniciar = true;
+			}
+			if (GUI.Button (new Rect ((Screen.width / 4), (6 * Screen.height / 8), 2 * Screen.width / 4, Screen.height / 8), "Sair")) {
+				Application.LoadLevel ("MainMenu");
+			}
+		}
+	}
 }
 

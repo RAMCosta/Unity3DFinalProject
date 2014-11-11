@@ -25,7 +25,7 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
@@ -57,7 +57,22 @@ ModelImporter:
   copyAvatar: 0
   humanDescription:
     human: []
-    skeleton: []
+    skeleton:
+    - name: Man sitting business N200514(Clone)
+      position: {x: .00409722654, y: .066770412, z: -.0323836431}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: BMan0001-S
+      position: {x: -.00409722654, y: -.066770412, z: .0343836434}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Box01
+      position: {x: .00957396906, y: -.0484057367, z: .0206034388}
+      rotation: {x: .707106829, y: 0, z: 0, w: .707106829}
+      scale: {x: 1.03869998, y: 1.03869998, z: 1.03869998}
+      transformModified: 1
     armTwist: .5
     foreArmTwist: .5
     upperLegTwist: .5
@@ -67,6 +82,6 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 3
   additionalBone: 0
   userData: 

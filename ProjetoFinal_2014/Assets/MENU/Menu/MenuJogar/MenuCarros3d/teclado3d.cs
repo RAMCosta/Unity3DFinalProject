@@ -25,6 +25,6 @@ public class teclado3d : MonoBehaviour {
 	
 	void OnMouseDown ()
 	{
-		Application.LoadLevel ("Carro3DTeclado");
+		Application.LoadLevel ("Taxi3DTeclado");
 	}
 }

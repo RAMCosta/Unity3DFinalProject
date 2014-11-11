@@ -5,7 +5,6 @@ public class PauseGame : MonoBehaviour
 {
 
 		bool pause = false;
-		bool clickMenuVoltar = false;
 		bool clickMenuReiniciar = false;
 		public Texture pauseGUI;
 		public bool HelicopteroTecladoScene;
@@ -16,6 +15,8 @@ public class PauseGame : MonoBehaviour
 		public bool Carros2DTecladoScene;
 		public bool Carros2DMindwaveScene;
 		public bool Carros2DAndroid;
+		public bool Taxi3DTecladoScene;
+		public bool Taxi3DGusBampScene;
 
 		void Start ()
 		{
@@ -24,37 +25,35 @@ public class PauseGame : MonoBehaviour
 
 		void Update ()
 		{
-				if (Input.GetKeyUp (KeyCode.Escape) || clickMenuVoltar == true) {
-						clickMenuVoltar = false;
+				if (Input.GetKeyUp (KeyCode.Escape)) {
 						if (pause == true) {
-								pause = false;
+
 								if (HelicopteroTecladoScene || HelicopteroGusbampScene || HelicopteroLivre) {
 										GameObject.Find ("Helicoptero").audio.Play ();
 								}
 								if (Carros2DTecladoScene || Carros2DMindwaveScene || Carros2DAndroid) {
 										GameObject.Find ("Camera").audio.Play ();
 								}
-								if (Carros3DTecladoScene || Carros3DGusbampScene) {
+								if (Carros3DTecladoScene || Carros3DGusbampScene || Taxi3DTecladoScene || Taxi3DGusBampScene) {
 										GameObject.Find ("TAXI").audio.Play ();
 								}
-						} else {
-								pause = true;
-						}
-						if (pause == true) {
+								Time.timeScale = 1.0f;
+								
+								pause = false;
+								
+						} else if (pause == false) {
 								if (HelicopteroTecladoScene || HelicopteroGusbampScene || HelicopteroLivre) {
 										GameObject.Find ("Helicoptero").audio.Pause ();
 								}
 								if (Carros2DTecladoScene || Carros2DMindwaveScene || Carros2DAndroid) {
 										GameObject.Find ("Camera").audio.Pause ();
 								}
-								if (Carros3DTecladoScene || Carros3DGusbampScene) {
+								if (Carros3DTecladoScene || Carros3DGusbampScene || Taxi3DTecladoScene || Taxi3DGusBampScene) {
 										GameObject.Find ("TAXI").audio.Pause ();
 								}
-
 								Time.timeScale = 0.0f;
-						} else {
-								Time.timeScale = 1.0f;
-						}
+								pause = true;
+						} 
 				}
 
 				if (clickMenuReiniciar == true) {
@@ -75,6 +74,10 @@ public class PauseGame : MonoBehaviour
 								Application.LoadLevel ("Carros2D_Mindwave");
 						} else if (Carros2DAndroid) {
 								Application.LoadLevel ("Carros2D_Android");
+						} else if (Taxi3DTecladoScene) {
+								Application.LoadLevel ("Taxi3DTeclado");
+						} else if (Taxi3DGusBampScene) {
+								Application.LoadLevel ("Taxi3DGusBamp");
 						}
 						clickMenuReiniciar = false;
 				}
@@ -88,15 +91,13 @@ public class PauseGame : MonoBehaviour
 
 						GUI.color = Color.yellow;
 
-						if (GUI.Button (new Rect ((Screen.width / 4), (Screen.height / 8), 2 * Screen.width / 4, Screen.height / 8), "Voltar ao Jogo")) {
-								clickMenuVoltar = true;
-						}
 						if (GUI.Button (new Rect ((Screen.width / 4), (3 * Screen.height / 8), 2 * Screen.width / 4, Screen.height / 8), "Reiniciar")) {
 								clickMenuReiniciar = true;
 						}
 						if (GUI.Button (new Rect ((Screen.width / 4), (5 * Screen.height / 8), 2 * Screen.width / 4, Screen.height / 8), "Sair")) {
 								Application.LoadLevel ("MainMenu");
 						}
+						
 				}
 		}
 }

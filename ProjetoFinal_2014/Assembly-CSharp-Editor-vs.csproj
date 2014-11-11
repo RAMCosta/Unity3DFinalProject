@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_5_5;UNITY_4_5;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;ENABLE_DUCK_TYPING</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_5_5;UNITY_4_5;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE;ENABLE_DUCK_TYPING</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -46,96 +46,38 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Editor\InvDatabaseInspector.cs" />
-     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Editor\InvFindItem.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\BMFontReader.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\ComponentSelector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\NGUIEditorTools.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\NGUIJson.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\NGUIMenu.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\NGUISelectionTools.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\NGUISettings.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\NGUITransformInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\SpriteSelector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIAtlasInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIAtlasMaker.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UICameraTool.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UICreateNewUIWizard.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UICreateWidgetWizard.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIDrawCallInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIFilledSpriteInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIFontInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIFontMaker.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIImageButtonInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UILabelInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIPanelInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIPanelTool.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIPopupListInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIScrollBarInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UISlicedSpriteInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UISliderInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UISpriteAnimationInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UISpriteInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UITextureInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UITexturePacker.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UITiledSpriteInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIWidgetInspector.cs" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
+     <Compile Include="Assets\Editor\Doxygen\DoxygenWindow.cs" />
      <None Include="Assets\CIDADE\_IMPORTS\Carros\Carrinha\archibase.net.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT_DifSpecVC.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
      <None Include="Assets\CIDADE\_IMPORTS\Car&amp;People models\Man sitting business N200514\archibase.net.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />
-     <None Include="Assets\NGUI\Examples\Models\Orc\Orc Skin.shader" />
-     <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
-     <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />
-     <None Include="Assets\NGUI\Resources\Shaders\GUI - Text Shader (SoftClip).shader" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Dynamic Font (AlphaClip).shader" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Masked Colored.shader" />
      <None Include="Assets\CIDADE\_IMPORTS\Car&amp;People models\c4ce7e143698f031c851e8c0942841bb\archibase.net.txt" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT-Skydome.shader" />
-     <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo18.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Detail.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT_DiffuseVCCubemap.shader" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (AlphaClip) .shader" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\CIDADE\Quantum Theory\Quantum MetaClouds Sample\Documentation.txt" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT_DiffuseVC.shader" />
-     <None Include="Assets\NGUI\Examples\Atlases\SciFi\SciFi Font - Header.txt" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (AlphaClip).shader" />
      <None Include="Assets\CIDADE\_IMPORTS\Carros\461c0d09b69b6f72cfc0c9165b759899\archibase.net.txt" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (AlphaClip).shader" />
      <None Include="Assets\CIDADE\_IMPORTS\Car&amp;People models\Man walking N120814\archibase.net.txt" />
-     <None Include="Assets\NGUI\Resources\Shaders\GUI - Text Shader (AlphaClip).shader" />
-     <None Include="Assets\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
-     <None Include="Assets\NGUI\Examples\Atlases\Refractive\Refractive Font - Normal.txt" />
      <None Include="Assets\CIDADE\TheLoom_Building_1_Free\Shaders\TheLoom_Normal.shader" />
      <None Include="Assets\CIDADE\_IMPORTS\Car&amp;People models\5bfeed11e99c952d459bc50137e93a87\archibase.net.txt" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\VertexOnly.shader" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Dynamic Font (SoftClip).shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT_Road.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT_DiffuseVCEmissive.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT-SkyBoxFog.shader" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (SoftClip).shader" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (SoftClip).shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Reflective.shader" />
      <None Include="Assets\HELICOPTERO\Unity3dx Free City01\Standard Assets\Skyboxes\ skybox info.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Particles Additive Culled.shader" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\Diffuse_VCMod2x.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT-SkyBox.shader" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Dynamic Font.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT_LightingOnly.shader" />
-     <None Include="Assets\NGUI\ReadMe - 2.7.0.txt" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT_DiffuseVCEmissiveCubeMap.shader" />
      <None Include="Assets\CIDADE\_IMPORTS\Car&amp;People models\5ea87d13283f74084edccf14e1c99205\archibase.net.txt" />
-     <None Include="Assets\NGUI\Examples\Other\English.txt" />
-     <None Include="Assets\NGUI\Examples\Other\French.txt" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed).shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Documentation.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Vertex Colored.shader" />
      <None Include="Assets\CIDADE\_IMPORTS\Car&amp;People models\Man 1 N230614\archibase.net.txt" />
@@ -143,13 +85,8 @@
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap AlphaTest.shader" />
      <None Include="Assets\CIDADE\TheLoom_Building_1_Free\readme.txt" />
      <None Include="Assets\CIDADE\_IMPORTS\Carros\f7f8de6f0e1b137b229a98a7bcd004b8\archibase.net.txt" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Additive Colored.shader" />
-     <None Include="Assets\NGUI\Examples\Atlases\Refractive\Refractive Font - Header.txt" />
-     <None Include="Assets\NGUI\Examples\Shaders\Refractive.shader" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth.shader" />
-     <None Include="Assets\NGUI\Examples\Atlases\SciFi\SciFi Font - Normal.txt" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (SoftClip).shader" />
-     <None Include="Assets\NGUI\Examples\Models\Orc Armor\Orc Armor.shader" />
+     <None Include="Assets\Editor\Doxygen\Resources\BaseDoxyfile.txt" />
+     <None Include="Assets\Editor\Doxygen\ReadMe.txt" />
      <None Include="Assets\CIDADE\_IMPORTS\Car&amp;People models\fb1a2fd5820296081eedbe0ce95b9c96\archibase.net.txt" />
      <None Include="Assets\CIDADE\Quantum Theory\Quantum MetaClouds Sample\Shaders\QuantumMetaCloud-SoftAlphaBlend.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">

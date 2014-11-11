@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_5_2;UNITY_4_5;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_5_5;UNITY_4_5;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -39,13 +39,15 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/Programas/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/Programas/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Animations\AnimViajante.cs" />
+     <Compile Include="Assets\Animations\AnimViajanteSair.cs" />
      <Compile Include="Assets\CARROS 2D\HERTZ\VerficarFramesActual.cs" />
      <Compile Include="Assets\CARROS 2D\_PREFABS\CarroBranco\MostrarSons.cs" />
      <Compile Include="Assets\CARROS 2D\_PREFABS\CarroBranco\Movimento.cs" />
@@ -64,6 +66,7 @@
      <Compile Include="Assets\CARROS 2D\_SCRIPTS\SairAnimacao.cs" />
      <Compile Include="Assets\CARROS 2D\_SCRIPTS\TCP Scripts\ClienteTCP.cs" />
      <Compile Include="Assets\CARROS 2D\_SCRIPTS\TCP Scripts\ServidorTCP.cs" />
+     <Compile Include="Assets\CARROS 2D\_SCRIPTS\TCP Scripts\tcpClient.cs" />
      <Compile Include="Assets\CARROS 2D\_SCRIPTS\VoltarAnimacao.cs" />
      <Compile Include="Assets\CARROS 2D\_TOUCHSCRIPTS\BaixoMov.cs" />
      <Compile Include="Assets\CARROS 2D\_TOUCHSCRIPTS\CimaMov.cs" />
@@ -90,6 +93,8 @@
      <Compile Include="Assets\CIDADE\_SCRIPTS\Destinos\DestinoEstimulos.cs" />
      <Compile Include="Assets\CIDADE\_SCRIPTS\Destinos\Destinos.cs" />
      <Compile Include="Assets\CIDADE\_SCRIPTS\Destinos\DestinosAndroid.cs" />
+     <Compile Include="Assets\CIDADE\_SCRIPTS\Destinos\DestinosAnim.cs" />
+     <Compile Include="Assets\CIDADE\_SCRIPTS\Destinos\DestinosTCPAnim.cs" />
      <Compile Include="Assets\CIDADE\_SCRIPTS\Estimulos\DireitaEstimulo.cs" />
      <Compile Include="Assets\CIDADE\_SCRIPTS\Estimulos\EsquerdaEstimulo.cs" />
      <Compile Include="Assets\CIDADE\_SCRIPTS\Estimulos\FrenteEstimulo.cs" />
@@ -104,13 +109,18 @@
      <Compile Include="Assets\CIDADE\_SCRIPTS\frames.cs" />
      <Compile Include="Assets\HELICOPTERO\IMPORTS\N916MU\Formats\RodarHelic.cs" />
      <Compile Include="Assets\HELICOPTERO\SCRIPTS\Android\Direita.cs" />
+     <Compile Include="Assets\HELICOPTERO\SCRIPTS\Android\DireitaAndroid.cs" />
      <Compile Include="Assets\HELICOPTERO\SCRIPTS\Android\Esquerda.cs" />
+     <Compile Include="Assets\HELICOPTERO\SCRIPTS\Android\EsquerdaAndroid.cs" />
      <Compile Include="Assets\HELICOPTERO\SCRIPTS\Android\Frente.cs" />
+     <Compile Include="Assets\HELICOPTERO\SCRIPTS\Android\FrenteAndroid.cs" />
      <Compile Include="Assets\HELICOPTERO\SCRIPTS\ApanharMoedas.cs" />
      <Compile Include="Assets\HELICOPTERO\SCRIPTS\ConexaoTCP\Tcpheli.cs" />
      <Compile Include="Assets\HELICOPTERO\SCRIPTS\DestinosHelicoptero.cs" />
      <Compile Include="Assets\HELICOPTERO\SCRIPTS\EscolherAneis.cs" />
+     <Compile Include="Assets\HELICOPTERO\SCRIPTS\EscolherAneisTeclado.cs" />
      <Compile Include="Assets\HELICOPTERO\SCRIPTS\EscolherMoedas.cs" />
+     <Compile Include="Assets\HELICOPTERO\SCRIPTS\HeliLivre.cs" />
      <Compile Include="Assets\HELICOPTERO\SCRIPTS\NavMeshDestinos.cs" />
      <Compile Include="Assets\HELICOPTERO\SCRIPTS\PassarAneis.cs" />
      <Compile Include="Assets\HELICOPTERO\SCRIPTS\TCPDestinos.cs" />
@@ -135,6 +145,7 @@
      <Compile Include="Assets\MENU\Menu\MenuJogar\MenuHelicoptero\Voltarheli.cs" />
      <Compile Include="Assets\MENU\Menu\MenuJogar\MenuHelicoptero\gusbamp2heli.cs" />
      <Compile Include="Assets\MENU\Menu\MenuJogar\MenuHelicoptero\gusbampheli.cs" />
+     <Compile Include="Assets\MENU\Menu\MenuJogar\MenuHelicoptero\teclado2heli.cs" />
      <Compile Include="Assets\MENU\Menu\MenuJogar\MenuHelicoptero\tecladoheli.cs" />
      <Compile Include="Assets\MENU\Menu\MenuJogar\VoltarJogar.cs" />
      <Compile Include="Assets\MENU\Menu\Opcoes\Calibracao\Calibracao.cs" />
@@ -195,6 +206,8 @@
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap AlphaTest.shader" />
      <None Include="Assets\CIDADE\TheLoom_Building_1_Free\readme.txt" />
      <None Include="Assets\CIDADE\_IMPORTS\Carros\f7f8de6f0e1b137b229a98a7bcd004b8\archibase.net.txt" />
+     <None Include="Assets\Editor\Doxygen\Resources\BaseDoxyfile.txt" />
+     <None Include="Assets\Editor\Doxygen\ReadMe.txt" />
      <None Include="Assets\CIDADE\_IMPORTS\Car&amp;People models\fb1a2fd5820296081eedbe0ce95b9c96\archibase.net.txt" />
      <None Include="Assets\CIDADE\Quantum Theory\Quantum MetaClouds Sample\Shaders\QuantumMetaCloud-SoftAlphaBlend.shader" />
   </ItemGroup>
