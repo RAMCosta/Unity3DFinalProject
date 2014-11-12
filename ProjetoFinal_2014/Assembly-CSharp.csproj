@@ -150,6 +150,7 @@
      <Compile Include="Assets\MENU\Menu\MenuJogar\VoltarJogar.cs" />
      <Compile Include="Assets\MENU\Menu\Opcoes\Calibracao\Calibracao.cs" />
      <Compile Include="Assets\MENU\Menu\Opcoes\Calibracao\CalibracaoPiscarSetas.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\Calibracao\CalibracaoTCP.cs" />
      <Compile Include="Assets\MENU\Menu\Opcoes\Calibracao\ComecarCalibracao.cs" />
      <Compile Include="Assets\MENU\Menu\Opcoes\Calibracao\PiscarGUI.cs" />
      <Compile Include="Assets\MENU\Menu\Opcoes\Calibracao\VoltarCalibracao.cs" />

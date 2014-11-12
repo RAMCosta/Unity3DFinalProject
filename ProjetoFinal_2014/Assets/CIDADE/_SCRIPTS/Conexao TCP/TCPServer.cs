@@ -25,6 +25,7 @@ public class TCPServer : MonoBehaviour {
 	int numberConnection = 0;
 	
 	public static bool EnviarComandoMatLabHeli = false;
+	public static string mensagemMatLab;
 	
 	void Start ()
 	{
@@ -53,7 +54,7 @@ public class TCPServer : MonoBehaviour {
 		
 		if (EnviarComandoMatLabHeli == true) {
 			EnviarComandoMatLabHeli = false;
-			SendMessageGetFreq(tcp_client);
+			SendMessageGetFreq(tcp_client, mensagemMatLab);
 		}
 		
 	}
@@ -126,9 +127,8 @@ public class TCPServer : MonoBehaviour {
 		}
 	}
 	
-	void SendMessageGetFreq(TcpClient client)
+	void SendMessageGetFreq(TcpClient client,string message)
 	{
-		string message = "A1";
 		//	byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(message);
 		NetworkStream stream = client.GetStream();
 		StreamWriter writer = new StreamWriter(stream);

@@ -5,7 +5,10 @@ public class PassarAneis : MonoBehaviour {
 
 	public static int Pontos= 0;
 	
-	
+	void Start(){
+		Pontos= 0;
+	}
+
 	void OnTriggerEnter (Collider collision)
 	{
 		

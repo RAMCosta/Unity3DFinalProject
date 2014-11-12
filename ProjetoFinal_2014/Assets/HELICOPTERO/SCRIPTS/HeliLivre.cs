@@ -18,6 +18,7 @@ public class HeliLivre : MonoBehaviour
 		// Use this for initialization
 		void Start ()
 		{
+				Time.timeScale = 1.0f;
 				if (Application.platform == RuntimePlatform.Android) {
 						Teclado.SetActive (true);
 				} else if (Application.platform == RuntimePlatform.IPhonePlayer) {
@@ -25,7 +26,11 @@ public class HeliLivre : MonoBehaviour
 				} else {
 						Teclado.SetActive (false);
 				}
-				
+		numeroColisao = 0;
+		clickMenuReiniciar = false;
+		JogoAcabou = false;
+		Colisao = false;
+		Pontuacao = 0;
 		}
 		
 		// Update is called once per frame

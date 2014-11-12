@@ -23,6 +23,7 @@ public class Tcpheli : MonoBehaviour
 		public static bool conectado = false;
 		public GUIText Conectado;
 		int numeroConectado = 0; // Controlo de conexao, devido ao Matlab enviar 2x a sincronizacao .. 1 ao fazer Run e outra ao meter Play
+		public static string mensagemMatLab;
 
 		public static bool EnviarComandoMatLabHeli = false;
 	
@@ -54,7 +55,7 @@ public class Tcpheli : MonoBehaviour
 
 				if (EnviarComandoMatLabHeli == true) {
 						EnviarComandoMatLabHeli = false;
-						SendMessageGetFreq (tcp_client);
+						SendMessageGetFreq (tcp_client, mensagemMatLab);
 				}
 		}
 
@@ -125,9 +126,8 @@ public class Tcpheli : MonoBehaviour
 				}
 		}
 
-		void SendMessageGetFreq (TcpClient client)
+		void SendMessageGetFreq (TcpClient client, string message)
 		{
-				string message = "A1";
 				//	byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(message);
 				NetworkStream stream = client.GetStream ();
 				StreamWriter writer = new StreamWriter (stream);

@@ -22,20 +22,22 @@ public class ComecarCalibracao : MonoBehaviour
 
 		void OnMouseDown ()
 		{
-				Comecou = !Comecou;
-				if (Comecou == true) {
-						GameObject.Find ("Main Camera").GetComponent<Calibracao> ().enabled = true;
-						GameObject.Find ("MenuPref").GetComponent<PiscarGUI> ().enabled = true;
-						Botao.guiTexture.texture = GUIBegin_End [0];
-						this.guiText.text = "Parar";
-				}
-				if (Comecou == false) {
-						GameObject.Find ("Main Camera").GetComponent<Calibracao> ().enabled = false;
-						GameObject.Find ("MenuPref").GetComponent<PiscarGUI> ().enabled = false;
-						PiscarGUI.progressoGUI = 0;
-						Calibracao.progressoCalib = 0;
-						Botao.guiTexture.texture = GUIBegin_End [1];
-						this.guiText.text = "Começar";
+				if (CalibracaoTCP.conectado == true) {
+						Comecou = !Comecou;
+						if (Comecou == true) {
+								GameObject.Find ("Main Camera").GetComponent<Calibracao> ().enabled = true;
+								GameObject.Find ("MenuPref").GetComponent<PiscarGUI> ().enabled = true;
+								Botao.guiTexture.texture = GUIBegin_End [0];
+								this.guiText.text = "Parar";
+						}
+						if (Comecou == false) {
+								GameObject.Find ("Main Camera").GetComponent<Calibracao> ().enabled = false;
+								GameObject.Find ("MenuPref").GetComponent<PiscarGUI> ().enabled = false;
+								PiscarGUI.progressoGUI = 0;
+								Calibracao.progressoCalib = 0;
+								Botao.guiTexture.texture = GUIBegin_End [1];
+								this.guiText.text = "Começar";
+						}
 				}
 		}
 }

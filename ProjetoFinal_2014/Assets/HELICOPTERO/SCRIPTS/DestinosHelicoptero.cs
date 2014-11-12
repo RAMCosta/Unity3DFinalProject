@@ -27,6 +27,10 @@ public class DestinosHelicoptero : MonoBehaviour
 				DestinoActual = "Destino20";
 				DestinoAnterior = "Destino20";
 				comando = "";
+				NumeroDestino = 1;
+				EscolhaDestino = false;
+				chegouDestino = false;
+				ParouCruzamento = false;
 		}
 	
 		// Update is called once per frame

@@ -35,6 +35,13 @@ public class DestinoEstimulos : MonoBehaviour {
 	void Start ()
 	{
 		Time.timeScale = 1.0f;
+		Pontuacao = 0;
+		NumeroViajante = 0;
+		NumeroDestino = 4;
+		viajanteABordo = false;
+		ParouCruzamento = false;
+		chegouDestino = false; 
+		EnviarMatLab = true;
 		EscolhaDestino.SetActive (false);
 		DestinoActual = "Destino3";
 		DestinoAnterior = "Destino3";
@@ -122,7 +129,8 @@ public class DestinoEstimulos : MonoBehaviour {
 
 			if (distanciaDest <= 100 && comando == "") {
 				if (EnviarMatLab == true) { // Para apenas mandar o comando 1 vez
-					TCPServer.EnviarComandoMatLabHeli = true;  // Dizer ao MatLab para enviar comando -- Class TCPheli
+					TCPServer.mensagemMatLab = "A1";
+					TCPServer.EnviarComandoMatLabHeli = true;  // Dizer ao MatLab para enviar comando -- Class TCPServer
 					EnviarMatLab = false;
 				}
 				EscolhaDestino.SetActive (true);

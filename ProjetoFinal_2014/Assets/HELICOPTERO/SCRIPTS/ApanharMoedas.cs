@@ -6,6 +6,9 @@ public class ApanharMoedas : MonoBehaviour
 {
 		public static int Pontuacao= 0;
 
+	void Start(){
+		Pontuacao= 0;
+	}
 
 		void OnTriggerEnter (Collider collision)
 		{

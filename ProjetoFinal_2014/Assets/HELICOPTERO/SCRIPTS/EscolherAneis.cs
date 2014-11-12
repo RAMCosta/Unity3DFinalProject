@@ -29,6 +29,10 @@ public class EscolherAneis : MonoBehaviour
 		// Use this for initialization
 		void Start ()
 		{
+		JogoAcabou = false;
+		contador = 0;
+		ValorRandom = 0;
+		clickMenuReiniciar = false;
 				while (contador<8) {
 						ValorRandom = Random.Range (1, 16);
 						if (!ListaAneis.Contains (ValorRandom)) {

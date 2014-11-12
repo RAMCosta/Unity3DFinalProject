@@ -82,6 +82,7 @@ public class TCPDestinos : MonoBehaviour
 						// Verificacao de colidiu com os Triggers colocados ao meio das ruas, para visualizar as direcoes
 						if (distancia < 150 && comando == "") {
 								if (EnviarMatLab == true) { // Para apenas mandar o comando 1 vez
+										Tcpheli.mensagemMatLab = "A1"; // Mensagem de para pedir Frequencia
 										Tcpheli.EnviarComandoMatLabHeli = true;  // Dizer ao MatLab para enviar comando -- Class TCPheli
 										EnviarMatLab = false;
 								}

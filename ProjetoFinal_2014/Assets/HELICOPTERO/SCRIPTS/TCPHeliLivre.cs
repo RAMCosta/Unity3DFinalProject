@@ -21,16 +21,22 @@ public class TCPHeliLivre : MonoBehaviour
 		// Use this for initialization
 		void Start ()
 		{
-			
+		Pontuacao = 0;
+		clickMenuReiniciar = false;
+		EnviarMatLab = true;
+		Colisao = false;
+		JogoAcabou = false;
+		numeroColisao = 0;
 		}
 		
 		// Update is called once per frame
 		void Update ()
 		{
-				if (/*Tcpheli.conectado == true &&*/ Colisao == false) {
+				if (Tcpheli.conectado == true && Colisao == false) {
 
 						if (EnviarMatLab == true) { // Cada vez que se perde ligaçao e retoma, envia um pedido de Frequencias
 								EnviarMatLab = false;
+								Tcpheli.mensagemMatLab = "A1";
 								Tcpheli.EnviarComandoMatLabHeli = true;
 						}
 						Estimulos.SetActive (true);

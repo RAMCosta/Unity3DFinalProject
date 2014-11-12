@@ -17,7 +17,6 @@ public class Destinos : MonoBehaviour
 	public int NumeroViajante = 0;
 	public int Pontuacao = 0;
 	public bool viajanteABordo = false;
-	Vector3 lastPosition;
 	public GameObject Setas;
 	public GUIText TextoPontos;
 	public Material TaxiOcupado;
@@ -38,7 +37,15 @@ public class Destinos : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+
 		Time.timeScale = 1.0f;
+		NumeroDestino = 4;
+		NumeroViajante = 0;
+		Pontuacao = 0;
+		viajanteABordo = false;
+		chegouDestino = false;
+		ParouCruzamento = false;
+
 		EscolhaDestino.SetActive (false);
 		DestinoActual = "Destino3";
 		DestinoAnterior = "Destino3";

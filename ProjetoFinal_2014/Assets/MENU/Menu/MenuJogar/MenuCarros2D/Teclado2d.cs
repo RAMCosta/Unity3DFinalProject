@@ -7,11 +7,11 @@ public class Teclado2d : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		if (Application.platform == RuntimePlatform.Android) {
-			Teclado.guiText.text = "Touch";
+			this.guiText.text = "Touch";
 		} else if (Application.platform == RuntimePlatform.IPhonePlayer) {
-			Teclado.guiText.text = "Touch";
+			this.guiText.text = "Touch";
 		} else {
-			Teclado.guiText.text = "Teclado";
+			this.guiText.text = "Teclado";
 		}
 	}
 	
