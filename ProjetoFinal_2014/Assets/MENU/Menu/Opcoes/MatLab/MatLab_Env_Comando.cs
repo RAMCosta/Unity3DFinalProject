@@ -15,7 +15,10 @@ public class MatLab_Env_Comando : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		
+		modo1.gameObject.guiText.text = "" + modo1Valor;
+		modo2.gameObject.guiText.text = "" + modo2Valor;
+		ini_estimulo.gameObject.guiText.text = "" + ini_estimuloValor;
+		ini_calibracao.gameObject.guiText.text = "" + ini_calibracaoValor;
 	}
 	
 	// Update is called once per frame

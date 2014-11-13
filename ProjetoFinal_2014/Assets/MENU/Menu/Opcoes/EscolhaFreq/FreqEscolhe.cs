@@ -14,7 +14,9 @@ public class FreqEscolhe : MonoBehaviour
 		// Use this for initialization
 		void Start ()
 		{
-	
+		FreqEsq.gameObject.guiText.text = "" + FreqEsqVal;
+		FreqDir.gameObject.guiText.text = "" + FreqDirVal;
+		FreqFrente.gameObject.guiText.text = "" + FreqFrenteVal;
 		}
 	
 		// Update is called once per frame

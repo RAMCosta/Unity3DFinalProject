@@ -15,7 +15,10 @@ public class MatLab_Det_Setas : MonoBehaviour
 		// Use this for initialization
 		void Start ()
 		{
-	
+		Esquerda.gameObject.guiText.text = "" + EsqValor;
+		Direita.gameObject.guiText.text = "" + DirValor;
+		Frente.gameObject.guiText.text = "" + FrenteValor;
+		Tras.gameObject.guiText.text = "" + TrasValor;
 		}
 	
 		// Update is called once per frame

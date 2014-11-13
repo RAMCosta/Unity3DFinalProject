@@ -35,12 +35,13 @@ public class TCPHeliLivre : MonoBehaviour
 		{
 		if (Tcpheli.conectado == true && Colisao == false) {
 			tempo += Time.deltaTime;
-						if (EnviarMatLabModoJogo == true && tempo>10) { // Cada vez que se perde ligaçao e retoma, envia um pedido de jogo modo2 (1 em 1s)
+						if (EnviarMatLabModoJogo == true && tempo>12) { // Cada vez que se perde ligaçao e retoma, envia um pedido de jogo modo2 (1 em 1s)
 								EnviarMatLabModoJogo = false;
 								Tcpheli.mensagemMatLab = MatLab_Env_Comando.modo2Valor.ToString() + "1";
 								Tcpheli.EnviarComandoMatLabHeli = true;
+								Estimulos.SetActive (true);
 						}
-						Estimulos.SetActive (true);
+						
 
 			if (!Input.GetKey (KeyCode.UpArrow) && !Tcpheli.comand.Equals ("C")) {
 								if (this.gameObject.transform.position.y > EscolherAneis.PosicaoYAneis) {

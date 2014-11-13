@@ -20,7 +20,13 @@ public class MatLab_Calib_Freq : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		
+		freq1.gameObject.guiText.text = "" + freq1Valor;
+		freq2.gameObject.guiText.text = "" + freq2Valor;
+		freq3.gameObject.guiText.text = "" + freq3Valor;
+		freq4.gameObject.guiText.text = "" + freq4Valor;
+		freq5.gameObject.guiText.text = "" + freq5Valor;
+		freq6.gameObject.guiText.text = "" + freq6Valor;
+		freq7.gameObject.guiText.text = "" + freq7Valor;
 	}
 	
 	// Update is called once per frame
