@@ -48,7 +48,7 @@ public class EscolherMoedas : MonoBehaviour
 				if (ApanharMoedas.Pontuacao == 10) {
 						Time.timeScale = 0.0f;
 						JogoAcabou = true;
-				} else if (HelicopteroEstimulos == true && Tcpheli.conectado == true) {
+		} else if (HelicopteroEstimulos == true && Tcpheli.conectado == true) {
 						timer += Time.deltaTime;
 						int minutes = Mathf.FloorToInt (timer / 60F);
 						int seconds = Mathf.FloorToInt (timer - minutes * 60);

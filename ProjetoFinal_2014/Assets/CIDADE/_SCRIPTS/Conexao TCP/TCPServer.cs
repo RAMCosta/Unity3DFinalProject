@@ -53,8 +53,9 @@ public class TCPServer : MonoBehaviour {
 		}
 		
 		if (EnviarComandoMatLabHeli == true) {
-			EnviarComandoMatLabHeli = false;
 			SendMessageGetFreq(tcp_client, mensagemMatLab);
+			EnviarComandoMatLabHeli = false;
+
 		}
 		
 	}

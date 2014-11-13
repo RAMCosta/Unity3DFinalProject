@@ -87,18 +87,25 @@ public class DestinosAnim : MonoBehaviour {
 				int seconds = Mathf.FloorToInt (timer - minutes * 60);
 				niceTime = string.Format ("{0:0}:{1:00}", minutes, seconds);
 			}
-			// Mudar a cor da placa em cima do taxi, para avisar se ocupado ou livre
+
 			if (viajanteABordo == false) {
+				// indica a distancia entre o taxi e o passageiro
 				distanciaViaj = (int)Vector3.Distance (this.transform.position, Viajantes [NumeroViajante].transform.position);
+				// actualizacao da seta orientadora, neste caso, para o passageiro a ir apanhar
 				Setas.transform.LookAt (Viajantes [NumeroViajante].transform);
+				// Mudar a cor da placa em cima do taxi, para avisar se ocupado ou livre
 				GameObject.Find ("EstadoDir").renderer.material = TaxiLivre;
 				GameObject.Find ("EstadoEsq").renderer.material = TaxiLivre;
 			} else {
+				// indica a distancia entre o taxi e o destino do passageiro
 				distanciaViaj = (int)Vector3.Distance (this.transform.position, ParticulasDestino [NumeroViajante].transform.position);
+				// actualizacao da seta orientadora, neste caso, para o destino do passageiro
 				Setas.transform.LookAt (ParticulasDestino [NumeroViajante].transform);
+				// Mudar a cor da placa em cima do taxi, para avisar se ocupado ou livre
 				GameObject.Find ("EstadoDir").renderer.material = TaxiOcupado;
 				GameObject.Find ("EstadoEsq").renderer.material = TaxiOcupado;
 			}
+
 			DistanciaGUI.guiText.text = distanciaViaj + "m";
 
 			// Escolha da tecla correspondente ao destino do Taxi
@@ -137,6 +144,7 @@ public class DestinosAnim : MonoBehaviour {
 				EscolhaDestino.SetActive (true);
 				this.gameObject.GetComponent<NavMeshAgent> ().speed = Mathf.Floor (Velocidade / 2);
 			} else if (distanciaDest > 100) {
+				comando = "";
 				EscolhaDestino.SetActive (false);
 				this.gameObject.GetComponent<NavMeshAgent> ().speed = Mathf.Floor (Velocidade);
 			}
@@ -196,11 +204,16 @@ public class DestinosAnim : MonoBehaviour {
 			}
 			
 			// ------------------------- VIAJANTE 1 -------------------------------------
-			
+
+			// Caso o destino em que o taxi bateu o local do passageiro em questao e este esteja ativo
 			if (collision.gameObject.name == "Destino40" && Viajantes [1].activeSelf == true) {
-				AndarViajante = true;		
+				// preparar animaçao de andamento do passageiro
+				AndarViajante = true;
+				// Desabilita a componente NavMesh, para o carro ficar imovel ate o passageiro entrar
 				this.gameObject.GetComponent<NavMeshAgent> ().enabled = false;
 			}
+
+			// Caso o taxi colida com o local de destino, e o numero de passageiro for o destinado a este local
 			if (collision.gameObject.name == "Destino46" && NumeroViajante == 1) {
 				LargarViajante (NumeroViajante);
 			}

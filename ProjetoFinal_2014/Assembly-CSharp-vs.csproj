@@ -107,6 +107,7 @@
      <Compile Include="Assets\CIDADE\_SCRIPTS\ciclosHertz.cs" />
      <Compile Include="Assets\CIDADE\_SCRIPTS\detectarcolisoes.cs" />
      <Compile Include="Assets\CIDADE\_SCRIPTS\frames.cs" />
+     <Compile Include="Assets\ConexaoTCP\TCP_IP_SERVER.cs" />
      <Compile Include="Assets\HELICOPTERO\IMPORTS\N916MU\Formats\RodarHelic.cs" />
      <Compile Include="Assets\HELICOPTERO\SCRIPTS\Android\Direita.cs" />
      <Compile Include="Assets\HELICOPTERO\SCRIPTS\Android\DireitaAndroid.cs" />
@@ -159,9 +160,14 @@
      <Compile Include="Assets\MENU\Menu\Opcoes\EscolhaEstimulo\VoltarEstim.cs" />
      <Compile Include="Assets\MENU\Menu\Opcoes\EscolhaFreq\FreqEscolhe.cs" />
      <Compile Include="Assets\MENU\Menu\Opcoes\EscolhaFreq\VoltarEscFreq.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\MatLab\MatLab_Calib_Freq.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\MatLab\MatLab_Det_Setas.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\MatLab\MatLab_Env_Comando.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\MatLab\VoltarMatLab.cs" />
      <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\CalibrarMenu.cs" />
      <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\EstimMenu.cs" />
      <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\FreqMenu.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\SinaisMatlabMenuOpcoes.cs" />
      <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\TesteGUI.cs" />
      <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\VoltarMenuOpcoes.cs" />
      <Compile Include="Assets\MENU\Menu\Script\AndarCamera.cs" />

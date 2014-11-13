@@ -26,11 +26,12 @@ public class DestinoEstimulos : MonoBehaviour {
 	int distanciaDest;
 	int distanciaViaj;
 	public GUIText DistanciaGUI;
-	bool EnviarMatLab = true; // ficheiro que controla o pedido de envio de freq, para nao enviar mais que uma vez
+	bool EnviarMatLab = true; // variavel que controla o pedido de envio de freq, para nao enviar mais que uma vez
 	public GUIText TempoGUI; // Tempo de jogo
 	string niceTime;
 	float timer; 
-
+	float tempo = 0; // enviar comando ao MatLab 2s depois da conexao
+	bool EnviarMatLabModoJogo = true; // variavel que controla o pedido de envio de ModoJogo
 	// Use this for initialization
 	void Start ()
 	{
@@ -46,7 +47,8 @@ public class DestinoEstimulos : MonoBehaviour {
 		DestinoActual = "Destino3";
 		DestinoAnterior = "Destino3";
 		comando = "";
-
+		tempo = 0;
+		EnviarMatLabModoJogo = true;
 		int minutes = Mathf.FloorToInt (timer / 60F);
 		int seconds = Mathf.FloorToInt (timer - minutes * 60);
 		niceTime = string.Format ("{0:0}:{1:00}", minutes, seconds);
@@ -56,114 +58,122 @@ public class DestinoEstimulos : MonoBehaviour {
 	void Update ()
 	{
 		if (TCPServer.connect == true) {
+						tempo += Time.deltaTime;
+						if (EnviarMatLabModoJogo == true && tempo > 10) { // envia um pedido de jogo modo1 (Bifurcacao)
+								EnviarMatLabModoJogo = false;
+								TCPServer.mensagemMatLab = MatLab_Env_Comando.modo1Valor.ToString () + "1";
+								TCPServer.EnviarComandoMatLabHeli = true;
+						}
+						distanciaDest = (int)Vector3.Distance (this.transform.position, destino [NumeroDestino].transform.position);
 				
-				distanciaDest = (int)Vector3.Distance (this.transform.position, destino [NumeroDestino].transform.position);
-				
-				// Actualizacao dos pontos do Jogador
-				TextoPontos.guiText.text = Pontuacao.ToString ();
+						// Actualizacao dos pontos do Jogador
+						TextoPontos.guiText.text = Pontuacao.ToString ();
 		
-				//Tempo de jogo no ecra
-				TempoGUI.guiText.text = niceTime;
+						//Tempo de jogo no ecra
+						TempoGUI.guiText.text = niceTime;
 				
 				
-				if (NumeroViajante >= 8) {
-					Time.timeScale = 0.0f;	
-				} else {
-					timer += Time.deltaTime;
-					int minutes = Mathf.FloorToInt (timer / 60F);
-					int seconds = Mathf.FloorToInt (timer - minutes * 60);
-					niceTime = string.Format ("{0:0}:{1:00}", minutes, seconds);
-				}
+						if (NumeroViajante >= 8) {
+								Time.timeScale = 0.0f;	
+						} else {
+								timer += Time.deltaTime;
+								int minutes = Mathf.FloorToInt (timer / 60F);
+								int seconds = Mathf.FloorToInt (timer - minutes * 60);
+								niceTime = string.Format ("{0:0}:{1:00}", minutes, seconds);
+						}
 
 
 
-				// Mudar a cor da placa em cima do taxi, para avisar se ocupado ou livre
-				if (viajanteABordo == false) {
-						Setas.transform.LookAt (Viajantes [NumeroViajante].transform);
-						distanciaViaj = (int)Vector3.Distance (this.transform.position, Viajantes [NumeroViajante].transform.position);
-						GameObject.Find ("EstadoDir").renderer.material = TaxiLivre;
-						GameObject.Find ("EstadoEsq").renderer.material = TaxiLivre;
-				} else {
-						distanciaViaj = (int)Vector3.Distance (this.transform.position, ParticulasDestino [NumeroViajante].transform.position);
-						Setas.transform.LookAt (ParticulasDestino [NumeroViajante].transform);
-						GameObject.Find ("EstadoDir").renderer.material = TaxiOcupado;
-						GameObject.Find ("EstadoEsq").renderer.material = TaxiOcupado;
-				}
-					DistanciaGUI.guiText.text = distanciaViaj + "m";
+						// Mudar a cor da placa em cima do taxi, para avisar se ocupado ou livre
+						if (viajanteABordo == false) {
+								Setas.transform.LookAt (Viajantes [NumeroViajante].transform);
+								distanciaViaj = (int)Vector3.Distance (this.transform.position, Viajantes [NumeroViajante].transform.position);
+								GameObject.Find ("EstadoDir").renderer.material = TaxiLivre;
+								GameObject.Find ("EstadoEsq").renderer.material = TaxiLivre;
+						} else {
+								distanciaViaj = (int)Vector3.Distance (this.transform.position, ParticulasDestino [NumeroViajante].transform.position);
+								Setas.transform.LookAt (ParticulasDestino [NumeroViajante].transform);
+								GameObject.Find ("EstadoDir").renderer.material = TaxiOcupado;
+								GameObject.Find ("EstadoEsq").renderer.material = TaxiOcupado;
+						}
+						DistanciaGUI.guiText.text = distanciaViaj + "m";
 
 
-			// Escolha da tecla correspondente ao destino do Taxi
-			if (EscolhaDestino.activeSelf == true || ParouCruzamento == true) {
-				if (TCPServer.comand.Equals ("A") || TCPServer.comand.Equals ("D")) {
-					comando = "M";
-					EscolhaDestino.SetActive (false);
-					Direita.DireitaTeclado = false;
-					this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
-					if (this.gameObject.GetComponent<NavMeshAgent> ().enabled == false) {
-						ParouCruzamento = false;
-						ActivarNavMesh (Velocidade, Aceleracao);
-					}
+						// Escolha da tecla correspondente ao destino do Taxi
+						if (EscolhaDestino.activeSelf == true || ParouCruzamento == true) {
+								if (TCPServer.comand.Equals (MatLab_Det_Setas.DirValor.ToString ())) {
+										comando = "M";
+										EscolhaDestino.SetActive (false);
+										Direita.DireitaTeclado = false;
+										this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
+										if (this.gameObject.GetComponent<NavMeshAgent> ().enabled == false) {
+												ParouCruzamento = false;
+												ActivarNavMesh (Velocidade, Aceleracao);
+										}
 					
-				}
-				if (TCPServer.comand.Equals ("B")) {
-					comando = "Z";
-					EscolhaDestino.SetActive (false);
-					Esquerda.EsquerdaTeclado = false;
-					this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
-					if (this.gameObject.GetComponent<NavMeshAgent> ().enabled == false) {
-						ParouCruzamento = false;
-						ActivarNavMesh (Velocidade, Aceleracao);
-					}
-				}
-				if (TCPServer.comand == "C") {
-					comando = "Y";
-					EscolhaDestino.SetActive (false);
-					Frente.FrenteTeclado = false;
-					this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
-					if (this.gameObject.GetComponent<NavMeshAgent> ().enabled == false) {
-						ParouCruzamento = false;
-						ActivarNavMesh (Velocidade, Aceleracao);
-					}
-				}
-			}
+								}
+								if (TCPServer.comand.Equals (MatLab_Det_Setas.EsqValor.ToString ())) {
+										comando = "Z";
+										EscolhaDestino.SetActive (false);
+										Esquerda.EsquerdaTeclado = false;
+										this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
+										if (this.gameObject.GetComponent<NavMeshAgent> ().enabled == false) {
+												ParouCruzamento = false;
+												ActivarNavMesh (Velocidade, Aceleracao);
+										}
+								}
+								if (TCPServer.comand.Equals (MatLab_Det_Setas.FrenteValor.ToString ())) {
+										comando = "Y";
+										EscolhaDestino.SetActive (false);
+										Frente.FrenteTeclado = false;
+										this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
+										if (this.gameObject.GetComponent<NavMeshAgent> ().enabled == false) {
+												ParouCruzamento = false;
+												ActivarNavMesh (Velocidade, Aceleracao);
+										}
+								}
+						}
 
-			if (distanciaDest <= 100 && comando == "") {
-				if (EnviarMatLab == true) { // Para apenas mandar o comando 1 vez
-					TCPServer.mensagemMatLab = "A1";
-					TCPServer.EnviarComandoMatLabHeli = true;  // Dizer ao MatLab para enviar comando -- Class TCPServer
-					EnviarMatLab = false;
-				}
-				EscolhaDestino.SetActive (true);
-				this.gameObject.GetComponent<NavMeshAgent> ().speed = Mathf.Floor (Velocidade / 2);
-			} else if (distanciaDest > 100) {
-				EnviarMatLab = true;
-				EscolhaDestino.SetActive (false);
-				this.gameObject.GetComponent<NavMeshAgent> ().speed = Mathf.Floor (Velocidade);
-			}
+						if (distanciaDest <= 100 && comando == "") {
+								if (EnviarMatLab == true) { // Para apenas mandar o comando 1 vez
+										TCPServer.mensagemMatLab = MatLab_Env_Comando.ini_estimuloValor.ToString () + "1";
+										TCPServer.EnviarComandoMatLabHeli = true;  // Dizer ao MatLab para enviar comando -- Class TCPServer
+										EnviarMatLab = false;
+								}
+								EscolhaDestino.SetActive (true);
+								this.gameObject.GetComponent<NavMeshAgent> ().speed = Mathf.Floor (Velocidade / 2);
+						} else if (distanciaDest > 100) {
+								EnviarMatLab = true;
+								EscolhaDestino.SetActive (false);
+								this.gameObject.GetComponent<NavMeshAgent> ().speed = Mathf.Floor (Velocidade);
+						}
 				
-			// Dar destino ao Taxi segundo a tecla pressionada
-			if (comando != "" && chegouDestino == true) {
-				if (comando == "M") {
-					VirarDireita ();
+						// Dar destino ao Taxi segundo a tecla pressionada
+						if (comando != "" && chegouDestino == true) {
+								if (comando == "M") {
+										VirarDireita ();
 					
-				}
-				if (comando == "Z") {
-					VirarEsquerda ();
-				}
-				if (comando == "Y") {
-					SeguirEmFrente ();
-				}
-				comando = "";
-				DestinoAnterior = DestinoActual;
-				chegouDestino = false;
+								}
+								if (comando == "Z") {
+										VirarEsquerda ();
+								}
+								if (comando == "Y") {
+										SeguirEmFrente ();
+								}
+								comando = "";
+								DestinoAnterior = DestinoActual;
+								chegouDestino = false;
 				
-			}
+						}
 
-			// Colocar o Taxi na rota de destino definida pela tecla pressionada, se o NavMesh estiver ativo
-			if (this.gameObject.GetComponent<NavMeshAgent> ().enabled == true) {
-				agente = gameObject.GetComponent<NavMeshAgent> ();
-				agente.SetDestination (destino [NumeroDestino].position);
-			}
+						// Colocar o Taxi na rota de destino definida pela tecla pressionada, se o NavMesh estiver ativo
+						if (this.gameObject.GetComponent<NavMeshAgent> ().enabled == true) {
+								agente = gameObject.GetComponent<NavMeshAgent> ();
+								agente.SetDestination (destino [NumeroDestino].position);
+						}
+				} else {
+			EnviarMatLabModoJogo = true;
+			tempo = 0;
 		}
 	}
 	

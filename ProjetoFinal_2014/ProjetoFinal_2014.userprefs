@@ -1,14 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Animations\AnimViajante.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MENU\Menu\Opcoes\SCRIPT\SinaisMatlabMenuOpcoes.cs">
     <Files>
-      <File FileName="Assets\Animations\AnimViajante.cs" Line="97" Column="5" />
-      <File FileName="Assets\HELICOPTERO\SCRIPTS\NavMeshDestinos.cs" Line="1" Column="1" />
-      <File FileName="Assets\CIDADE\_SCRIPTS\Conexao TCP\TCPServer.cs" Line="1" Column="1" />
-      <File FileName="Assets\CIDADE\_SCRIPTS\Destinos\DestinosTCPAnim.cs" Line="1" Column="1" />
-      <File FileName="Assets\CIDADE\_SCRIPTS\Destinos\DestinoEstimulos.cs" Line="1" Column="1" />
+      <File FileName="Assets\MENU\Menu\Opcoes\SCRIPT\VoltarMenuOpcoes.cs" Line="1" Column="1" />
+      <File FileName="Assets\MENU\Menu\Opcoes\SCRIPT\SinaisMatlabMenuOpcoes.cs" Line="26" Column="21" />
       <File FileName="Assets\CIDADE\_SCRIPTS\Destinos\DestinosAnim.cs" Line="1" Column="1" />
-      <File FileName="Assets\MENU\Menu\Script\PauseGame.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

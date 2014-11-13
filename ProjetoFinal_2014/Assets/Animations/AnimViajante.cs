@@ -32,7 +32,7 @@ public class AnimViajante : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{
-				if (DestinosAnim.AndarViajante == true) {
+				if (DestinosAnim.AndarViajante == true || DestinosTCPAnim.AndarViajante == true) {
 						SeguirCarro = false;
 						anim.SetBool ("Andar", true);
 						for (int i=0; i<6; i++) {
@@ -43,6 +43,7 @@ public class AnimViajante : MonoBehaviour
 								}
 						}
 						DestinosAnim.AndarViajante = false;
+						DestinosTCPAnim.AndarViajante = false;
 
 				}		
 

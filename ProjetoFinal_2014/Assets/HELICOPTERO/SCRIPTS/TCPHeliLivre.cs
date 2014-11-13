@@ -9,7 +9,7 @@ public class TCPHeliLivre : MonoBehaviour
 		public string comando;				 // contem a tecla que o utilizador escolheu
 		public static float distancia;
 		public GameObject Estimulos;
-		bool EnviarMatLab = true;
+		bool EnviarMatLabModoJogo = true;
 		bool Colisao = false;
 		bool JogoAcabou = false;
 		public Texture pauseGUI;
@@ -17,13 +17,14 @@ public class TCPHeliLivre : MonoBehaviour
 		public GUIStyle TipoLetraFinal;
 		int numeroColisao = 0; // Apenas faz a explosao quando bate a primeira vez em algo
 		public GameObject explosao;
+		float tempo = 0; // enviar comando ao MatLab 2s depois da conexao
 		
 		// Use this for initialization
 		void Start ()
 		{
 		Pontuacao = 0;
 		clickMenuReiniciar = false;
-		EnviarMatLab = true;
+		EnviarMatLabModoJogo = true;
 		Colisao = false;
 		JogoAcabou = false;
 		numeroColisao = 0;
@@ -32,16 +33,16 @@ public class TCPHeliLivre : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{
-				if (Tcpheli.conectado == true && Colisao == false) {
-
-						if (EnviarMatLab == true) { // Cada vez que se perde ligaçao e retoma, envia um pedido de Frequencias
-								EnviarMatLab = false;
-								Tcpheli.mensagemMatLab = "A1";
+		if (Tcpheli.conectado == true && Colisao == false) {
+			tempo += Time.deltaTime;
+						if (EnviarMatLabModoJogo == true && tempo>10) { // Cada vez que se perde ligaçao e retoma, envia um pedido de jogo modo2 (1 em 1s)
+								EnviarMatLabModoJogo = false;
+								Tcpheli.mensagemMatLab = MatLab_Env_Comando.modo2Valor.ToString() + "1";
 								Tcpheli.EnviarComandoMatLabHeli = true;
 						}
 						Estimulos.SetActive (true);
 
-						if (!Input.GetKey (KeyCode.UpArrow) && !Tcpheli.comand.Equals ("C")) {
+			if (!Input.GetKey (KeyCode.UpArrow) && !Tcpheli.comand.Equals ("C")) {
 								if (this.gameObject.transform.position.y > EscolherAneis.PosicaoYAneis) {
 										this.transform.Translate (new Vector3 (0, -2 * Time.deltaTime, 0));
 								}
@@ -49,16 +50,16 @@ public class TCPHeliLivre : MonoBehaviour
 						this.transform.Translate (new Vector3 (0, 0, 10 * Time.deltaTime));
 				
 						// Se houver ligacao TCP com o jogo ele anda, senao fica parado
-						if (Tcpheli.conectado == true) {
+			if (Tcpheli.conectado == true) {
 
-								if (Tcpheli.comand.Equals ("A")) {
+				if (Tcpheli.comand.Equals (MatLab_Det_Setas.DirValor.ToString())) {
 										this.transform.Rotate (new Vector3 (0, 10 * Time.deltaTime, 0));	
 								}
-								if (Tcpheli.comand.Equals ("B")) {
+				if (Tcpheli.comand.Equals (MatLab_Det_Setas.EsqValor.ToString())) {
 										this.transform.Rotate (new Vector3 (0, -10 * Time.deltaTime, 0));
 								}
 						
-								if (Tcpheli.comand.Equals ("C")) {
+				if (Tcpheli.comand.Equals (MatLab_Det_Setas.FrenteValor.ToString())) {
 										this.transform.Translate (new Vector3 (0, 2 * Time.deltaTime, 0));
 								}
 						}
@@ -77,7 +78,8 @@ public class TCPHeliLivre : MonoBehaviour
 						}
 
 				} else {
-						EnviarMatLab = true; 
+						EnviarMatLabModoJogo = true;
+						tempo = 0;
 				}
 				if (Colisao == true && JogoAcabou != true) {
 						this.transform.Translate (new Vector3 (0, -10 * Time.deltaTime, 0));	

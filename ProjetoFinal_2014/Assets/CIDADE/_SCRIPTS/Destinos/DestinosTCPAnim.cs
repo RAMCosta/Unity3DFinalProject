@@ -38,9 +38,11 @@ public class DestinosTCPAnim : MonoBehaviour
 		bool JogoAcabou = false;
 		public GUIStyle TipoLetraFinal;
 		public Texture pauseGUI;	
-
+		float tempo = 0; // enviar comando ao MatLab 2s depois da conexao
+		bool EnviarMatLabModoJogo = true; // variavel que controla o pedido de envio de ModoJogo
 		// variaveis para animacao
 		public static bool AndarViajante = false;
+		
 	
 		// Use this for initialization
 		void Start ()
@@ -55,7 +57,9 @@ public class DestinosTCPAnim : MonoBehaviour
 				EnviarMatLab = true;
 				clickMenuReiniciar = false;
 				JogoAcabou = false;
-
+				tempo = 0;
+				timer = 0;
+				EnviarMatLabModoJogo = true;
 				EscolhaDestino.SetActive (false);
 				DestinoActual = "Destino4";
 				DestinoAnterior = "Destino4";
@@ -70,8 +74,15 @@ public class DestinosTCPAnim : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{ 
-				if (TCPServer.connect == true) {
-		
+		if (TCPServer.connect == true) {
+						tempo += Time.deltaTime;
+						if (EnviarMatLabModoJogo == true && tempo > 10) { // Cada vez que se perde ligaçao e retoma, envia um pedido de jogo modo2 (1 em 1s)
+							TCPServer.mensagemMatLab = MatLab_Env_Comando.modo1Valor.ToString() + "1";
+							TCPServer.EnviarComandoMatLabHeli = true;
+							
+							EnviarMatLabModoJogo = false;
+						}
+
 						if (AnimViajante.SeguirCarro == true) {
 				
 								if (AnimViajante.ActualizarDestino == true) {
@@ -116,7 +127,7 @@ public class DestinosTCPAnim : MonoBehaviour
 			
 								// Escolha da tecla correspondente ao destino do Taxi
 								if (EscolhaDestino.activeSelf == true || ParouCruzamento == true) {
-										if (TCPServer.comand.Equals ("A") || TCPServer.comand.Equals ("D") || Input.GetKey (KeyCode.M)) {
+										if (TCPServer.comand.Equals (MatLab_Det_Setas.DirValor.ToString()) || Input.GetKey (KeyCode.M)) {
 												comando = "M";
 												EscolhaDestino.SetActive (false);
 												Direita.DireitaTeclado = false;
@@ -127,7 +138,7 @@ public class DestinosTCPAnim : MonoBehaviour
 												}
 					
 										}
-										if (TCPServer.comand.Equals ("B") || Input.GetKey (KeyCode.Z)) {
+										if (TCPServer.comand.Equals (MatLab_Det_Setas.EsqValor.ToString()) || Input.GetKey (KeyCode.Z)) {
 												comando = "Z";
 												EscolhaDestino.SetActive (false);
 												Esquerda.EsquerdaTeclado = false;
@@ -137,7 +148,7 @@ public class DestinosTCPAnim : MonoBehaviour
 														ActivarNavMesh (Velocidade, Aceleracao);
 												}
 										}
-										if (TCPServer.comand.Equals ("C") || Input.GetKey (KeyCode.Y)) {
+										if (TCPServer.comand.Equals (MatLab_Det_Setas.FrenteValor.ToString()) || Input.GetKey (KeyCode.Y)) {
 												comando = "Y";
 												EscolhaDestino.SetActive (false);
 												Frente.FrenteTeclado = false;
@@ -151,12 +162,12 @@ public class DestinosTCPAnim : MonoBehaviour
 			
 								if (distanciaDest <= 100 && comando == "") {
 										if (EnviarMatLab == true) { // Para apenas mandar o comando 1 vez
-												TCPServer.mensagemMatLab = "A1";
-												TCPServer.EnviarComandoMatLabHeli = true;  // Dizer ao MatLab para enviar comando -- Class TCPheli
+												TCPServer.mensagemMatLab = MatLab_Env_Comando.ini_estimuloValor.ToString () + "1";
+												TCPServer.EnviarComandoMatLabHeli = true;  // Dizer ao MatLab para enviar comando -- Class TCPServer
 												EnviarMatLab = false;
 										}
 										EscolhaDestino.SetActive (true);
-										this.gameObject.GetComponent<NavMeshAgent> ().speed = Mathf.Floor (Velocidade / 2);
+										this.gameObject.GetComponent<NavMeshAgent> ().speed = Mathf.Floor ((Velocidade / 2) - 2);
 								} else if (distanciaDest > 100) {
 										EnviarMatLab = true;
 										EscolhaDestino.SetActive (false);
@@ -187,6 +198,9 @@ public class DestinosTCPAnim : MonoBehaviour
 										agente.SetDestination (destino [NumeroDestino].position);
 								}
 						}	
+				} else {
+						EnviarMatLabModoJogo = true;
+						tempo = 0;
 				}
 				if (clickMenuReiniciar == true) {
 						Application.LoadLevel ("Taxi3DGusBamp");

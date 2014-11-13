@@ -20,7 +20,8 @@ public class TCPDestinos : MonoBehaviour
 		public static float distancia;
 		public GUIText DistanciaGUI;
 		bool EnviarMatLab = true; // ficheiro que controla o pedido de envio de freq, para nao enviar mais que uma vez
-	
+		bool EnviarMatLabModoJogo = true; // variavel que controla o pedido de envio de ModoJogo
+		float tempo = 0; // enviar comando ao MatLab 2s depois da conexao
 		// Use this for initialization
 		void Start ()
 		{	
@@ -34,13 +35,21 @@ public class TCPDestinos : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{	// Se houver ligacao TCP com o jogo ele anda, senao fica parado
-				if (Tcpheli.conectado == true) {
+		if (Tcpheli.conectado == true) {
+			tempo += Time.deltaTime;
+						// envia mensagem ao MatLab a confirmar o jogo no Modo 1 (Bifurcacao)
+			if (EnviarMatLabModoJogo == true && tempo>10) { // Cada vez que se perde ligaçao e retoma, envia um pedido de Frequencias
+				EnviarMatLabModoJogo = false;
+								Tcpheli.mensagemMatLab = MatLab_Env_Comando.modo1Valor.ToString () + "1";
+								Tcpheli.EnviarComandoMatLabHeli = true;
+						}	
+
 						distancia = (int)Vector3.Distance (this.transform.position, destino [NumeroDestino].transform.position);
 						DistanciaGUI.guiText.text = distancia + "m";
 					
 						// Escolha da tecla correspondente ao destino do Helicoptero
-						if (EscolhaDestino.activeSelf == true || ParouCruzamento == true) {
-								if (Tcpheli.comand.Equals ("A") || Tcpheli.comand.Equals ("D")) {
+						if (EscolhaDestino.activeSelf == true || ParouCruzamento == true) { 
+								if (Tcpheli.comand.Equals (MatLab_Det_Setas.DirValor.ToString ()) /*|| Tcpheli.comand.Equals ("D")*/) {
 										comando = "M";
 										EnviarMatLab = true;
 										EscolhaDestino.SetActive (false);
@@ -51,7 +60,7 @@ public class TCPDestinos : MonoBehaviour
 										}
 
 								}
-								if (Tcpheli.comand.Equals ("B") || Tcpheli.comand.Equals ("C")) {
+								if (Tcpheli.comand.Equals (MatLab_Det_Setas.EsqValor.ToString ())/* || Tcpheli.comand.Equals ("C")*/) {
 										comando = "Z";
 										EnviarMatLab = true;
 										EscolhaDestino.SetActive (false);
@@ -82,7 +91,7 @@ public class TCPDestinos : MonoBehaviour
 						// Verificacao de colidiu com os Triggers colocados ao meio das ruas, para visualizar as direcoes
 						if (distancia < 150 && comando == "") {
 								if (EnviarMatLab == true) { // Para apenas mandar o comando 1 vez
-										Tcpheli.mensagemMatLab = "A1"; // Mensagem de para pedir Frequencia
+										Tcpheli.mensagemMatLab = MatLab_Env_Comando.ini_estimuloValor.ToString () + "1"; // Mensagem de para pedir Frequencia
 										Tcpheli.EnviarComandoMatLabHeli = true;  // Dizer ao MatLab para enviar comando -- Class TCPheli
 										EnviarMatLab = false;
 								}
@@ -101,7 +110,11 @@ public class TCPDestinos : MonoBehaviour
 								agente.SetDestination (destino [NumeroDestino].position);
 						}
 		
-				} 
+				} else {
+			EnviarMatLabModoJogo = true;
+						tempo = 0;
+				}
+
 		}
 	
 		void OnTriggerEnter (Collider collision)
