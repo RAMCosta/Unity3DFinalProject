@@ -26,6 +26,7 @@ public class TCPServer : MonoBehaviour {
 	
 	public static bool EnviarComandoMatLabHeli = false;
 	public static string mensagemMatLab;
+	public static bool RecebeuComando = false;
 	
 	void Start ()
 	{
@@ -56,6 +57,12 @@ public class TCPServer : MonoBehaviour {
 			SendMessageGetFreq(tcp_client, mensagemMatLab);
 			EnviarComandoMatLabHeli = false;
 
+		}
+		if (DestinosTCPAnim.novoCmdRecebido == true) {
+			DestinosTCPAnim.novoCmdRecebido = false;
+			RecebeuComando = false;
+			Debug.Log ("Heli - " + DestinosTCPAnim.novoCmdRecebido);
+			Debug.Log ("TCP - " + RecebeuComando);
 		}
 		
 	}
@@ -112,6 +119,7 @@ public class TCPServer : MonoBehaviour {
 			ASCIIEncoding encoder = new ASCIIEncoding ();
 			Debug.Log (encoder.GetString (message, 0, bytes_read));
 			comand = encoder.GetString (message, 0, bytes_read);
+			RecebeuComando = true;
 			
 			
 		}

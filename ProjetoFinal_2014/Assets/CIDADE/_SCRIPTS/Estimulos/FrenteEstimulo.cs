@@ -18,7 +18,8 @@ public class FrenteEstimulo : MonoBehaviour {
 	{
 		if(FreqEscolhe.DefFreqManual==true)
 		{
-			frequencia = FreqEscolhe.FreqFrenteVal;
+			//frequencia = FreqEscolhe.FreqFrenteVal;
+			frequencia = 11;
 		} else if(Calibracao.DefFreqCalibrar==true){
 			frequencia= Calibracao.FreqRecMeioFrente;
 		}

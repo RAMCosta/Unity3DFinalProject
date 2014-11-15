@@ -18,7 +18,8 @@ public class EsquerdaEstimulo : MonoBehaviour {
 	{
 		if(FreqEscolhe.DefFreqManual==true)
 		{
-			frequencia = FreqEscolhe.FreqEsqVal;
+			//frequencia = FreqEscolhe.FreqEsqVal;
+			frequencia = 7;
 		} else if(Calibracao.DefFreqCalibrar==true){
 			frequencia= Calibracao.FreqRecMenorEsquerda;
 		}

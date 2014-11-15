@@ -18,7 +18,8 @@ public class DireitaEstimulo : MonoBehaviour {
 	{
 		if(FreqEscolhe.DefFreqManual==true)
 		{
-			frequencia = FreqEscolhe.FreqDirVal;
+			//frequencia = FreqEscolhe.FreqDirVal;
+			frequencia = 9;
 		} else if(Calibracao.DefFreqCalibrar==true){
 			frequencia= Calibracao.FreqRecMaiorDireita;
 		}

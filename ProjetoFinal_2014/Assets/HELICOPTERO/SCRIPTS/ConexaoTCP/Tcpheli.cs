@@ -11,7 +11,9 @@ public class Tcpheli : MonoBehaviour
 {
 
 		public static string comand = "a";
-		string ip_address; //= "127.0.0.1";
+		public static string[] ComandosRecebidos;
+		int numerocomando = 0;
+		string ip_address;// = "127.0.0.1";
 		int port = 10100;
 		Thread listen_thread;
 		TcpListener tcp_listener;
@@ -24,9 +26,9 @@ public class Tcpheli : MonoBehaviour
 		public GUIText Conectado;
 		int numeroConectado = 0; // Controlo de conexao, devido ao Matlab enviar 2x a sincronizacao .. 1 ao fazer Run e outra ao meter Play
 		public static string mensagemMatLab;
-
 		public static bool EnviarComandoMatLabHeli = false;
-	
+		public static bool RecebeuComando = false;
+
 		void Start ()
 		{
 
@@ -54,8 +56,15 @@ public class Tcpheli : MonoBehaviour
 				}
 
 				if (EnviarComandoMatLabHeli == true) {
+						numerocomando ++;
 						EnviarComandoMatLabHeli = false;
 						SendMessageGetFreq (tcp_client, mensagemMatLab);
+				}
+				if (TCPDestinos.novoCmdRecebido == true) {
+						TCPDestinos.novoCmdRecebido = false;
+						RecebeuComando = false;
+			Debug.Log ("Heli - " + TCPDestinos.novoCmdRecebido);
+			Debug.Log ("TCP - " + RecebeuComando);
 				}
 		}
 
@@ -76,7 +85,7 @@ public class Tcpheli : MonoBehaviour
 						if (numeroConectado == 2) {
 								conectado = true;
 								numeroConectado = 0;
-								Debug.Log("Conexao 2/2.. Pode Jogar");
+								Debug.Log ("Conexao 2/2.. Pode Jogar");
 						} else {
 								Debug.Log ("Conexao 1/2.. ");
 						}
@@ -94,6 +103,7 @@ public class Tcpheli : MonoBehaviour
 				int bytes_read;
 		
 				while (isTrue == true) {
+
 						bytes_read = 0;
 						//blocks until a client sends a message
 						bytes_read = client_stream.Read (message, 0, 4096);
@@ -101,7 +111,9 @@ public class Tcpheli : MonoBehaviour
 						//a socket error has occured
 						if (bytes_read == 0) {
 								//client has disconnected
+								conectado = false;
 								Debug.Log ("Disconectado");
+								numeroConectado = 0;
 								conectado = false;
 								tcp_client.Close ();
 								break;
@@ -110,8 +122,7 @@ public class Tcpheli : MonoBehaviour
 						ASCIIEncoding encoder = new ASCIIEncoding ();
 						Debug.Log (encoder.GetString (message, 0, bytes_read));
 						comand = encoder.GetString (message, 0, bytes_read);
-			
-			
+						RecebeuComando = true;
 				}
 		
 				if (isTrue == false) {
@@ -138,9 +149,12 @@ public class Tcpheli : MonoBehaviour
 		void OnApplicationQuit ()
 		{
 				conectado = false;
+
 				try {
+						clientThread.Abort();
 						tcp_client.Close ();
 						isTrue = false;
+						
 				} catch (Exception e) {
 						Debug.Log (e.Message);
 				}

@@ -37,12 +37,16 @@ public class DestinosTCPAnim : MonoBehaviour
 		bool clickMenuReiniciar = false;
 		bool JogoAcabou = false;
 		public GUIStyle TipoLetraFinal;
-		public Texture pauseGUI;	
+		public Texture pauseGUI;
 		float tempo = 0; // enviar comando ao MatLab 2s depois da conexao
 		bool EnviarMatLabModoJogo = true; // variavel que controla o pedido de envio de ModoJogo
 		// variaveis para animacao
 		public static bool AndarViajante = false;
-		
+		public static bool novoCmdRecebido = false;
+		bool controlocolisao = false;
+		public GameObject SetaDireita;
+		public GameObject SetaEsquerda;
+		public GameObject SetaFrente;
 	
 		// Use this for initialization
 		void Start ()
@@ -64,6 +68,9 @@ public class DestinosTCPAnim : MonoBehaviour
 				DestinoActual = "Destino4";
 				DestinoAnterior = "Destino4";
 				comando = "";
+				SetaDireita.SetActive (false);
+				SetaEsquerda.SetActive (false);
+				SetaFrente.SetActive (false);
 		
 				int minutes = Mathf.FloorToInt (timer / 60F);
 				int seconds = Mathf.FloorToInt (timer - minutes * 60);
@@ -74,14 +81,14 @@ public class DestinosTCPAnim : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{ 
-		if (TCPServer.connect == true) {
+				if (TCPServer.connect == true) {
 						tempo += Time.deltaTime;
-						if (EnviarMatLabModoJogo == true && tempo > 10) { // Cada vez que se perde ligaçao e retoma, envia um pedido de jogo modo2 (1 em 1s)
-							TCPServer.mensagemMatLab = MatLab_Env_Comando.modo1Valor.ToString() + "1";
-							TCPServer.EnviarComandoMatLabHeli = true;
+					/*	if (EnviarMatLabModoJogo == true && tempo > 10) { // Cada vez que se perde ligaçao e retoma, envia um pedido de jogo modo2 (1 em 1s)
+								TCPServer.mensagemMatLab = MatLab_Env_Comando.modo1Valor.ToString () + "1";
+								TCPServer.EnviarComandoMatLabHeli = true;
 							
-							EnviarMatLabModoJogo = false;
-						}
+								EnviarMatLabModoJogo = false;
+						}*/
 
 						if (AnimViajante.SeguirCarro == true) {
 				
@@ -127,10 +134,14 @@ public class DestinosTCPAnim : MonoBehaviour
 			
 								// Escolha da tecla correspondente ao destino do Taxi
 								if (EscolhaDestino.activeSelf == true || ParouCruzamento == true) {
-										if (TCPServer.comand.Equals (MatLab_Det_Setas.DirValor.ToString()) || Input.GetKey (KeyCode.M)) {
+										//if (TCPServer.comand.Equals (MatLab_Det_Setas.DirValor.ToString()) || Input.GetKey (KeyCode.M)) {
+										if (TCPServer.comand.Equals ("B") && TCPServer.RecebeuComando==true) {
+												novoCmdRecebido = true;
 												comando = "M";
+												TCPServer.comand.Equals ("");
 												EscolhaDestino.SetActive (false);
 												Direita.DireitaTeclado = false;
+												SetaDireita.SetActive (true);
 												this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
 												if (this.gameObject.GetComponent<NavMeshAgent> ().enabled == false) {
 														ParouCruzamento = false;
@@ -138,20 +149,28 @@ public class DestinosTCPAnim : MonoBehaviour
 												}
 					
 										}
-										if (TCPServer.comand.Equals (MatLab_Det_Setas.EsqValor.ToString()) || Input.GetKey (KeyCode.Z)) {
+										//		if (TCPServer.comand.Equals (MatLab_Det_Setas.EsqValor.ToString()) || Input.GetKey (KeyCode.Z)) {
+										if (TCPServer.comand.Equals ("A") && TCPServer.RecebeuComando==true) {
+												novoCmdRecebido = true;
+												TCPServer.comand.Equals ("");
 												comando = "Z";
 												EscolhaDestino.SetActive (false);
 												Esquerda.EsquerdaTeclado = false;
+												SetaEsquerda.SetActive (true);
 												this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
 												if (this.gameObject.GetComponent<NavMeshAgent> ().enabled == false) {
 														ParouCruzamento = false;
 														ActivarNavMesh (Velocidade, Aceleracao);
 												}
 										}
-										if (TCPServer.comand.Equals (MatLab_Det_Setas.FrenteValor.ToString()) || Input.GetKey (KeyCode.Y)) {
+										//if (TCPServer.comand.Equals (MatLab_Det_Setas.FrenteValor.ToString()) || Input.GetKey (KeyCode.Y)) {
+										if (TCPServer.comand.Equals ("C") && TCPServer.RecebeuComando==true) {
+												novoCmdRecebido = true;
 												comando = "Y";
+												TCPServer.comand.Equals ("");
 												EscolhaDestino.SetActive (false);
 												Frente.FrenteTeclado = false;
+												SetaFrente.SetActive (true);
 												this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
 												if (this.gameObject.GetComponent<NavMeshAgent> ().enabled == false) {
 														ParouCruzamento = false;
@@ -159,16 +178,34 @@ public class DestinosTCPAnim : MonoBehaviour
 												}
 										}
 								}
-			
-								if (distanciaDest <= 100 && comando == "") {
+
+								// Enviar comando ao MatLab 2s antes
+							/*	if (distanciaDest < 120) {
 										if (EnviarMatLab == true) { // Para apenas mandar o comando 1 vez
-												TCPServer.mensagemMatLab = MatLab_Env_Comando.ini_estimuloValor.ToString () + "1";
+												//Tcpheli.mensagemMatLab = MatLab_Env_Comando.ini_estimuloValor.ToString () + "1"; // Mensagem de para pedir Frequencia
+												TCPServer.mensagemMatLab = "R1";
+												TCPServer.EnviarComandoMatLabHeli = true;  // Dizer ao MatLab para enviar comando -- Class TCPheli
+												EnviarMatLab = false;
+										}
+							*/	}
+			
+								if (distanciaDest <= 50 && comando == "" && controlocolisao == false) {
+										if (EnviarMatLab == true) { // Para apenas mandar o comando 1 vez
+											/*	TCPServer.mensagemMatLab = MatLab_Env_Comando.ini_estimuloValor.ToString () + "1";
 												TCPServer.EnviarComandoMatLabHeli = true;  // Dizer ao MatLab para enviar comando -- Class TCPServer
+												EnviarMatLab = false;*/
+												TCPServer.mensagemMatLab = "R1";
+												TCPServer.EnviarComandoMatLabHeli = true;  // Dizer ao MatLab para enviar comando -- Class TCPheli
 												EnviarMatLab = false;
 										}
 										EscolhaDestino.SetActive (true);
 										this.gameObject.GetComponent<NavMeshAgent> ().speed = Mathf.Floor ((Velocidade / 2) - 2);
-								} else if (distanciaDest > 100) {
+								} else if (distanciaDest > 50) {
+										SetaDireita.SetActive (false);
+										SetaEsquerda.SetActive (false);
+										SetaFrente.SetActive (false);
+										TCPServer.comand.Equals ("");
+										controlocolisao = false;
 										EnviarMatLab = true;
 										EscolhaDestino.SetActive (false);
 										this.gameObject.GetComponent<NavMeshAgent> ().speed = Mathf.Floor (Velocidade);
@@ -197,7 +234,6 @@ public class DestinosTCPAnim : MonoBehaviour
 										agente = gameObject.GetComponent<NavMeshAgent> ();
 										agente.SetDestination (destino [NumeroDestino].position);
 								}
-						}	
 				} else {
 						EnviarMatLabModoJogo = true;
 						tempo = 0;
@@ -212,6 +248,7 @@ public class DestinosTCPAnim : MonoBehaviour
 				// Verificacao de colidiu com algum Trigger Destino. Esta condicao serve para verificar onde estao os viajantes,
 				// bem como verificar se o jogador definiu algum caminho antes de chegar ao cruzamento
 				if (collision.gameObject.name.Contains ("Destino") && DestinoActual != collision.gameObject.name) {
+						controlocolisao = true;
 						chegouDestino = true;
 						this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
 			

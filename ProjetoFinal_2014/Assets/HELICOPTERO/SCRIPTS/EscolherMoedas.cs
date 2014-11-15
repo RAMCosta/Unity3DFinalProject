@@ -12,7 +12,7 @@ public class EscolherMoedas : MonoBehaviour
 		public GUIStyle LetraHoras;
 		public GUIStyle TipoLetraFinal;
 		public Texture2D PontuacaoTexture;
-		string niceTime;
+		string niceTime; // TESTE
 		float timer;
 		bool JogoAcabou = false;
 		public Texture pauseGUI;
@@ -43,7 +43,7 @@ public class EscolherMoedas : MonoBehaviour
 		{
 
 			PontuacaoGUI.guiText.text = ApanharMoedas.Pontuacao + "/10";
-			TempoGUI.guiText.text = niceTime;
+			TempoGUI.guiText.text = niceTime; 
 
 				if (ApanharMoedas.Pontuacao == 10) {
 						Time.timeScale = 0.0f;

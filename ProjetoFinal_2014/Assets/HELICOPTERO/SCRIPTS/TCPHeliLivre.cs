@@ -37,33 +37,36 @@ public class TCPHeliLivre : MonoBehaviour
 			tempo += Time.deltaTime;
 						if (EnviarMatLabModoJogo == true && tempo>12) { // Cada vez que se perde ligaçao e retoma, envia um pedido de jogo modo2 (1 em 1s)
 								EnviarMatLabModoJogo = false;
-								Tcpheli.mensagemMatLab = MatLab_Env_Comando.modo2Valor.ToString() + "1";
+								//Tcpheli.mensagemMatLab = MatLab_Env_Comando.modo2Valor.ToString() + "1";
+								Tcpheli.mensagemMatLab = "Q1";
 								Tcpheli.EnviarComandoMatLabHeli = true;
 								Estimulos.SetActive (true);
 						}
 						
 
-			if (!Input.GetKey (KeyCode.UpArrow) && !Tcpheli.comand.Equals ("C")) {
+					//	if (!Input.GetKey (KeyCode.UpArrow) && !Tcpheli.comand.Equals ("C")) {
 								if (this.gameObject.transform.position.y > EscolherAneis.PosicaoYAneis) {
 										this.transform.Translate (new Vector3 (0, -2 * Time.deltaTime, 0));
 								}
-						}
-						this.transform.Translate (new Vector3 (0, 0, 10 * Time.deltaTime));
+					//	}
+						this.transform.Translate (new Vector3 (0, 0, 5 * Time.deltaTime));
 				
 						// Se houver ligacao TCP com o jogo ele anda, senao fica parado
-			if (Tcpheli.conectado == true) {
 
-				if (Tcpheli.comand.Equals (MatLab_Det_Setas.DirValor.ToString())) {
+				//if (Tcpheli.comand.Equals (MatLab_Det_Setas.DirValor.ToString())) {
+							if (Tcpheli.comand.Equals ("B")) {
 										this.transform.Rotate (new Vector3 (0, 10 * Time.deltaTime, 0));	
 								}
-				if (Tcpheli.comand.Equals (MatLab_Det_Setas.EsqValor.ToString())) {
+				//if (Tcpheli.comand.Equals (MatLab_Det_Setas.EsqValor.ToString())) {
+							if (Tcpheli.comand.Equals ("A")) {
 										this.transform.Rotate (new Vector3 (0, -10 * Time.deltaTime, 0));
 								}
 						
-				if (Tcpheli.comand.Equals (MatLab_Det_Setas.FrenteValor.ToString())) {
-										this.transform.Translate (new Vector3 (0, 2 * Time.deltaTime, 0));
+			//	if (Tcpheli.comand.Equals (MatLab_Det_Setas.FrenteValor.ToString())) {
+							if (Tcpheli.comand.Equals ("C")) {
+										this.transform.Translate (new Vector3 (0, 0, 0));
 								}
-						}
+						
 				
 
 

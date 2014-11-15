@@ -42,7 +42,7 @@ public class HeliLivre : MonoBehaviour
 										this.transform.Translate (new Vector3 (0, -2 * Time.deltaTime, 0));
 								}
 						}
-						this.transform.Translate (new Vector3 (0, 0, 10 * Time.deltaTime));			
+						this.transform.Translate (new Vector3 (0, 0, 20 * Time.deltaTime));			
 
 
 						if (Input.GetKey (KeyCode.RightArrow) || DireitaAndroid.DirAndroid == true) {

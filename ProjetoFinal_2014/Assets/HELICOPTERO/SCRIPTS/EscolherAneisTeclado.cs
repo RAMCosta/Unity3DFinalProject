@@ -33,13 +33,19 @@ public class EscolherAneisTeclado : MonoBehaviour
 		JogoAcabou = false;
 		ValorRandom = 0;
 		contador = 0;
+
+			// Escolha aleatoria de oito numeros em dezasseis
 				while (contador<8) {
 						ValorRandom = Random.Range (1, 16);
+						// verificar se o numero nao existe na lista
 						if (!ListaAneis.Contains (ValorRandom)) {
+								// Adicionar os numeros a lista
 								ListaAneis.Add (ValorRandom);
 								contador++;
 						}
 				}
+				
+
 				int minutes = Mathf.FloorToInt (timer / 60F);
 				int seconds = Mathf.FloorToInt (timer - minutes * 60);
 				niceTime = string.Format ("{0:0}:{1:00}", minutes, seconds);
@@ -53,7 +59,8 @@ public class EscolherAneisTeclado : MonoBehaviour
 				DistanciaGUI.guiText.text = distancia + "m";
 				PontuacaoGUI.guiText.text = PassarAneis.Pontos + "/10";
 				TempoGUI.guiText.text = niceTime;
-			
+		// Associacao da lista ao Anel, sendo o variavel PassarAneis os pontos do utilizador
+		// como cada anel vale um ponto, este percorre a lista toda
 				Aneis [int.Parse (ListaAneis [PassarAneis.Pontos].ToString ())].SetActive (true);
 				PosicaoYAneis = Aneis [int.Parse (ListaAneis [PassarAneis.Pontos].ToString ())].transform.position.y;
 				SetasAuxiliares.transform.LookAt (Aneis [int.Parse (ListaAneis [PassarAneis.Pontos].ToString ())].transform);
