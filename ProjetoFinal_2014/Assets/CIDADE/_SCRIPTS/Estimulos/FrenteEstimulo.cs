@@ -16,13 +16,16 @@ public class FrenteEstimulo : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		if(FreqEscolhe.DefFreqManual==true)
+	
+	  if(FreqEscolhe.DefFreqManual==true)
 		{
-			//frequencia = FreqEscolhe.FreqFrenteVal;
-			frequencia = 11;
+			frequencia = FreqEscolhe.FreqFrenteVal;
+			Debug.Log("Frn" + frequencia);
 		} else if(Calibracao.DefFreqCalibrar==true){
 			frequencia= Calibracao.FreqRecMeioFrente;
+			Debug.Log("Frn" + frequencia);
 		}
+
 		delay = (int) (1000 / frequencia)/2;
 		
 		ThreadBlink = new Thread (Blink);

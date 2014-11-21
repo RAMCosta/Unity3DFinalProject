@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class TCPDestinos : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class TCPDestinos : MonoBehaviour
 		string ColisaoActual;
 		public GameObject SetaDireita;
 		public GameObject SetaEsquerda;
-		public int NumeroDestino = 1;
+		public static int NumeroDestino = 1;
 		int Aceleracao = 10;
 		int Velocidade = 10;
 		string DestinoActual;
@@ -27,6 +28,8 @@ public class TCPDestinos : MonoBehaviour
 		// Use this for initialization
 		public static bool novoCmdRecebido = false;
 		bool controlocolisao = false;
+		string DirValor;
+		string EsqValor;
 
 		void Start ()
 		{	
@@ -37,28 +40,38 @@ public class TCPDestinos : MonoBehaviour
 				DestinoActual = "Destino20";
 				DestinoAnterior = "Destino20";
 				comando = "";
+
+				int d = Convert.ToInt32(MatLab_Det_Setas.DirValor.ToString(), 10);
+				char dir = (char) d;
+				DirValor = dir.ToString ();
+				
+				int e = Convert.ToInt32(MatLab_Det_Setas.EsqValor.ToString(), 10);
+				char esq = (char) e;
+				EsqValor = esq.ToString ();
 		}
 	
 		// Update is called once per frame
 		void Update ()
 		{	// Se houver ligacao TCP com o jogo ele anda, senao fica parado
 				if (Tcpheli.conectado == true) {
-						/*tempo += Time.deltaTime;
-						// envia mensagem ao MatLab a confirmar o jogo no Modo 1 (Bifurcacao)
-						if (EnviarMatLabModoJogo == true && tempo > 12) { // Cada vez que se perde ligaçao e retoma, envia um pedido de Frequencias
-								EnviarMatLabModoJogo = false;
-									Tcpheli.mensagemMatLab = MatLab_Env_Comando.modo1Valor.ToString () + "1";
-									Tcpheli.mensagemMatLab = "P1";
-									Tcpheli.EnviarComandoMatLabHeli = true;
-						}*/	
+						tempo += Time.deltaTime;
+						/*if (EnviarMatLabModoJogo == true && tempo > 11) { // Cada vez que se perde ligaçao e retoma, envia um pedido de jogo modo2 (1 em 1s)
+							int n = Convert.ToInt32(MatLab_Env_Comando.modo1Valor.ToString (), 10);
+							char res = (char) n;
+							string msg = res.ToString ();				
+
+							Tcpheli.mensagemMatLab = msg + "1";
+							Tcpheli.EnviarComandoMatLabHeli = true;
+							EnviarMatLabModoJogo = false;
+						}*/
 
 						distancia = (int)Vector3.Distance (this.transform.position, destino [NumeroDestino].transform.position);
 						DistanciaGUI.guiText.text = distancia + "m";
 					
 						// Escolha da tecla correspondente ao destino do Helicoptero
 						if (EscolhaDestino.activeSelf == true || ParouCruzamento == true) { 
-								//	if (Tcpheli.comand.Equals (MatLab_Det_Setas.DirValor.ToString ()) /*|| Tcpheli.comand.Equals ("D")*/) {
-								if (Tcpheli.comand.Equals ("B") && Tcpheli.RecebeuComando == true/*|| Tcpheli.comand.Equals ("D")*/) {
+						if (Tcpheli.comand.Equals (DirValor) && Tcpheli.RecebeuComando==true ||Input.GetKey (KeyCode.M)) {
+								//if (Tcpheli.comand.Equals ("B") && Tcpheli.RecebeuComando == true/*|| Tcpheli.comand.Equals ("D")*/) {
 										novoCmdRecebido = true;
 										Tcpheli.comand.Equals ("");
 										comando = "M";
@@ -72,8 +85,8 @@ public class TCPDestinos : MonoBehaviour
 										}
 
 								}
-								//if (Tcpheli.comand.Equals (MatLab_Det_Setas.EsqValor.ToString ())/* || Tcpheli.comand.Equals ("C")*/) {
-								if (Tcpheli.comand.Equals ("A") && Tcpheli.RecebeuComando == true/* || Tcpheli.comand.Equals ("C")*/) {	
+						if (Tcpheli.comand.Equals (EsqValor) && Tcpheli.RecebeuComando==true || Input.GetKey (KeyCode.Z)) {
+							//	if (Tcpheli.comand.Equals ("A") && Tcpheli.RecebeuComando == true/* || Tcpheli.comand.Equals ("C")*/) {	
 										novoCmdRecebido = true;
 										Tcpheli.comand.Equals ("");
 										comando = "Z";
@@ -120,17 +133,16 @@ public class TCPDestinos : MonoBehaviour
 						// Verificacao de colidiu com os Triggers colocados ao meio das ruas, para visualizar as direcoes
 						if (distancia <= 100 && comando == "" && controlocolisao == false) {
 								if (EnviarMatLab == true) { // Para apenas mandar o comando 1 vez
-										/*Tcpheli.mensagemMatLab = MatLab_Env_Comando.ini_estimuloValor.ToString () + "1"; // Mensagem de para pedir Frequencia
-										Tcpheli.mensagemMatLab = "R1";
-										Tcpheli.EnviarComandoMatLabHeli = true;  // Dizer ao MatLab para enviar comando -- Class TCPheli
-										EnviarMatLab = false;*/
-										Tcpheli.mensagemMatLab = "R1";
-										Tcpheli.EnviarComandoMatLabHeli = true;  // Dizer ao MatLab para enviar comando -- Class TCPheli
-										EnviarMatLab = false;
+									int n = Convert.ToInt32(MatLab_Env_Comando.ini_estimuloValor.ToString (), 10);
+									char res = (char) n;
+									string msg = res.ToString ();			
+									Tcpheli.mensagemMatLab = msg + "1";
+									Tcpheli.EnviarComandoMatLabHeli = true; // Dizer ao MatLab para enviar comando -- Class Tcpheli
+									EnviarMatLab = false;
 								}
 								EscolhaDestino.SetActive (true);
 								this.gameObject.GetComponent<NavMeshAgent> ().speed = Mathf.Floor (Velocidade / 2);
-						} else if (distancia > 120) {
+						} else if (distancia > 100) {
 								SetaDireita.SetActive (false);
 								SetaEsquerda.SetActive (false);
 								controlocolisao = false;
@@ -152,6 +164,10 @@ public class TCPDestinos : MonoBehaviour
 						tempo = 0;
 				}
 
+		}
+
+		void OnGUI(){
+			Velocidade = (int)GUI.HorizontalSlider (new Rect (Screen.width/3, Screen.height/14, Screen.width/4, Screen.width/5), Velocidade, 5, 20);
 		}
 	
 		void OnTriggerEnter (Collider collision)
@@ -198,6 +214,9 @@ public class TCPDestinos : MonoBehaviour
 						NumeroDestino = 20;
 				}
 				if (DestinoActual == "Destino1" && DestinoAnterior == "Destino3") {
+						NumeroDestino = 2;
+				}
+				if (DestinoActual == "Destino1" && DestinoAnterior == "Destino7") {
 						NumeroDestino = 2;
 				}
 		
@@ -356,6 +375,9 @@ public class TCPDestinos : MonoBehaviour
 				if (DestinoActual == "Destino13" && DestinoAnterior == "Destino17") {
 						NumeroDestino = 12;
 				}
+				if (DestinoActual == "Destino13" && DestinoAnterior == "Destino20") {
+					NumeroDestino = 17;
+				}
 		
 				if (DestinoActual == "Destino14" && DestinoAnterior == "Destino9") {
 						NumeroDestino = 10;
@@ -443,6 +465,9 @@ public class TCPDestinos : MonoBehaviour
 				}
 				if (DestinoActual == "Destino1" && DestinoAnterior == "Destino3") {
 						NumeroDestino = 20;
+				}
+				if (DestinoActual == "Destino1" && DestinoAnterior == "Destino7") {
+					NumeroDestino = 20;
 				}
 		
 				if (DestinoActual == "Destino2" && DestinoAnterior == "Destino1") {
@@ -602,6 +627,9 @@ public class TCPDestinos : MonoBehaviour
 				}
 				if (DestinoActual == "Destino13" && DestinoAnterior == "Destino17") {
 						NumeroDestino = 8;
+				}
+				if (DestinoActual == "Destino13" && DestinoAnterior == "Destino20") {
+						NumeroDestino = 12;
 				}
 		
 				if (DestinoActual == "Destino14" && DestinoAnterior == "Destino9") {

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class DestinosTCPAnim : MonoBehaviour
 {
@@ -47,6 +48,9 @@ public class DestinosTCPAnim : MonoBehaviour
 		public GameObject SetaDireita;
 		public GameObject SetaEsquerda;
 		public GameObject SetaFrente;
+		string DirValor;
+		string EsqValor;
+		string FrnValor;
 	
 		// Use this for initialization
 		void Start ()
@@ -75,6 +79,18 @@ public class DestinosTCPAnim : MonoBehaviour
 				int minutes = Mathf.FloorToInt (timer / 60F);
 				int seconds = Mathf.FloorToInt (timer - minutes * 60);
 				niceTime = string.Format ("{0:0}:{1:00}", minutes, seconds);
+
+				int d = Convert.ToInt32(MatLab_Det_Setas.DirValor.ToString(), 10);
+				char dir = (char) d;
+				DirValor = dir.ToString ();
+
+				int e = Convert.ToInt32(MatLab_Det_Setas.EsqValor.ToString(), 10);
+				char esq = (char) e;
+				EsqValor = esq.ToString ();
+
+				int f = Convert.ToInt32(MatLab_Det_Setas.FrenteValor.ToString(), 10);
+				char frn = (char) f;
+				FrnValor = frn.ToString ();
 		
 		}
 	
@@ -83,12 +99,16 @@ public class DestinosTCPAnim : MonoBehaviour
 		{ 
 				if (TCPServer.connect == true) {
 						tempo += Time.deltaTime;
-					/*	if (EnviarMatLabModoJogo == true && tempo > 10) { // Cada vez que se perde ligaçao e retoma, envia um pedido de jogo modo2 (1 em 1s)
-								TCPServer.mensagemMatLab = MatLab_Env_Comando.modo1Valor.ToString () + "1";
-								TCPServer.EnviarComandoMatLabHeli = true;
-							
-								EnviarMatLabModoJogo = false;
-						}*/
+						if (EnviarMatLabModoJogo == true && tempo > 11) { // Cada vez que se perde ligaçao e retoma, envia um pedido de jogo modo2 (1 em 1s)
+							int n = Convert.ToInt32(MatLab_Env_Comando.modo1Valor.ToString (), 10);
+							char res = (char) n;
+							string msg = res.ToString ();				
+
+
+							TCPServer.mensagemMatLab = msg + "1";
+							TCPServer.EnviarComandoMatLabHeli = true;
+							EnviarMatLabModoJogo = false;
+						}
 
 						if (AnimViajante.SeguirCarro == true) {
 				
@@ -134,8 +154,8 @@ public class DestinosTCPAnim : MonoBehaviour
 			
 								// Escolha da tecla correspondente ao destino do Taxi
 								if (EscolhaDestino.activeSelf == true || ParouCruzamento == true) {
-										//if (TCPServer.comand.Equals (MatLab_Det_Setas.DirValor.ToString()) || Input.GetKey (KeyCode.M)) {
-										if (TCPServer.comand.Equals ("B") && TCPServer.RecebeuComando==true) {
+										if (TCPServer.comand.Equals (DirValor) && TCPServer.RecebeuComando==true || Input.GetKey (KeyCode.M)) {
+										//if (TCPServer.comand.Equals ("B") && TCPServer.RecebeuComando==true) {
 												novoCmdRecebido = true;
 												comando = "M";
 												TCPServer.comand.Equals ("");
@@ -149,8 +169,8 @@ public class DestinosTCPAnim : MonoBehaviour
 												}
 					
 										}
-										//		if (TCPServer.comand.Equals (MatLab_Det_Setas.EsqValor.ToString()) || Input.GetKey (KeyCode.Z)) {
-										if (TCPServer.comand.Equals ("A") && TCPServer.RecebeuComando==true) {
+									   	if (TCPServer.comand.Equals (EsqValor) && TCPServer.RecebeuComando==true || Input.GetKey (KeyCode.Z)) {
+										//if (TCPServer.comand.Equals ("A") && TCPServer.RecebeuComando==true) {
 												novoCmdRecebido = true;
 												TCPServer.comand.Equals ("");
 												comando = "Z";
@@ -163,8 +183,8 @@ public class DestinosTCPAnim : MonoBehaviour
 														ActivarNavMesh (Velocidade, Aceleracao);
 												}
 										}
-										//if (TCPServer.comand.Equals (MatLab_Det_Setas.FrenteValor.ToString()) || Input.GetKey (KeyCode.Y)) {
-										if (TCPServer.comand.Equals ("C") && TCPServer.RecebeuComando==true) {
+										if (TCPServer.comand.Equals (FrnValor) && TCPServer.RecebeuComando==true || Input.GetKey (KeyCode.Y)) {
+									//	if (TCPServer.comand.Equals ("C") && TCPServer.RecebeuComando==true) {
 												novoCmdRecebido = true;
 												comando = "Y";
 												TCPServer.comand.Equals ("");
@@ -191,11 +211,13 @@ public class DestinosTCPAnim : MonoBehaviour
 			
 								if (distanciaDest <= 50 && comando == "" && controlocolisao == false) {
 										if (EnviarMatLab == true) { // Para apenas mandar o comando 1 vez
-											/*	TCPServer.mensagemMatLab = MatLab_Env_Comando.ini_estimuloValor.ToString () + "1";
-												TCPServer.EnviarComandoMatLabHeli = true;  // Dizer ao MatLab para enviar comando -- Class TCPServer
-												EnviarMatLab = false;*/
-												TCPServer.mensagemMatLab = "R1";
-												TCPServer.EnviarComandoMatLabHeli = true;  // Dizer ao MatLab para enviar comando -- Class TCPheli
+												int n = Convert.ToInt32(MatLab_Env_Comando.ini_estimuloValor.ToString (), 10);
+												char res = (char) n;
+												string msg = res.ToString ();				
+												
+												
+												TCPServer.mensagemMatLab = msg + "1";
+												TCPServer.EnviarComandoMatLabHeli = true; // Dizer ao MatLab para enviar comando -- Class TCPServer
 												EnviarMatLab = false;
 										}
 										EscolhaDestino.SetActive (true);

@@ -16,13 +16,15 @@ public class EsquerdaEstimulo : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
+	
 		if(FreqEscolhe.DefFreqManual==true)
 		{
-			//frequencia = FreqEscolhe.FreqEsqVal;
-			frequencia = 7;
+			frequencia = FreqEscolhe.FreqEsqVal;
+			Debug.Log("Esq" + frequencia);
 		} else if(Calibracao.DefFreqCalibrar==true){
 			frequencia= Calibracao.FreqRecMenorEsquerda;
 		}
+
 		delay = (int) (1000 / frequencia)/2;
 		
 		ThreadBlink = new Thread (Blink);

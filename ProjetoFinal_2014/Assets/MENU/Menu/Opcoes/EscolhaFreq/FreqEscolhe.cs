@@ -7,9 +7,9 @@ public class FreqEscolhe : MonoBehaviour
 		public GUIText FreqEsq;
 		public GUIText FreqDir;
 		public GUIText FreqFrente;
-		public static int FreqEsqVal = 6;
-		public static int FreqDirVal = 11;
-		public static int FreqFrenteVal = 15;
+		public static int FreqEsqVal = 7;
+		public static int FreqDirVal = 9;
+		public static int FreqFrenteVal = 11;
 		public static bool DefFreqManual = true;
 		// Use this for initialization
 		void Start ()

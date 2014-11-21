@@ -339,7 +339,7 @@ public class DestinosAnim : MonoBehaviour {
 	//  ----------------------  FUNCOES RELATIVAS A DIRECAO ESCOLHIDA ------------------------------------------------------
 	void VirarDireita ()
 	{
-		if (DestinoActual == "Destino1" && DestinoAnterior == "Destino63") {
+				if (DestinoActual == "Destino1" && DestinoAnterior == "Destino63") {
 						NumeroDestino = 2;
 				} else if (DestinoActual == "Destino2" && DestinoAnterior == "Destino1") {
 						NumeroDestino = 3;

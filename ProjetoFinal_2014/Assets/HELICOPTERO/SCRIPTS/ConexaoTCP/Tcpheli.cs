@@ -59,6 +59,7 @@ public class Tcpheli : MonoBehaviour
 						numerocomando ++;
 						EnviarComandoMatLabHeli = false;
 						SendMessageGetFreq (tcp_client, mensagemMatLab);
+						Debug.Log("Enviou Mensagem " + mensagemMatLab);
 				}
 				if (TCPDestinos.novoCmdRecebido == true) {
 						TCPDestinos.novoCmdRecebido = false;
@@ -86,6 +87,7 @@ public class Tcpheli : MonoBehaviour
 								conectado = true;
 								numeroConectado = 0;
 								Debug.Log ("Conexao 2/2.. Pode Jogar");
+								
 						} else {
 								Debug.Log ("Conexao 1/2.. ");
 						}
@@ -125,16 +127,14 @@ public class Tcpheli : MonoBehaviour
 						RecebeuComando = true;
 				}
 		
-				if (isTrue == false) {
+			/*	if (isTrue == false) {
 						tcp_client.Close ();
 						Debug.Log ("Conexao TCP terminada");
 						conectado = false;
 						clientThread.Abort ();
 						listen_thread.Abort ();
 						tcp_listener.Stop ();
-						Debug.Log ("clientThread: " + clientThread.IsAlive); 
-						Debug.Log ("listen_thread: " + clientThread.IsAlive); 
-				}
+				}*/
 		}
 
 		void SendMessageGetFreq (TcpClient client, string message)
@@ -147,25 +147,28 @@ public class Tcpheli : MonoBehaviour
 		}
 	
 		void OnApplicationQuit ()
-		{
-				conectado = false;
-
-				try {
-						clientThread.Abort();
-						tcp_client.Close ();
-						isTrue = false;
-						
-				} catch (Exception e) {
-						Debug.Log (e.Message);
-				}
-		
-				// You must close the tcp listener
-				try {
-						tcp_listener.Stop ();
-						isTrue = false;
-				} catch (Exception e) {
-						Debug.Log (e.Message);
-				}
-				Debug.Log (clientThread.IsAlive); //true (must be false)
+	{
+		try {
+			conectado = false;
+			// Terminar ligacao caso esta seja abortada
+			Debug.Log ("Close Streams");
+			
+			tcp_client.Close ();
+			Debug.Log ("Conexao TCP terminada");
+			conectado = false;
+			Debug.Log ("abort Threads");
+			clientThread.Abort ();
+			//	clientThread = null;
+			listen_thread.Abort ();
+			tcp_listener.Stop ();
+			Debug.Log ("clientThread: " + clientThread.IsAlive); 
+			Debug.Log ("listen_thread: " + clientThread.IsAlive); 
+			
+			tcp_client.Close ();
+			
+			//Debug.Log (clientThread.IsAlive); //true (must be false)
+		} catch (Exception e) {
+			Debug.Log (e.Message);
 		}
+	}
 }

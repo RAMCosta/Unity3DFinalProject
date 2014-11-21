@@ -14,6 +14,8 @@ public class HeliLivre : MonoBehaviour
 		bool clickMenuReiniciar = false;
 		public GUIStyle TipoLetraFinal;
 		int numeroColisao = 0; // Apenas faz a explosao quando bate a primeira vez em algo
+		bool ParaAcabar = false;
+		public GUIText colisoes;
 		
 		// Use this for initialization
 		void Start ()
@@ -26,11 +28,11 @@ public class HeliLivre : MonoBehaviour
 				} else {
 						Teclado.SetActive (false);
 				}
-		numeroColisao = 0;
-		clickMenuReiniciar = false;
-		JogoAcabou = false;
-		Colisao = false;
-		Pontuacao = 0;
+				numeroColisao = 0;
+				clickMenuReiniciar = false;
+				JogoAcabou = false;
+				Colisao = false;
+				Pontuacao = 0;
 		}
 		
 		// Update is called once per frame
@@ -42,19 +44,25 @@ public class HeliLivre : MonoBehaviour
 										this.transform.Translate (new Vector3 (0, -2 * Time.deltaTime, 0));
 								}
 						}
+						
+						if (this.gameObject.transform.position.y < EscolherAneisTeclado.PosicaoYAneis) {
+								this.transform.Translate (new Vector3 (0, 2 * Time.deltaTime, 0));
+						}
+						// Comando para seguir em frente
 						this.transform.Translate (new Vector3 (0, 0, 20 * Time.deltaTime));			
-
-
+						// Virar a direita
 						if (Input.GetKey (KeyCode.RightArrow) || DireitaAndroid.DirAndroid == true) {
 								this.transform.Rotate (new Vector3 (0, 10 * Time.deltaTime, 0));	
 						}
+						// Virar a esquerda
 						if (Input.GetKey (KeyCode.LeftArrow) || EsquerdaAndroid.EsqAndroid == true) {
 								this.transform.Rotate (new Vector3 (0, -10 * Time.deltaTime, 0));
 						}
-		
+						// Subir o helicoptero (eixo dos yy)
 						if (Input.GetKey (KeyCode.UpArrow) || FrenteAndroid.FrnAndroid == true) {
 								this.transform.Translate (new Vector3 (0, 2 * Time.deltaTime, 0));
 						}
+
 				} else if (Colisao == true && JogoAcabou != true) {
 						this.transform.Translate (new Vector3 (0, -10 * Time.deltaTime, 0));	
 				} 
@@ -66,20 +74,28 @@ public class HeliLivre : MonoBehaviour
 		
 		void  OnCollisionEnter (Collision collision)
 		{
-				Colisao = true;
-				explosao.SetActive (true);
-				if (numeroColisao == 0) {
-						explosao.audio.Play ();
+				if (!collision.gameObject.name.Contains ("Anel")) {
+						colisoes.text = numeroColisao.ToString() + "/10";
+						Debug.Log ("Colisao: " + numeroColisao);
+						if (numeroColisao == 10) {
+								explosao.SetActive (true);
+								explosao.audio.Play ();
+								Colisao = true;
+								this.rigidbody.useGravity = true;
+								this.audio.Stop ();
+								//	ParaAcabar = true;
+						}
+						if (numeroColisao > 10) {
+								if (collision.gameObject.name.Contains ("floor") || collision.gameObject.name.Contains ("Terrain") || collision.gameObject.name.Contains ("Street") || numeroColisao == 4) {
+										JogoAcabou = true;
+										this.GetComponent<RodarHelices> ().enabled = false;
+					
+										Time.timeScale = 0.0f;
+								}
+						}
+						numeroColisao++;
 				}
-				this.rigidbody.useGravity = true;
-				this.audio.Stop ();
-				if (collision.gameObject.name.Contains ("floor") || collision.gameObject.name.Contains ("Terrain") || collision.gameObject.name.Contains ("Street") || numeroColisao == 4) {
-						JogoAcabou = true;
-						this.GetComponent<RodarHelices> ().enabled = false;
-				
-						Time.timeScale = 0.0f;
-				}
-				numeroColisao++;
+
 		}
 
 		void OnGUI ()

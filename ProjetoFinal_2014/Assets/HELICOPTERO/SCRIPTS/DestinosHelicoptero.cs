@@ -5,7 +5,7 @@ public class DestinosHelicoptero : MonoBehaviour
 {
 	
 		string DestinoAnterior;
-		int NumeroDestino = 1;
+		public static int NumeroDestino = 1;
 		int Aceleracao = 10;
 		int Velocidade = 10;
 		string DestinoActual;
@@ -18,7 +18,6 @@ public class DestinosHelicoptero : MonoBehaviour
 		public static int distancia;
 		public GUIText DistanciaGUI;
 		public GameObject Teclado;
-	
 	
 		// Use this for initialization
 		void Start ()
@@ -96,10 +95,10 @@ public class DestinosHelicoptero : MonoBehaviour
 				} 
 
 				// Verificacao de colidiu com os Triggers colocados ao meio das ruas, para visualizar as direcoes
-				if (distancia <= 150 && comando == "") {
+				if (distancia <= 100 && comando == "") {
 						EscolhaDestino = true;
 						this.gameObject.GetComponent<NavMeshAgent> ().speed = Mathf.Floor (Velocidade / 2);
-				} else if (distancia > 150) {
+				} else if (distancia > 100) {
 						EscolhaDestino = false;
 						this.gameObject.GetComponent<NavMeshAgent> ().speed = Mathf.Floor (Velocidade);
 				}
@@ -142,6 +141,10 @@ public class DestinosHelicoptero : MonoBehaviour
 				this.gameObject.GetComponent<NavMeshAgent> ().speed = Velocidade;
 				this.gameObject.GetComponent<NavMeshAgent> ().acceleration = Aceleracao;
 		}
+
+	void OnGUI(){
+		Velocidade = (int)GUI.HorizontalSlider (new Rect (Screen.width/3, Screen.height/14, Screen.width/4, Screen.width/5), Velocidade, 5, 20);
+	}
 	
 
 		//  ----------------------  FUNCOES RELATIVAS A DIRECAO ESCOLHIDA ------------------------------------------------------
@@ -156,6 +159,9 @@ public class DestinosHelicoptero : MonoBehaviour
 				}
 				if (DestinoActual == "Destino1" && DestinoAnterior == "Destino3") {
 						NumeroDestino = 2;
+				}
+				if (DestinoActual == "Destino1" && DestinoAnterior == "Destino7") {
+					NumeroDestino = 2;
 				}
 		
 				if (DestinoActual == "Destino2" && DestinoAnterior == "Destino1") {
@@ -310,6 +316,9 @@ public class DestinosHelicoptero : MonoBehaviour
 				if (DestinoActual == "Destino13" && DestinoAnterior == "Destino17") {
 						NumeroDestino = 12;
 				}
+				if (DestinoActual == "Destino13" && DestinoAnterior == "Destino20") {
+						NumeroDestino = 17;
+				}
 		
 				if (DestinoActual == "Destino14" && DestinoAnterior == "Destino9") {
 						NumeroDestino = 10;
@@ -391,6 +400,9 @@ public class DestinosHelicoptero : MonoBehaviour
 
 				if (DestinoActual == "Destino1" && DestinoAnterior == "Destino20") {
 						NumeroDestino = 2;
+				}
+				if (DestinoActual == "Destino1" && DestinoAnterior == "Destino7") {
+					NumeroDestino = 20;
 				}
 				if (DestinoActual == "Destino1" && DestinoAnterior == "Destino2") {
 						NumeroDestino = 3;
@@ -553,6 +565,9 @@ public class DestinosHelicoptero : MonoBehaviour
 				}
 				if (DestinoActual == "Destino13" && DestinoAnterior == "Destino17") {
 						NumeroDestino = 8;
+				}
+				if (DestinoActual == "Destino13" && DestinoAnterior == "Destino20") {
+					NumeroDestino = 12;
 				}
 		
 				if (DestinoActual == "Destino14" && DestinoAnterior == "Destino9") {

@@ -21,14 +21,22 @@ public class EscolherMoedas : MonoBehaviour
 		public bool HelicopteroEstimulos;
 		public GUIText PontuacaoGUI;
 		public GUIText TempoGUI;
+		float distancia;
+		public GameObject DirectionRight;
+		public GameObject DirectionLeft;
+		public GameObject DirectionMiddle;
+		public GameObject[] Moedas;
 		// Use this for initialization
 		void Start ()
 		{
+		for (int i=0; i<=19; i++) {
+			Moedas[i].SetActive(false);
+		}
 				while (contador<10) {
-						ValorRandom = Random.Range (1, 20);
+						ValorRandom = Random.Range (0, 20);
 						if (!ListaMoedas.Contains (ValorRandom)) {
 								ListaMoedas.Add (ValorRandom);
-								GameObject.Find ("Coin" + ListaMoedas [contador]).SetActive (false);	
+								Moedas[ListaMoedas [contador]].SetActive (true);	
 								contador++;
 						}
 				}
@@ -36,19 +44,36 @@ public class EscolherMoedas : MonoBehaviour
 				int minutes = Mathf.FloorToInt (timer / 60F);
 				int seconds = Mathf.FloorToInt (timer - minutes * 60);
 				niceTime = string.Format ("{0:0}:{1:00}", minutes, seconds);
+
+				DirectionRight.SetActive (false);
+				DirectionLeft.SetActive (false);
 		}
 	
 		// Update is called once per frame
 		void Update ()
 		{
+				int dir = NextDirection ();
+				if (dir == 1) {
+						DirectionRight.SetActive (true);
+						DirectionMiddle.SetActive (false);
+						DirectionLeft.SetActive (false);
+				} else if (dir == -1) {
+						DirectionLeft.SetActive (true);
+						DirectionMiddle.SetActive (false);
+						DirectionRight.SetActive (false);
+				} else {
+						DirectionLeft.SetActive (false);
+						DirectionMiddle.SetActive (true);
+						DirectionRight.SetActive (false);
+				}
 
-			PontuacaoGUI.guiText.text = ApanharMoedas.Pontuacao + "/10";
-			TempoGUI.guiText.text = niceTime; 
+				PontuacaoGUI.guiText.text = ApanharMoedas.Pontuacao + "/10";
+				TempoGUI.guiText.text = niceTime; 
 
 				if (ApanharMoedas.Pontuacao == 10) {
 						Time.timeScale = 0.0f;
 						JogoAcabou = true;
-		} else if (HelicopteroEstimulos == true && Tcpheli.conectado == true) {
+				} else if (HelicopteroEstimulos == true && Tcpheli.conectado == true) {
 						timer += Time.deltaTime;
 						int minutes = Mathf.FloorToInt (timer / 60F);
 						int seconds = Mathf.FloorToInt (timer - minutes * 60);
@@ -70,6 +95,38 @@ public class EscolherMoedas : MonoBehaviour
 						}
 				}
 				
+		}
+
+		public int NextDirection ()
+		{	
+				Vector3 h = new Vector3(0,0,0);
+				int direcao = 0;
+				if (HelicopteroEstimulos == true) {
+						h = GameObject.Find ("Destino" + TCPDestinos.NumeroDestino).transform.position;
+				} else if (HelicopteroTeclado == true){
+						h = GameObject.Find ("Destino" + DestinosHelicoptero.NumeroDestino).transform.position;
+				}
+				
+				distancia = 1000000;
+				for (int i=0; i<ListaMoedas.Count; i++) {
+						if (Moedas[ListaMoedas [i]].activeSelf == true) {
+						Vector3 m = Moedas[ListaMoedas [i]].transform.position;
+
+								float h2 = Vector3.Distance (h, m);
+								if (h2 < distancia) {
+										distancia = h2;
+										if (h.x < m.x) {
+												direcao = 1;
+										} else {
+												direcao = -1;
+										}
+								}
+						}
+				}
+				//Debug.Log ("direcao: " + direcao);
+				//Debug.Log ("Helicoptero : " + h);
+				//Debug.Log ("LM : " + ListaMoedas.Count);
+				return direcao;
 		}
 
 		void OnGUI ()

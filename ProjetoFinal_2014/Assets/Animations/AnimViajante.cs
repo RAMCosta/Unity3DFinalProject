@@ -31,10 +31,11 @@ public class AnimViajante : MonoBehaviour
 	
 		// Update is called once per frame
 		void Update ()
-		{
+		{		// Verificar se taxi embateu no destino
 				if (DestinosAnim.AndarViajante == true || DestinosTCPAnim.AndarViajante == true) {
-						SeguirCarro = false;
-						anim.SetBool ("Andar", true);
+						SeguirCarro = false; // Parar o carro
+						anim.SetBool ("Andar", true); //Activar a AnimacaoCarros "Andar"
+						// Verificar qual a o destino a volta do taxi mais perto do passageiro, para nao percorrer todos
 						for (int i=0; i<6; i++) {
 								distancia = (int)Vector3.Distance (this.transform.position, NavDestino [i].transform.position);
 								if (distancia < distanciaPeq) {
@@ -42,28 +43,22 @@ public class AnimViajante : MonoBehaviour
 										numeroDestino = i;
 								}
 						}
+						// Desativar a opcao de fazer o passageiro Andar
 						DestinosAnim.AndarViajante = false;
 						DestinosTCPAnim.AndarViajante = false;
-
 				}		
-
+				// Percorrer os destinos relativos ao NavMesh
 				if (numeroDestino >= 0 && numeroDestino != 10) {
 						agente = gameObject.GetComponent<NavMeshAgent> ();
 						agente.SetDestination (NavDestino [numeroDestino].position);
 				}
 				// calculo da distancia entre o taxi e o destino
 				distancia = (int)Vector3.Distance (Taxi.transform.position, destino.transform.position);
-				
-				if (distancia > 30){
 				// Rodar passageiro, para ficar de frente para o taxi
-					this.transform.LookAt (referencia.transform); 
-				}
+				if (distancia > 30) { this.transform.LookAt (referencia.transform); }
 				// Caso a distancia seja <100m, o passageiro levanta a mao para chamar o taxi
-				if (distancia > 2 && distancia < 100) {
-						anim.SetBool ("ChamarTaxi", true);	
-				} else {
-						anim.SetBool ("ChamarTaxi", false);	
-				}
+				if (distancia > 2 && distancia < 100) {anim.SetBool ("ChamarTaxi", true);	
+				} else {anim.SetBool ("ChamarTaxi", false);	}
 				// AbrirPorta = true e definido quando o passageiro percorre todos os destinos
 				// a volta do carro e chega ao destino 0
 				if (AbrirPorta == true) {
@@ -81,8 +76,6 @@ public class AnimViajante : MonoBehaviour
 								SeguirCarro = true;
 								AbrirPorta = false;
 								ActualizarDestino = true;
-
-								//this.gameObject.SetActive(false);
 						}
 				}
 		}

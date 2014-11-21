@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class TCPHeliLivre : MonoBehaviour
 {		
@@ -18,7 +19,11 @@ public class TCPHeliLivre : MonoBehaviour
 		int numeroColisao = 0; // Apenas faz a explosao quando bate a primeira vez em algo
 		public GameObject explosao;
 		float tempo = 0; // enviar comando ao MatLab 2s depois da conexao
-		
+		string DirValor;
+		string EsqValor;
+		string FrnValor;
+		public GUIText colisoes;
+
 		// Use this for initialization
 		void Start ()
 		{
@@ -28,42 +33,59 @@ public class TCPHeliLivre : MonoBehaviour
 		Colisao = false;
 		JogoAcabou = false;
 		numeroColisao = 0;
+
+		int d = Convert.ToInt32(MatLab_Det_Setas.DirValor.ToString(), 10);
+		char dir = (char) d;
+		DirValor = dir.ToString ();
+		
+		int e = Convert.ToInt32(MatLab_Det_Setas.EsqValor.ToString(), 10);
+		char esq = (char) e;
+		EsqValor = esq.ToString ();
+		
+		int f = Convert.ToInt32(MatLab_Det_Setas.FrenteValor.ToString(), 10);
+		char frn = (char) f;
+		FrnValor = frn.ToString ();
+
 		}
 		
 		// Update is called once per frame
 		void Update ()
 		{
 		if (Tcpheli.conectado == true && Colisao == false) {
-			tempo += Time.deltaTime;
-						if (EnviarMatLabModoJogo == true && tempo>12) { // Cada vez que se perde ligaçao e retoma, envia um pedido de jogo modo2 (1 em 1s)
-								EnviarMatLabModoJogo = false;
-								//Tcpheli.mensagemMatLab = MatLab_Env_Comando.modo2Valor.ToString() + "1";
-								Tcpheli.mensagemMatLab = "Q1";
-								Tcpheli.EnviarComandoMatLabHeli = true;
-								Estimulos.SetActive (true);
+				tempo += Time.deltaTime;
+				if (EnviarMatLabModoJogo == true && tempo > 12) { // Cada vez que se perde ligaçao e retoma, envia um pedido de jogo modo2 (1 em 1s)
+					int n = Convert.ToInt32(MatLab_Env_Comando.modo2Valor.ToString (), 10);
+					char res = (char) n;
+					string msg = res.ToString ();				
+					
+					Tcpheli.mensagemMatLab = msg + "1";
+					Tcpheli.EnviarComandoMatLabHeli = true;
+					EnviarMatLabModoJogo = false;
+				}
+						//	Colocar posiçao Y do helicoptero, igual a posicao Y do anel, caso esteja baixo demais
+						if (this.gameObject.transform.position.y < EscolherAneis.PosicaoYAneis) {
+								this.transform.Translate (new Vector3 (0, 2 * Time.deltaTime, 0));
 						}
-						
-
-					//	if (!Input.GetKey (KeyCode.UpArrow) && !Tcpheli.comand.Equals ("C")) {
-								if (this.gameObject.transform.position.y > EscolherAneis.PosicaoYAneis) {
-										this.transform.Translate (new Vector3 (0, -2 * Time.deltaTime, 0));
-								}
+						//	Colocar posiçao Y do helicoptero, igual a posicao Y do anel, caso esteja alto demais
+						if (this.gameObject.transform.position.y > EscolherAneis.PosicaoYAneis) {
+								this.transform.Translate (new Vector3 (0, -2 * Time.deltaTime, 0));
+						}
 					//	}
 						this.transform.Translate (new Vector3 (0, 0, 5 * Time.deltaTime));
 				
 						// Se houver ligacao TCP com o jogo ele anda, senao fica parado
 
 				//if (Tcpheli.comand.Equals (MatLab_Det_Setas.DirValor.ToString())) {
-							if (Tcpheli.comand.Equals ("B")) {
+							if (Tcpheli.comand.Equals (DirValor) || Input.GetKey(KeyCode.RightArrow)) {
 										this.transform.Rotate (new Vector3 (0, 10 * Time.deltaTime, 0));	
 								}
 				//if (Tcpheli.comand.Equals (MatLab_Det_Setas.EsqValor.ToString())) {
-							if (Tcpheli.comand.Equals ("A")) {
+							if (Tcpheli.comand.Equals (EsqValor) || Input.GetKey(KeyCode.LeftArrow)) {
 										this.transform.Rotate (new Vector3 (0, -10 * Time.deltaTime, 0));
 								}
 						
 			//	if (Tcpheli.comand.Equals (MatLab_Det_Setas.FrenteValor.ToString())) {
-							if (Tcpheli.comand.Equals ("C")) {
+							if (Tcpheli.comand.Equals (FrnValor) || Input.GetKey(KeyCode.UpArrow)) {
 										this.transform.Translate (new Vector3 (0, 0, 0));
 								}
 						
@@ -95,20 +117,27 @@ public class TCPHeliLivre : MonoBehaviour
 		
 		void  OnCollisionEnter (Collision collision)
 		{
-				Colisao = true;
+		if (!collision.gameObject.name.Contains ("Anel")) {
+			colisoes.text = numeroColisao.ToString() + "/10";
+			Debug.Log ("Colisao: " + numeroColisao);
+			if (numeroColisao == 10) {
 				explosao.SetActive (true);
-				if (numeroColisao == 0) {
-						explosao.audio.Play ();
-				}
+				explosao.audio.Play ();
+				Colisao = true;
 				this.rigidbody.useGravity = true;
 				this.audio.Stop ();
+				//	ParaAcabar = true;
+			}
+			if (numeroColisao > 10) {
 				if (collision.gameObject.name.Contains ("floor") || collision.gameObject.name.Contains ("Terrain") || collision.gameObject.name.Contains ("Street") || numeroColisao == 4) {
-						JogoAcabou = true;
-						this.GetComponent<RodarHelices> ().enabled = false;
-			
-						Time.timeScale = 0.0f;
+					JogoAcabou = true;
+					this.GetComponent<RodarHelices> ().enabled = false;
+					
+					Time.timeScale = 0.0f;
 				}
-				numeroColisao++;
+			}
+			numeroColisao++;
+		}
 		}
 
 		void OnGUI ()
