@@ -530,20 +530,20 @@ public class DestinosAnim : MonoBehaviour {
 				} else if (DestinoActual == "Destino35" && DestinoAnterior == "Destino33") {
 						NumeroDestino = 32;
 				} else if (DestinoActual == "Destino35" && DestinoAnterior == "Destino34") {
-						NumeroDestino = 43;
+						NumeroDestino = 45;
 				} else if (DestinoActual == "Destino35" && DestinoAnterior == "Destino36") {
 						NumeroDestino = 33;
-				} else if (DestinoActual == "Destino35" && DestinoAnterior == "Destino43") {
+				} else if (DestinoActual == "Destino35" && DestinoAnterior == "Destino45") {
 						NumeroDestino = 36;
 				} else if (DestinoActual == "Destino35" && DestinoAnterior == "Destino42") {
 						NumeroDestino = 36;
 				} else if (DestinoActual == "Destino36" && DestinoAnterior == "Destino26") {
 						NumeroDestino = 35;
 				} else if (DestinoActual == "Destino36" && DestinoAnterior == "Destino35") {
-						NumeroDestino = 44;
+						NumeroDestino = 46;
 				} else if (DestinoActual == "Destino36" && DestinoAnterior == "Destino37") {
 						NumeroDestino = 26;
-				} else if (DestinoActual == "Destino36" && DestinoAnterior == "Destino44") {
+				} else if (DestinoActual == "Destino36" && DestinoAnterior == "Destino46") {
 						NumeroDestino = 37;
 				} else if (DestinoActual == "Destino37" && DestinoAnterior == "Destino27") {
 						NumeroDestino = 36;
@@ -593,20 +593,20 @@ public class DestinosAnim : MonoBehaviour {
 						NumeroDestino = 42;
 				} else if (DestinoActual == "Destino44" && DestinoAnterior == "Destino42") {
 						NumeroDestino = 46;
-				} else if (DestinoActual == "Destino45" && DestinoAnterior == "Destino43") {
+				} else if (DestinoActual == "Destino45" && DestinoAnterior == "Destino35") {
 						NumeroDestino = 64;
 				} else if (DestinoActual == "Destino45" && DestinoAnterior == "Destino46") {
-						NumeroDestino = 43;
+						NumeroDestino = 35;
 				} else if (DestinoActual == "Destino45" && DestinoAnterior == "Destino52") {
 						NumeroDestino = 46;
 				} else if (DestinoActual == "Destino45" && DestinoAnterior == "Destino64") {
 						NumeroDestino = 52;
-				} else if (DestinoActual == "Destino46" && DestinoAnterior == "Destino44") {
+				} else if (DestinoActual == "Destino46" && DestinoAnterior == "Destino36") {
 						NumeroDestino = 45;
 				} else if (DestinoActual == "Destino46" && DestinoAnterior == "Destino45") {
 						NumeroDestino = 53;
 				} else if (DestinoActual == "Destino46" && DestinoAnterior == "Destino47") {
-						NumeroDestino = 44;
+						NumeroDestino = 36;
 				} else if (DestinoActual == "Destino46" && DestinoAnterior == "Destino53") {
 						NumeroDestino = 47;
 				} else if (DestinoActual == "Destino47" && DestinoAnterior == "Destino37") {
@@ -878,18 +878,18 @@ public class DestinosAnim : MonoBehaviour {
 		} else if (DestinoActual == "Destino35" && DestinoAnterior == "Destino32") {
 			NumeroDestino = 33;
 		} else if (DestinoActual == "Destino35" && DestinoAnterior == "Destino36") {
-			NumeroDestino = 43;
+			NumeroDestino = 45;
 		} else if (DestinoActual == "Destino35" && DestinoAnterior == "Destino42"){
 			NumeroDestino = 34;
-		} else if (DestinoActual == "Destino35" && DestinoAnterior == "Destino43") {
+		} else if (DestinoActual == "Destino35" && DestinoAnterior == "Destino45") {
 			NumeroDestino = 32;
 		} else if (DestinoActual == "Destino36" && DestinoAnterior == "Destino26") {
 			NumeroDestino = 37;
 		} else if (DestinoActual == "Destino36" && DestinoAnterior == "Destino35") {
 			NumeroDestino = 26;
 		} else if (DestinoActual == "Destino36" && DestinoAnterior == "Destino37") {
-			NumeroDestino = 44;
-		} else if (DestinoActual == "Destino36" && DestinoAnterior == "Destino44") {
+			NumeroDestino = 46;
+		} else if (DestinoActual == "Destino36" && DestinoAnterior == "Destino46") {
 			NumeroDestino = 35;
 		} else if (DestinoActual == "Destino37" && DestinoAnterior == "Destino27") {
 			NumeroDestino = 38;
@@ -939,18 +939,18 @@ public class DestinosAnim : MonoBehaviour {
 			NumeroDestino = 36;
 		} else if (DestinoActual == "Destino44" && DestinoAnterior == "Destino46") {
 			NumeroDestino = 42;
-		} else if (DestinoActual == "Destino45" && DestinoAnterior == "Destino43") {
+		} else if (DestinoActual == "Destino45" && DestinoAnterior == "Destino35") {
 			NumeroDestino = 46;
 		} else if (DestinoActual == "Destino45" && DestinoAnterior == "Destino46") {
 			NumeroDestino = 52;
 		} else if (DestinoActual == "Destino45" && DestinoAnterior == "Destino52") {
 			NumeroDestino = 64;
 		} else if (DestinoActual == "Destino45" && DestinoAnterior == "Destino64") {
-			NumeroDestino = 43;
-		} else if (DestinoActual == "Destino46" && DestinoAnterior == "Destino44") {
+			NumeroDestino = 35;
+		} else if (DestinoActual == "Destino46" && DestinoAnterior == "Destino36") {
 			NumeroDestino = 47;
 		} else if (DestinoActual == "Destino46" && DestinoAnterior == "Destino45") {
-			NumeroDestino = 44;
+			NumeroDestino = 36;
 		} else if (DestinoActual == "Destino46" && DestinoAnterior == "Destino47") {
 			NumeroDestino = 53;
 		} else if (DestinoActual == "Destino46" && DestinoAnterior == "Destino53") {
@@ -1223,17 +1223,17 @@ public class DestinosAnim : MonoBehaviour {
 			NumeroDestino = 36;
 		} else if (DestinoActual == "Destino35" && DestinoAnterior == "Destino36") {
 			NumeroDestino = 34;
-		} else if (DestinoActual == "Destino35" && DestinoAnterior == "Destino43") {
+		} else if (DestinoActual == "Destino35" && DestinoAnterior == "Destino45") {
 			NumeroDestino = 33;
 		}else if(DestinoActual == "Destino35" && DestinoAnterior == "Destino42"){
 			NumeroDestino = 33;
 		}else if (DestinoActual == "Destino36" && DestinoAnterior == "Destino26") {
-			NumeroDestino = 44;
+			NumeroDestino = 46;
 		} else if (DestinoActual == "Destino36" && DestinoAnterior == "Destino35") {
 			NumeroDestino = 37;
 		} else if (DestinoActual == "Destino36" && DestinoAnterior == "Destino37") {
 			NumeroDestino = 35;
-		} else if (DestinoActual == "Destino36" && DestinoAnterior == "Destino44") {
+		} else if (DestinoActual == "Destino36" && DestinoAnterior == "Destino46") {
 			NumeroDestino = 26;
 		} else if (DestinoActual == "Destino37" && DestinoAnterior == "Destino27") {
 			NumeroDestino = 47;
@@ -1279,22 +1279,22 @@ public class DestinosAnim : MonoBehaviour {
 			NumeroDestino = 46;
 		} else if (DestinoActual == "Destino44" && DestinoAnterior == "Destino46") {
 			NumeroDestino = 36;
-		} else if (DestinoActual == "Destino45" && DestinoAnterior == "Destino43") {
+		} else if (DestinoActual == "Destino45" && DestinoAnterior == "Destino35") {
 			NumeroDestino = 52;
 		} else if (DestinoActual == "Destino45" && DestinoAnterior == "Destino46") {
 			NumeroDestino = 64;
 		} else if (DestinoActual == "Destino45" && DestinoAnterior == "Destino52") {
-			NumeroDestino = 43;
+			NumeroDestino = 35;
 		} else if (DestinoActual == "Destino45" && DestinoAnterior == "Destino64") {
 			NumeroDestino = 46;
-		} else if (DestinoActual == "Destino46" && DestinoAnterior == "Destino44") {
+		} else if (DestinoActual == "Destino46" && DestinoAnterior == "Destino36") {
 			NumeroDestino = 53;
 		} else if (DestinoActual == "Destino46" && DestinoAnterior == "Destino45") {
 			NumeroDestino = 47;
 		} else if (DestinoActual == "Destino46" && DestinoAnterior == "Destino47") {
 			NumeroDestino = 45;
 		} else if (DestinoActual == "Destino46" && DestinoAnterior == "Destino53") {
-			NumeroDestino = 44;
+			NumeroDestino = 36;
 		} else if (DestinoActual == "Destino47" && DestinoAnterior == "Destino37") {
 			NumeroDestino = 54;
 		} else if (DestinoActual == "Destino47" && DestinoAnterior == "Destino46") {
