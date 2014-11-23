@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: 8feeec62d3d99174a89a1cd2d9c70769
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: taxi
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

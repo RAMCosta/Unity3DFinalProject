@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Tcpheli">
+    <Position X="0.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQBAFAACCABEAAIAAEAAAAIAABIAAgICACAAAAAAEA=</HashCode>
+      <FileName>Assets\HELICOPTERO\SCRIPTS\ConexaoTCP\Tcpheli.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCPDestinos">
+    <Position X="3.5" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AARIEQAAACBAAQCAAAQQBAAAAAIAAIgQQAAAAQCAQAY=</HashCode>
+      <FileName>Assets\HELICOPTERO\SCRIPTS\TCPDestinos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MatLab_Det_Setas">
+    <Position X="6.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAUAAAICAQIAAAAAAAAAAAAAAAAAAAIFAAAAAAIAA=</HashCode>
+      <FileName>Assets\MENU\Menu\Opcoes\MatLab\MatLab_Det_Setas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MatLab_Env_Comando">
+    <Position X="6.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAAACCAAAAAAACAAAAAAAAAQACAIAAAIABAAAA=</HashCode>
+      <FileName>Assets\MENU\Menu\Opcoes\MatLab\MatLab_Env_Comando.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

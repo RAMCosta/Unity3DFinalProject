@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_5_5;UNITY_4_5;UNITY_STANDALONE_OSX;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_GAMECENTER;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_5_2;UNITY_4_5;UNITY_STANDALONE_OSX;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_GAMECENTER;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>D:/Programas/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>D:/Programas/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -61,13 +61,17 @@
      <Compile Include="Assets\Standard Assets (Mobile)\Scripts\ZoomCamera.js" />
      <Compile Include="Assets\Standard Assets (Mobile)\Scripts\tapcontrol.js" />
      <None Include="Assets\CIDADE\_IMPORTS\Carros\Carrinha\archibase.net.txt" />
+     <None Include="Assets\CARROS 2D\_SCRIPTS\ClassDiagram1.cd" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
+     <None Include="Assets\ZRNAssets\license_en.txt" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT_DifSpecVC.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
      <None Include="Assets\CIDADE\_IMPORTS\Car&amp;People models\Man sitting business N200514\archibase.net.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />
+     <None Include="Assets\ZRNAssets\PQAssets\Query-Chan\Shaders\PQ_Skin.shader" />
      <None Include="Assets\CIDADE\_IMPORTS\Car&amp;People models\c4ce7e143698f031c851e8c0942841bb\archibase.net.txt" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT-Skydome.shader" />
+     <None Include="Assets\ZRNAssets\license_jp.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Detail.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT_DiffuseVCCubemap.shader" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
@@ -76,30 +80,40 @@
      <None Include="Assets\CIDADE\_IMPORTS\Carros\461c0d09b69b6f72cfc0c9165b759899\archibase.net.txt" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\CIDADE\_IMPORTS\Car&amp;People models\Man walking N120814\archibase.net.txt" />
+     <None Include="Assets\CIDADE\_SCRIPTS\DiagramaTaxiEstimulos.cd" />
      <None Include="Assets\CIDADE\TheLoom_Building_1_Free\Shaders\TheLoom_Normal.shader" />
      <None Include="Assets\CIDADE\_IMPORTS\Car&amp;People models\5bfeed11e99c952d459bc50137e93a87\archibase.net.txt" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\VertexOnly.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT_Road.shader" />
+     <None Include="Assets\ZRNAssets\005339_08932_25_14\Shaders\su_Double_and_Clip.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT_DiffuseVCEmissive.shader" />
+     <None Include="Assets\HELICOPTERO\SCRIPTS\DiagramHeliLivre.cd" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT-SkyBoxFog.shader" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Reflective.shader" />
      <None Include="Assets\HELICOPTERO\Unity3dx Free City01\Standard Assets\Skyboxes\ skybox info.txt" />
+     <None Include="Assets\ZRNAssets\PQAssets\license_jp.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Particles Additive Culled.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\Diffuse_VCMod2x.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT-SkyBox.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT_LightingOnly.shader" />
+     <None Include="Assets\ZRNAssets\PQAssets\Query-Chan\Shaders\PQ_TransBlue.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT_DiffuseVCEmissiveCubeMap.shader" />
      <None Include="Assets\CIDADE\_IMPORTS\Car&amp;People models\5ea87d13283f74084edccf14e1c99205\archibase.net.txt" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Documentation.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Vertex Colored.shader" />
+     <None Include="Assets\ZRNAssets\005339_08932_25_14\Shaders\su_VertexCol_1UV_Single.shader" />
      <None Include="Assets\CIDADE\_IMPORTS\Car&amp;People models\Man 1 N230614\archibase.net.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Only.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap AlphaTest.shader" />
      <None Include="Assets\CIDADE\TheLoom_Building_1_Free\readme.txt" />
      <None Include="Assets\CIDADE\_IMPORTS\Carros\f7f8de6f0e1b137b229a98a7bcd004b8\archibase.net.txt" />
+     <None Include="Assets\ZRNAssets\PQAssets\license_en.txt" />
+     <None Include="Assets\CIDADE\_SCRIPTS\Estimulos.cd" />
      <None Include="Assets\Editor\Doxygen\Resources\BaseDoxyfile.txt" />
      <None Include="Assets\Editor\Doxygen\ReadMe.txt" />
+     <None Include="Assets\HELICOPTERO\SCRIPTS\DiagramaHelicoptero.cd" />
+     <None Include="Assets\ZRNAssets\005339_08932_25_14\Documents\ReadMe.txt" />
      <None Include="Assets\CIDADE\_IMPORTS\Car&amp;People models\fb1a2fd5820296081eedbe0ce95b9c96\archibase.net.txt" />
      <None Include="Assets\CIDADE\Quantum Theory\Quantum MetaClouds Sample\Shaders\QuantumMetaCloud-SoftAlphaBlend.shader" />
   </ItemGroup>
