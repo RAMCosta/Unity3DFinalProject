@@ -91,7 +91,7 @@
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\QT-SkyBoxFog.shader" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Reflective.shader" />
-     <None Include="Assets\HELICOPTERO\Unity3dx Free City01\Standard Assets\Skyboxes\ skybox info.txt" />
+     <None Include="Assets\HELICOPTERO\Unity3dx Free City01\Standard Assets\Skyboxes\skybox info.txt" />
      <None Include="Assets\ZRNAssets\PQAssets\license_jp.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Particles Additive Culled.shader" />
      <None Include="Assets\CIDADE\Quantum Theory\UCP\Materials\Shaders\Diffuse_VCMod2x.shader" />
