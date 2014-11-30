@@ -10,7 +10,7 @@ public class JogarOpcao : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		//
 	}
 	
 	void OnMouseEnter ()

@@ -10,7 +10,7 @@ public class teclado3d : MonoBehaviour {
 		} else if (Application.platform == RuntimePlatform.IPhonePlayer) {
 			this.guiText.text = "Touch";
 		} else {
-			this.guiText.text = "Touch";
+			this.guiText.text = "Teclado";
 		}
 	}
 	
