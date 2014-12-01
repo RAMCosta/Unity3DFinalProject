@@ -1,11 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CIDADE\_SCRIPTS\Destinos\DestinosAnim.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MENU\Menu\Opcoes\TamanhoEstimulos\TamanhoEstimulos.cs">
     <Files>
-      <File FileName="Assets\MENU\Menu\MainMenu\JogarOpcao.cs" Line="1" Column="1" />
-      <File FileName="Assets\MENU\Menu\MenuJogar\MenuCarros3d\teclado3d.cs" Line="1" Column="1" />
-      <File FileName="Assets\CIDADE\_SCRIPTS\Destinos\DestinosAnim.cs" Line="1" Column="1" />
-      <File FileName="Assets\CIDADE\_SCRIPTS\Destinos\DestinosTCPAnim.cs" Line="1" Column="1" />
+      <File FileName="Assets\CIDADE\_SCRIPTS\Estimulos\DireitaEstimulo.cs" Line="45" Column="28" />
+      <File FileName="Assets\MENU\Menu\Opcoes\TamanhoEstimulos\TamanhoEstimulos.cs" Line="22" Column="2" />
+      <File FileName="Assets\CIDADE\_SCRIPTS\Estimulos\EsquerdaEstimulo.cs" Line="30" Column="23" />
+      <File FileName="Assets\CIDADE\_SCRIPTS\Estimulos\FrenteEstimulo.cs" Line="39" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

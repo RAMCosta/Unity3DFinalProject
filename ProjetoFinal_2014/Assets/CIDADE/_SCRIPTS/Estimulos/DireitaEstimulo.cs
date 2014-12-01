@@ -10,12 +10,40 @@ public class DireitaEstimulo : MonoBehaviour {
 	int delay;
 	bool state;
 	float frequencia;
-	public GUITexture Seta1;
-	public GUITexture Seta2;
+	public GUITexture PeqDir1;
+	public GUITexture PeqDir2;
+	public GUITexture MedioDir1;
+	public GUITexture MedioDir2;
+	public GUITexture GrnDir1;
+	public GUITexture GrnDir2;
+	GUITexture Seta1;
+	GUITexture Seta2;
 	public Texture[] TexturaEstimulos;
 	// Use this for initialization
 	void Start ()
 	{
+		if (TamanhoEstimulos.Size == "Pequeno") {
+			Seta1 = PeqDir1;
+			Seta2 = PeqDir2;
+			MedioDir1.enabled=false;
+			MedioDir2.enabled=false;
+			GrnDir1.enabled=false;
+			GrnDir2.enabled=false;
+		} else if (TamanhoEstimulos.Size == "Medio") {
+			Seta1 = MedioDir1;
+			Seta2 = MedioDir2;
+			PeqDir1.enabled=false;
+			PeqDir2.enabled=false;
+			GrnDir1.enabled=false;
+			GrnDir2.enabled=false;
+		} else if (TamanhoEstimulos.Size == "Grande") {
+			Seta1 = GrnDir1;
+			Seta2 = GrnDir2;
+			PeqDir1.enabled=false;
+			PeqDir2.enabled=false;
+			MedioDir1.enabled=false;
+			MedioDir2.enabled=false;
+		}
 		//frequencia=9;
 		if(FreqEscolhe.DefFreqManual==true)
 		{

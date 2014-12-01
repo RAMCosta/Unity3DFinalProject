@@ -173,8 +173,10 @@
      <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\EstimMenu.cs" />
      <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\FreqMenu.cs" />
      <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\SinaisMatlabMenuOpcoes.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\TamanhoMenu.cs" />
      <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\TesteGUI.cs" />
      <Compile Include="Assets\MENU\Menu\Opcoes\SCRIPT\VoltarMenuOpcoes.cs" />
+     <Compile Include="Assets\MENU\Menu\Opcoes\TamanhoEstimulos\TamanhoEstimulos.cs" />
      <Compile Include="Assets\MENU\Menu\Script\AndarCamera.cs" />
      <Compile Include="Assets\MENU\Menu\Script\Creditos.cs" />
      <Compile Include="Assets\MENU\Menu\Script\PauseGame.cs" />

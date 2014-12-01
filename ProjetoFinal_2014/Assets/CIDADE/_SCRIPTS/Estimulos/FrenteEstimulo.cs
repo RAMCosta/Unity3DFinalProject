@@ -10,12 +10,41 @@ public class FrenteEstimulo : MonoBehaviour {
 	int delay;
 	bool state;
 	float frequencia;
-	public GUITexture Seta1;
-	public GUITexture Seta2;
+	GUITexture Seta1;
+	GUITexture Seta2;
+	public GUITexture PeqFrn1;
+	public GUITexture PeqFrn2;
+	public GUITexture MedioFrn1;
+	public GUITexture MedioFrn2;
+	public GUITexture GrnFrn1;
+	public GUITexture GrnFrn2;
 	public Texture[] TexturaEstimulos;
+
 	// Use this for initialization
 	void Start ()
 	{
+		if (TamanhoEstimulos.Size == "Pequeno") {
+			Seta1 = PeqFrn1;
+			Seta2 = PeqFrn2;
+			MedioFrn1.enabled=false;
+			MedioFrn2.enabled=false;
+			GrnFrn1.enabled=false;
+			GrnFrn2.enabled=false;
+		} else if (TamanhoEstimulos.Size == "Medio") {
+			Seta1 = MedioFrn1;
+			Seta2 = MedioFrn2;
+			PeqFrn1.enabled=false;
+			PeqFrn2.enabled=false;
+			GrnFrn1.enabled=false;
+			GrnFrn2.enabled=false;
+		} else if (TamanhoEstimulos.Size == "Grande") {
+			Seta1 = GrnFrn1;
+			Seta2 = GrnFrn2;
+			PeqFrn1.enabled=false;
+			PeqFrn2.enabled=false;
+			MedioFrn1.enabled=false;
+			MedioFrn2.enabled=false;
+		}
 	
 	  if(FreqEscolhe.DefFreqManual==true)
 		{

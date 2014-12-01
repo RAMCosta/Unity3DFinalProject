@@ -10,12 +10,41 @@ public class EsquerdaEstimulo : MonoBehaviour {
 	int delay;
 	bool state;
 	float frequencia;
-	public GUITexture Seta1;
-	public GUITexture Seta2;
+	GUITexture Seta1;
+	GUITexture Seta2;
+	public GUITexture PeqEsq1;
+	public GUITexture PeqEsq2;
+	public GUITexture MedioEsq1;
+	public GUITexture MedioEsq2;
+	public GUITexture GrnEsq1;
+	public GUITexture GrnEsq2;
 	public Texture[] TexturaEstimulos;
+
 	// Use this for initialization
 	void Start ()
 	{
+		if (TamanhoEstimulos.Size == "Pequeno") {
+			Seta1 = PeqEsq1;
+			Seta2 = PeqEsq2;
+			MedioEsq1.enabled=false;
+			MedioEsq2.enabled=false;
+			GrnEsq1.enabled=false;
+			GrnEsq2.enabled=false;
+		} else if (TamanhoEstimulos.Size == "Medio") {
+			Seta1 = MedioEsq1;
+			Seta2 = MedioEsq2;
+			PeqEsq1.enabled=false;
+			PeqEsq2.enabled=false;
+			GrnEsq1.enabled=false;
+			GrnEsq2.enabled=false;
+		} else if (TamanhoEstimulos.Size == "Grande") {
+			Seta1 = GrnEsq1;
+			Seta2 = GrnEsq2;
+			PeqEsq1.enabled=false;
+			PeqEsq2.enabled=false;
+			MedioEsq1.enabled=false;
+			MedioEsq2.enabled=false;
+		}
 	
 		if(FreqEscolhe.DefFreqManual==true)
 		{
