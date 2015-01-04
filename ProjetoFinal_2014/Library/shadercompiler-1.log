@@ -1,3 +1,125 @@
-Base path: C:/Program Files (x86)/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-1-5672
+Base path: D:/Programas/Unity/Editor/Data
+Pipe name: \\.\pipe\UnityShaderCompiler-1-1560
 Cmd: getPlatforms
+Cmd: preprocess
+  insize=3557 outsize=1412 ok=1
+Cmd: preprocess
+  insize=2733 outsize=1451 ok=1
+Cmd: preprocess
+  insize=818 outsize=818 ok=1
+Cmd: preprocess
+  insize=3281 outsize=1430 ok=1
+Cmd: preprocess
+  insize=3491 outsize=1997 ok=1
+Cmd: preprocess
+  insize=2335 outsize=1324 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (77): 'vert': output parameter 'o' not completely initialized
+  error: 1 plat 4 at (103): implicit truncation of vector type
+  api=4 type=0 insize=6140 outsize=0 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=0
+Cmd: preprocess
+  insize=2508 outsize=1371 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (80): 'vert': output parameter 'o' not completely initialized
+  error: 1 plat 4 at (109): implicit truncation of vector type
+  api=4 type=0 insize=6535 outsize=0 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=0
+Cmd: preprocess
+  insize=2874 outsize=1319 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (84): 'vert': output parameter 'o' not completely initialized
+  error: 1 plat 4 at (113): implicit truncation of vector type
+  api=4 type=0 insize=6936 outsize=0 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=0
+Cmd: preprocess
+  insize=3309 outsize=1509 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (86): 'vert': output parameter 'o' not completely initialized
+  error: 1 plat 4 at (112): 'texCUBE': implicit truncation of vector type
+  error: 1 plat 4 at (122): implicit truncation of vector type
+  error: 1 plat 4 at (123): implicit truncation of vector type
+  api=4 type=0 insize=7305 outsize=0 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=0
+Cmd: preprocess
+  insize=472 outsize=472 ok=1
+Cmd: preprocess
+  insize=835 outsize=835 ok=1
+Cmd: preprocess
+  insize=730 outsize=730 ok=1
+Cmd: preprocess
+  insize=2573 outsize=1382 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (80): 'vert': output parameter 'o' not completely initialized
+  error: 1 plat 4 at (109): implicit truncation of vector type
+  api=4 type=0 insize=6447 outsize=0 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=0
+Cmd: preprocess
+  insize=3166 outsize=1606 ok=1
+Cmd: preprocess
+  insize=608 outsize=608 ok=1
+Cmd: preprocess
+  insize=3110 outsize=1735 ok=1
+Cmd: preprocess
+  insize=3140 outsize=1574 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (91): 'vert': output parameter 'o' not completely initialized
+  error: 1 plat 4 at (123): implicit truncation of vector type
+  error: 1 plat 4 at (124): implicit truncation of vector type
+  error: 1 plat 4 at (125): implicit truncation of vector type
+  error: 1 plat 4 at (126): implicit truncation of vector type
+  api=4 type=0 insize=6971 outsize=0 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=0
+Cmd: preprocess
+  insize=2892 outsize=1337 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (84): 'vert': output parameter 'o' not completely initialized
+  error: 1 plat 4 at (113): implicit truncation of vector type
+  api=4 type=0 insize=6936 outsize=0 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=0
+Cmd: preprocess
+  insize=1355 outsize=1355 ok=1
+Cmd: preprocess
+  insize=316 outsize=316 ok=1
+Cmd: preprocess
+  insize=2581 outsize=1403 ok=1
+Cmd: preprocess
+  insize=3645 outsize=1836 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (96): 'vert': output parameter 'o' not completely initialized
+  error: 1 plat 4 at (124): 'texCUBE': implicit truncation of vector type
+  error: 1 plat 4 at (131): implicit truncation of vector type
+  error: 1 plat 4 at (132): implicit truncation of vector type
+  error: 1 plat 4 at (133): implicit truncation of vector type
+  error: 1 plat 4 at (134): implicit truncation of vector type
+  error: 1 plat 4 at (135): implicit truncation of vector type
+  api=4 type=0 insize=7591 outsize=0 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=0
+Cmd: preprocess
+  insize=2549 outsize=1393 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (81): 'vert': output parameter 'o' not completely initialized
+  error: 1 plat 4 at (110): implicit truncation of vector type
+  api=4 type=0 insize=6445 outsize=0 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=0
+Cmd: preprocess
+  insize=634 outsize=634 ok=1
+Cmd: preprocess
+  insize=963 outsize=963 ok=1
+Cmd: preprocess
+  insize=2356 outsize=1310 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (77): 'vert': output parameter 'o' not completely initialized
+  error: 1 plat 4 at (104): implicit truncation of vector type
+  api=4 type=0 insize=6273 outsize=0 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=0
+Cmd: preprocess
+  insize=1725 outsize=1007 ok=1
+Cmd: preprocess
+  insize=2966 outsize=1475 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (88): 'vert': output parameter 'o' not completely initialized
+  error: 1 plat 4 at (110): 'texCUBE': implicit truncation of vector type
+  error: 1 plat 4 at (118): implicit truncation of vector type
+  error: 1 plat 4 at (119): implicit truncation of vector type
+  error: 1 plat 4 at (120): implicit truncation of vector type
+  error: 1 plat 4 at (121): implicit truncation of vector type
+  api=4 type=0 insize=7070 outsize=0 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=0
+Cmd: preprocess
+  insize=3121 outsize=1452 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (91): 'vert': output parameter 'o' not completely initialized
+  error: 1 plat 4 at (120): implicit truncation of vector type
+  error: 1 plat 4 at (121): implicit truncation of vector type
+  error: 1 plat 4 at (122): implicit truncation of vector type
+  api=4 type=0 insize=7142 outsize=0 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=0
